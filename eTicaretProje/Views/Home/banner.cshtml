@@ -1,0 +1,47 @@
+﻿@model List<eTicaretProje.MARKALAR>
+@{
+    Layout = null;
+}
+@foreach (var i in Model)
+{
+    <div class="single-logo">
+        @{  if (i.markaAdi == "APPLE")
+            {
+                <a href="http://www.apple.com/tr/iphone/"><img src="@i.MarkaResimYol" alt="" /></a>
+            }
+            else if (i.markaAdi == "SAMSUNG")
+            {
+                <a href="http://www.samsung.com/tr/home/"><img src="@i.MarkaResimYol" alt="" /></a>
+            }
+            else if (i.markaAdi == "GENERALMOBILE")
+            {
+                <a href="http://www.generalmobile.com.tr/"><img src="@i.MarkaResimYol" alt="" /></a>
+            }
+            else if (i.markaAdi == "TOSHİBA")
+            {
+                <a href="http://www.toshiba.com.tr/"><img src="@i.MarkaResimYol" alt="" /></a>
+            }
+            else if (i.markaAdi == "CASPER")
+            {
+                <a href="http://www.casper.com.tr/"><img src="@i.MarkaResimYol" alt="" /></a>
+            }
+            else if (i.markaAdi == "HP")
+            {
+                <a href="http://www8.hp.com/tr/tr/home.html"><img src="@i.MarkaResimYol" alt="" /></a>
+            }
+            else if (i.markaAdi == "SONY")
+            {
+                <a href="http://www.sony.com.tr/"><img src="@i.MarkaResimYol" alt="" /></a>
+            }
+            else if (i.markaAdi == "HTC")
+            {
+                <a href="http://www.htc.com/tr/"><img src="@i.MarkaResimYol" alt="" /></a>
+            }
+            else if (i.markaAdi == "LENOVO")
+            {
+                <a href="http://www.lenovo.com/tr/tr/"><img src="@i.MarkaResimYol" alt="" /></a>
+            }
+
+        }
+    </div>
+            }

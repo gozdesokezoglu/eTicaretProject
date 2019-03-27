@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EticaretDatabaseModelStoreContainer" CdmEntityContainer="projectMVCDBEntities">
+    <EntitySetMapping Name="ALISVERISSEPETI">
+      <EntityTypeMapping TypeName="EticaretDatabaseModel.ALISVERISSEPETI">
+        <MappingFragment StoreEntitySet="ALISVERISSEPETI">
+          <ScalarProperty Name="kullaniciID" ColumnName="kullaniciID" />
+          <ScalarProperty Name="urunID" ColumnName="urunID" />
+          <ScalarProperty Name="sepetID" ColumnName="sepetID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ANAKATEGORİ">
+      <EntityTypeMapping TypeName="EticaretDatabaseModel.ANAKATEGORİ">
+        <MappingFragment StoreEntitySet="ANAKATEGORİ">
+          <ScalarProperty Name="anakategoriAdi" ColumnName="anakategoriAdi" />
+          <ScalarProperty Name="anakategoriID" ColumnName="anakategoriID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="EticaretDatabaseModel.AspNetRoles">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="EticaretDatabaseModel.AspNetUserClaims">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="EticaretDatabaseModel.AspNetUserLogins">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="EticaretDatabaseModel.AspNetUsers">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BANKALAR">
+      <EntityTypeMapping TypeName="EticaretDatabaseModel.BANKALAR">
+        <MappingFragment StoreEntitySet="BANKALAR">
+          <ScalarProperty Name="BankaLogoYol" ColumnName="BankaLogoYol" />
+          <ScalarProperty Name="bankaAdi" ColumnName="bankaAdi" />
+          <ScalarProperty Name="bankaID" ColumnName="bankaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KAMPANYALAR">
+      <EntityTypeMapping TypeName="EticaretDatabaseModel.KAMPANYALAR">
+        <MappingFragment StoreEntitySet="KAMPANYALAR">
+          <ScalarProperty Name="bitisTarihi" ColumnName="bitisTarihi" />
+          <ScalarProperty Name="baslangicTarihi" ColumnName="baslangicTarihi" />
+          <ScalarProperty Name="indirimOrani" ColumnName="indirimOrani" />
+          <ScalarProperty Name="urunID" ColumnName="urunID" />
+          <ScalarProperty Name="kampanyaID" ColumnName="kampanyaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KARGO">
+      <EntityTypeMapping TypeName="EticaretDatabaseModel.KARGO">
+        <MappingFragment StoreEntitySet="KARGO">
+          <ScalarProperty Name="kargoFirmaAciklama" ColumnName="kargoFirmaAciklama" />
+          <ScalarProperty Name="kargoFirmaAdi" ColumnName="kargoFirmaAdi" />
+          <ScalarProperty Name="kargoID" ColumnName="kargoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KATEGORILER">
+      <EntityTypeMapping TypeName="EticaretDatabaseModel.KATEGORILER">
+        <MappingFragment StoreEntitySet="KATEGORILER">
+          <ScalarProperty Name="anaKategoriID" ColumnName="anaKategoriID" />
+          <ScalarProperty Name="kategoriAdi" ColumnName="kategoriAdi" />
+          <ScalarProperty Name="kategoriID" ColumnName="kategoriID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MARKALAR">
+      <EntityTypeMapping TypeName="EticaretDatabaseModel.MARKALAR">
+        <MappingFragment StoreEntitySet="MARKALAR">
+          <ScalarProperty Name="MarkaResimYol" ColumnName="MarkaResimYol" />
+          <ScalarProperty Name="markaAdi" ColumnName="markaAdi" />
+          <ScalarProperty Name="markaID" ColumnName="markaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ODEMESECENEKLER">
+      <EntityTypeMapping TypeName="EticaretDatabaseModel.ODEMESECENEKLER">
+        <MappingFragment StoreEntitySet="ODEMESECENEKLER">
+          <ScalarProperty Name="OdemeTip" ColumnName="OdemeTip" />
+          <ScalarProperty Name="odemeSecenekID" ColumnName="odemeSecenekID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OZELLIKDETAY">
+      <EntityTypeMapping TypeName="EticaretDatabaseModel.OZELLIKDETAY">
+        <MappingFragment StoreEntitySet="OZELLIKDETAY">
+          <ScalarProperty Name="ozellikDetayi" ColumnName="ozellikDetayi" />
+          <ScalarProperty Name="urunID" ColumnName="urunID" />
+          <ScalarProperty Name="ozellikID" ColumnName="ozellikID" />
+          <ScalarProperty Name="ozellikDetayID" ColumnName="ozellikDetayID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIPARISLER">
+      <EntityTypeMapping TypeName="EticaretDatabaseModel.SIPARISLER">
+        <MappingFragment StoreEntitySet="SIPARISLER">
+          <ScalarProperty Name="TeslimTarihi" ColumnName="TeslimTarihi" />
+          <ScalarProperty Name="kargoNo" ColumnName="kargoNo" />
+          <ScalarProperty Name="kargoID" ColumnName="kargoID" />
+          <ScalarProperty Name="siparisTarihi" ColumnName="siparisTarihi" />
+          <ScalarProperty Name="odemeSecekenleriID" ColumnName="odemeSecekenleriID" />
+          <ScalarProperty Name="siparisDurum" ColumnName="siparisDurum" />
+          <ScalarProperty Name="urunID" ColumnName="urunID" />
+          <ScalarProperty Name="siparisID" ColumnName="siparisID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SLIDER">
+      <EntityTypeMapping TypeName="EticaretDatabaseModel.SLIDER">
+        <MappingFragment StoreEntitySet="SLIDER">
+          <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
+          <ScalarProperty Name="BaslangicTarihi" ColumnName="BaslangicTarihi" />
+          <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
+          <ScalarProperty Name="SliderText" ColumnName="SliderText" />
+          <ScalarProperty Name="SliderID" ColumnName="SliderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="URUNLER">
+      <EntityTypeMapping TypeName="EticaretDatabaseModel.URUNLER">
+        <MappingFragment StoreEntitySet="URUNLER">
+          <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
+          <ScalarProperty Name="BaslangicTarihi" ColumnName="BaslangicTarihi" />
+          <ScalarProperty Name="urunResimYol" ColumnName="urunResimYol" />
+          <ScalarProperty Name="urunAlisFiyati" ColumnName="urunAlisFiyati" />
+          <ScalarProperty Name="urunFiyat" ColumnName="urunFiyat" />
+          <ScalarProperty Name="urunAciklama" ColumnName="urunAciklama" />
+          <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
+          <ScalarProperty Name="markaID" ColumnName="markaID" />
+          <ScalarProperty Name="kategoriID" ColumnName="kategoriID" />
+          <ScalarProperty Name="urunID" ColumnName="urunID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="URUNOZELLIKLER">
+      <EntityTypeMapping TypeName="EticaretDatabaseModel.URUNOZELLIKLER">
+        <MappingFragment StoreEntitySet="URUNOZELLIKLER">
+          <ScalarProperty Name="anakategoriID" ColumnName="anakategoriID" />
+          <ScalarProperty Name="ozellikAd" ColumnName="ozellikAd" />
+          <ScalarProperty Name="ozellikID" ColumnName="ozellikID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="EticaretDatabaseModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

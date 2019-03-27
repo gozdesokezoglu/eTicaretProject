@@ -1,0 +1,184 @@
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\obj\Debug\eTicaretProje.csprojResolveAssemblyReference.cache
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\obj\Debug\eTicaretProje.csproj.GenerateResource.Cache
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\obj\Debug\eTicaretProje.Resource.Home.resources
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\obj\Debug\eTicaretProje.Resource.Home.en.resources
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\ApplicationInsights.config
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\roslyn\csc.exe
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\roslyn\vbc.exe
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\roslyn\VBCSCompiler.exe
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Resource\Home.resx
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Resource\Home.en.resx
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Resource\Home.en.Designer.cs
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Resource\Home.Designer.cs
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\eTicaretProje.dll.config
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\eTicaretProje.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\eTicaretProje.pdb
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\en\eTicaretProje.resources.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Antlr3.Runtime.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\EntityFramework.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\EntityFramework.SqlServer.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.AI.Web.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.ApplicationInsights.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Newtonsoft.Json.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Owin.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\System.Web.Helpers.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\System.Web.Mvc.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\System.Web.Optimization.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\System.Web.Razor.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\System.Web.WebPages.Deployment.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\System.Web.WebPages.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\System.Web.WebPages.Razor.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\WebGrease.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.AI.Web.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.ApplicationInsights.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\System.Web.Helpers.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\System.Web.Mvc.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\System.Web.Optimization.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\System.Web.Razor.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\System.Web.WebPages.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\System.Web.WebPages.Deployment.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\System.Web.WebPages.Razor.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Antlr3.Runtime.pdb
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Newtonsoft.Json.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\EntityFramework.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\EntityFramework.SqlServer.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\obj\Debug\en\eTicaretProje.resources.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\obj\Debug\eTicaretProje.dll
+C:\Users\gozde\Desktop\Yazilim muhendisligi\eTicaretProje\eTicaretProje\obj\Debug\eTicaretProje.pdb
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\obj\Debug\eTicaretProje.csprojAssemblyReference.cache
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\obj\Debug\eTicaretProje.Resource.Home.resources
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\obj\Debug\eTicaretProje.Resource.Home.en.resources
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\obj\Debug\eTicaretProje.csproj.GenerateResource.cache
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\obj\Debug\eTicaretProje.csproj.CoreCompileInputs.cache
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\obj\Debug\eTicaretProje.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\obj\Debug\eTicaretProje.pdb
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\ApplicationInsights.config
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\roslyn\csc.exe
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\roslyn\vbc.exe
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\roslyn\VBCSCompiler.exe
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Resource\Home.resx
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Resource\Home.en.resx
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Resource\Home.en.Designer.cs
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Resource\Home.Designer.cs
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\eTicaretProje.dll.config
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\eTicaretProje.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\eTicaretProje.pdb
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\en\eTicaretProje.resources.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Antlr3.Runtime.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\EntityFramework.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\EntityFramework.SqlServer.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.AI.Web.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.ApplicationInsights.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Newtonsoft.Json.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Owin.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\System.Web.Helpers.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\System.Web.Mvc.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\System.Web.Optimization.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\System.Web.Razor.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\System.Web.WebPages.Deployment.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\System.Web.WebPages.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\System.Web.WebPages.Razor.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\WebGrease.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.AI.Web.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.ApplicationInsights.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\System.Web.Helpers.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\System.Web.Mvc.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\System.Web.Optimization.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\System.Web.Razor.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\System.Web.WebPages.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\System.Web.WebPages.Deployment.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\System.Web.WebPages.Razor.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Antlr3.Runtime.pdb
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Newtonsoft.Json.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\EntityFramework.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\EntityFramework.SqlServer.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\obj\Debug\en\eTicaretProje.resources.dll
+C:\Users\g.sokezoglu\Desktop\eTicaretProje\eTicaretProje\obj\Debug\eTicaretProje.csproj.CopyComplete

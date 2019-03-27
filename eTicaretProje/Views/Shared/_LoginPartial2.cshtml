@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    <li>@Html.ActionLink(Resource.Home.hesabim, "hesabim", "Home")</li>
+    <li>@Html.ActionLink(Resource.Home.begendiklerim, "begendiklerim", "begendiklerim")</li>
+    <li>@Html.ActionLink(Resource.Home.sepetim, "sepetim", "Sepetim")</li>
+    <li>@Html.ActionLink(User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "navbar-right" })</li>
+    <li><a href="javascript:document.getElementById('logoutForm').submit()">  Log off</a></li>
+
+
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+    {
+        @Html.AntiForgeryToken()
+        @*<li>
+                <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+            </li>*@
+    }
+
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink(Resource.Home.kayitol, "kayitol", "Home", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink(Resource.Home.giris2, "Hesabim", "Home", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

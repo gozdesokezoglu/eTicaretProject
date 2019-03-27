@@ -1,0 +1,320 @@
+﻿@model eTicaretProje.Models.Homemodel
+@{
+    ViewBag.Title = "urunList";
+}
+
+@functions{
+    public string GetString(string tag, int indis)
+    {
+        string result;
+        switch (indis)
+        {
+            case 1:
+                result = tag + "One";
+                break;
+            case 2:
+                result = tag + "Two";
+                break;
+            case 3:
+                result = tag + "Three";
+                break;
+            case 4:
+                result = tag + "Four";
+                break;
+            case 5:
+                result = tag + "Five";
+                break;
+            case 6:
+                result = tag + "Six";
+                break;
+            case 7:
+                result = tag + "Seven";
+                break;
+            case 8:
+                result = tag + "Eight";
+                break;
+            case 9:
+                result = tag + "Nine";
+                break;
+            case 10:
+                result = tag + "Ten";
+                break;
+            default:
+                result = tag;
+                break;
+        }
+        return result;
+    }
+}
+
+
+<div class="shop-content-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="breadcrumbs">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <!-- CATEGORY-SIDEBAR-START -->
+
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <h3 class="section-title">Ürunler</h3>
+                    @{int indis = 0; }
+                    @foreach (var item in Model.AnaKategori)
+                    {
+                        indis = indis + 1;
+                        if (@item.KATEGORILER.Count < 1)
+                        {
+                            <div class="panel panel-default wow fadeIn" data-wow-delay="0.2s">
+                                <div class="panel-heading" role="tab" id="@GetString("heading",indis)">
+                                    <h4 class="panel-title no-items"> <a class="collapsed" href="#" data-toggle="collapse" data-parent="#accordion"> @item.anakategoriAdi </a> </h4>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="panel panel-default wow fadeIn" data-wow-delay="0.2s">
+                                <div class="panel-heading" role="tab" id="@GetString("heading",indis)">
+                                    <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#@GetString("collapse",indis)" aria-expanded="false" class="collapsed" aria-controls="@GetString("collapse",indis)"> @item.anakategoriAdi </a> </h4>
+                                </div>
+                                <div id="@GetString("collapse",indis)" class="panel-collapse collapse" role="tabpanel" aria-labelledby="@GetString("heading",indis)">
+                                    <div class="panel-body">
+                                        <ul>
+                                            @foreach (var x in Model.Kategori)
+                                            {
+                                                if (@item.anakategoriAdi == @x.ANAKATEGORİ.anakategoriAdi)
+                                                {
+                                                    <li>
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                @*<input type="checkbox"> @x.kategoriAdi*@
+                                                                <a href="@Url.Action("kategoriListele","YeniUrunler", new { ID = @x.kategoriID})">@x.kategoriAdi <span class="item-count">  ( @x.URUNLER.Count )</span></a>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                }
+                                            }
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+
+
+                </div>
+
+                <!-- CATEGORY-SIDEBAR-END -->
+                <!-- FILTER_PRICE START-->
+                <div class="filter-price">
+                    <h3 class="sidebar-title">Filter By Price</h3>
+                    <div id="slider-range"></div>
+                    <a href="#">Filter</a>
+                    <p>
+                        Price:<input type="text" id="amount" readonly>
+                    </p>
+                </div>
+                <!-- FILTER_PRICE END-->
+                <!-- COMPARE START-->
+                @*<div class="compare">
+                        <h3 class="sidebar-title">Compare</h3>
+                        <p>No products to compare</p>
+                        <a href="#">Clear all</a>
+                        <a class="compare-button" href="#">Compare</a>
+                    </div>*@
+                <!-- COMPARE END-->
+                <!-- POPULAR-TAGS START-->
+                <div class="tags">
+                    <h3 class="sidebar-title">Popular Tags</h3>
+                    <ul>
+                        <li><a href="#">blouse</a></li>
+                        <li><a href="#">clothes</a></li>
+                        <li><a href="#">electronic</a></li>
+                        <li><a href="#">fashion</a></li>
+                        <li><a href="#">handbag</a></li>
+                        <li><a href="#">hat</a></li>
+                        <li><a href="#">laptop</a></li>
+                        <li><a href="#">tablet</a></li>
+                        <li><a href="#">television</a></li>
+                    </ul>
+                </div>
+                <!-- POPULAR-TAGS END-->
+                <!-- FEATURED-PRODUCT-AREA START-->
+                <div class="featured-product-area">
+                    <h3 class="sidebar-title">@Resource.Home.onecikanurunler</h3>
+                    @foreach (var item in Model.FirsatUrunler)
+                    {<div class="single-product">
+
+                        <div class="product-img">
+                            <a href="@Url.Action("urunDetay","UrunDetay", new { Id=item.urunID})">
+                                <img class="primary-image" alt="Special" src="@item.urunResimYol">
+                            </a>
+                        </div>
+                        <div class="product-name-ratting">
+                            <h2 class="product-name">
+                                <a href="#">@item.UrunAdi</a>
+                            </h2>
+                            <div class="price-box-small">
+                                <span class="special-price">
+                                    ₺@item.urunAlisFiyati
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                    }
+
+                </div>
+                <!-- FEATURED-PRODUCT-AREA END-->
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9">
+                <!-- ALL-PRODUCT-AREA START-->
+                <div class="all-product-area">
+                    <!-- ALL-PRODUCT-TOP-ROW START-->
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <!-- TOOLBAR START-->
+                            <div class="toolbar">
+                                <div class="view-mode">
+                                    <a href="@Url.Action("yeniurun","YeniUrunler")" class="active">
+                                        <i class="fa fa-th-large"></i>
+                                    </a>
+                                    <a href="@Url.Action("urunList","YeniUrunler")">
+                                        <i class="fa fa-th-list"></i>
+                                    </a>
+                                </div>
+                                <div class="result-short pull-right">
+                                    <p class="result-count"> Showing 1-12 of 34 results</p>
+                                    <form class="hidden-xs" method="POST">
+                                        <div class="orderby-wrapper">
+                                            <select>
+                                                <option>Default sorting</option>
+                                                <option>Sort by popularity</option>
+                                                <option>Sort by average rating</option>
+                                                <option>Sort by newness</option>
+                                                <option>Sort by price: low to high</option>
+                                                <option>Sort by price: high to low</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- TOOLBAR END-->
+                        </div>
+                    </div>
+                    <!-- ALL-PRODUCT-TOP-ROW END-->
+                    <div class="row">
+                        @foreach (var item in Model.Urunler)
+                        {
+                        <!-- SINGLE-PRODUCT START-->
+                            <div class="single-product">
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <div class="product-img">
+                                        <span class="onsale">
+                                            <span class="sale-bg"></span>
+                                            <span class="sale-text">Sale</span>
+                                        </span>
+                                        <a href="#">
+                                            <img src="@item.urunResimYol" alt="Special" class="primary-image" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8">
+                                    <div class="product-info">
+                                        <div class="ratings">
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </div>
+                                        <div class="price-box">
+                                            <span class="special-price">
+                                                ₺@item.urunAlisFiyati
+                                            </span>
+
+                                        </div>
+                                        <h2 class="product-name">
+                                            <a href="#">@item.UrunAdi</a>
+                                        </h2>
+                                        <div class="product-desc">
+                                            @item.urunAciklama
+                                        </div>
+                                        <div class="action-buttons">
+                                            <a href="#" class="button">
+                                                <i class="fa fa-shopping-cart"></i>
+                                                @Resource.Home.sepeteekle
+                                            </a>
+
+                                            <div class="add-to-wishlist">
+                                                <a class="color-tooltip" data-toggle="tooltip" href="@Url.Action("begendiklerim", "begendiklerim", new { Id = item.urunID })" title="@Resource.Home.begen"><i class="fa fa-heart-o"></i></a>
+                                            </div>
+                                            <div class="compare-button">
+                                                <a class="color-tooltip" data-toggle="tooltip" href="#" title="@Resource.Home.kopyala"><i class="fa fa-files-o"></i></a>
+                                            </div>
+                                            <div class="quickviewbtn">
+                                                <a class="color-tooltip" data-toggle="tooltip" href="@Url.Action("urunDetay", "urunDetay", new { Id = item.urunID })" title="@Resource.Home.goruntule"><i class="fa fa-search"></i></a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <!-- SINGLE-PRODUCT END-->
+
+                </div>
+                <!-- ALL-PRODUCT-AREA END-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  SHOP-CONTENT-AREA START-->
+<!-- LOGO-BRAND START -->
+<div class="logo-brand-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="logo-brand">
+                    <div class="single-logo">
+                        <a href="#"><img src="/Content/img/brand-logo/1.png" alt="" /></a>
+                    </div>
+                    <div class="single-logo">
+                        <a href="#"><img src="/Content/img/brand-logo/2.png" alt="" /></a>
+                    </div>
+                    <div class="single-logo">
+                        <a href="#"><img src="/Content/img/brand-logo/3.png" alt="" /></a>
+                    </div>
+                    <div class="single-logo">
+                        <a href="#"><img src="/Content/img/brand-logo/4.png" alt="" /></a>
+                    </div>
+                    <div class="single-logo">
+                        <a href="#"><img src="/Content/img/brand-logo/5.png" alt="" /></a>
+                    </div>
+                    <div class="single-logo">
+                        <a href="#"><img src="/Content/img/brand-logo/1.png" alt="" /></a>
+                    </div>
+                    <div class="single-logo">
+                        <a href="#"><img src="/Content/img/brand-logo/3.png" alt="" /></a>
+                    </div>
+                    <div class="single-logo">
+                        <a href="#"><img src="/Content/img/brand-logo/2.png" alt="" /></a>
+                    </div>
+                    <div class="single-logo">
+                        <a href="#"><img src="/Content/img/brand-logo/4.png" alt="" /></a>
+                    </div>
+                    <div class="single-logo">
+                        <a href="#"><img src="/Content/img/brand-logo/5.png" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

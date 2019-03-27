@@ -1,0 +1,191 @@
+﻿@using eTicaretProje.Models
+@model RegisterViewModel
+
+
+@{
+    ViewBag.Title = "kayitol";
+}
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<body class="my-account">
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="breadcrumbs">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="form-title">@Resource.Home.hesabim</h1>
+        <div class="row">
+             <div class="account-area fix">
+                <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
+                    <div class="form-area">
+                        <div class="form-fields">
+                            <h2>@Resource.Home.kayitol</h2>
+
+                            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
+
+                                @Html.ValidationSummary("", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <p><a href="">@Resource.Home.sifre</a></p>
+                                        <input type="submit" class="btn btn-default" value="@Resource.Home.oturumac" />
+                                        <label><input type="checkbox"> @Resource.Home.benihatirla </label>
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                        @*<div class="form-action fix">
+                                <p><a href="#"> Şifreni mi unuttun?</a></p>
+                                <input type="submit" class="btn btn-default" value="Oturum Aç" />
+                                <label><input type="checkbox"> Beni Hatırla </label>
+                            </div>*@
+                    </div>
+                </div>
+            @*<div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
+                <div class="form-area">
+                    <div class="form-fields">
+                        <h2>@Resource.Home.giris</h2>
+                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                            @Html.AntiForgeryToken()
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                    @*<div class="form-group">
+                                            <div class="col-md-offset-2 col-md-10">
+                                                <div class="checkbox">
+                                                    @Html.CheckBoxFor(m => m.RememberMe)
+                                                    @Html.LabelFor(m => m.RememberMe)
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="submit" value="@Resource.Home.giris" class="btn btn-default" />
+                                        </div>
+                                    </div>
+                                    <p>
+                                        @Html.ActionLink(Resource.Home.kokayit, "Register")
+                                    </p>
+                                    @* Enable this once you have account confirmation enabled for password reset functionality
+                                        <p>
+                                            @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                                        </p>
+                        }
+
+                    </div>
+
+                </div>
+            </div>*@
+        </div>
+    </div>
+    </div>
+
+    <!-- JS -->
+    <!-- jquery js -->
+    <script src="/Content/js/vendor/jquery-1.11.3.min.js"></script>
+
+    <!-- bootstrap js -->
+    <script src="/Content/js/bootstrap.min.js"></script>
+
+    <!-- owl.carousel.min js -->
+    <script src="/Content/js/owl.carousel.min.js"></script>
+
+    <!-- Mobile Menu js -->
+    <script src="/Content/js/jquery.meanmenu.js"></script>
+
+    <!-- FILTER_PRICE js -->
+    <script src="/Content/js/jquery-ui.min.js"></script>
+
+    <!-- mixitup js -->
+    <script src="/Content/js/jquery.mixitup.min.js"></script>
+    <!-- fancybox js -->
+    <script src="/Content/js/fancybox/jquery.fancybox.pack.js"></script>
+    <!-- Img Zoom js -->
+    <script src="/Content/js/img-zoom/jquery.simpleLens.min.js"></script>
+
+    <!-- jquery.countdown js -->
+    <script src="/Content/js/jquery.countdown.min.js"></script>
+
+    <!-- parallax js -->
+    <script src="/Content/js/parallax.js"></script>
+    <!-- jquery.collapse js -->
+    <script src="/Content/js/jquery.collapse.js"></script>
+
+    <!-- jquery.easing js -->
+    <script src="/Content/js/jquery.easing.1.3.min.js"></script>
+
+    <!-- jquery.scrollUp js -->
+    <script src="/Content/js/jquery.scrollUp.min.js"></script>
+
+    <!-- knob circle js -->
+    <script src="/Content/js/jquery.knob.js"></script>
+
+    <!-- jquery.appear js -->
+    <script src="/Content/js/jquery.appear.js"></script>
+    <!-- jquery.counterup js -->
+    <script src="/Content/js/jquery.counterup.min.js"></script>
+    <script src="/Content/js/waypoints.min.js"></script>
+
+    <!-- wow js -->
+    <script src="/Content/js/wow.js"></script>
+    <script>
+			new WOW().init();
+    </script>
+    <!-- rs-plugin js -->
+    <script type="text/javascript" src="/Content/lib/rs-plugin//Content/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="/Content/lib/rs-plugin//Content/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="/Content/lib/rs-plugin/rs.home.js"></script>
+
+    <!-- plugins js -->
+    <script src="/Content/js/plugins.js"></script>
+
+    <!-- main js -->
+    <script src="/Content/js/main.js"></script>
+</body>
+</html>
+
+

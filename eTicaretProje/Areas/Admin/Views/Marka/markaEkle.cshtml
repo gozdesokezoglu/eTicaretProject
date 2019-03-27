@@ -1,0 +1,42 @@
+﻿@model eTicaretProje.Areas.Admin.Models.MarkaModel
+@{
+    ViewBag.Title = "markaEkle";
+}
+
+
+@using (Html.BeginForm("EkleMarka", "Marka", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>MARKA EKLE</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.markaAdi, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.markaAdi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.markaAdi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.MarkaResimYol, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.MarkaResimYol, new { htmlAttributes = new { @class = "form-control", placeholder = "Dosya Seç", type = "file" } })
+                @Html.ValidationMessageFor(model => model.MarkaResimYol, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="col-lg-6">
+                    <button type="submit" class="btn btn-primary">Ekle</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

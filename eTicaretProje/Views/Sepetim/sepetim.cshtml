@@ -1,0 +1,290 @@
+﻿@model eTicaretProje.Models.Homemodel
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <!-- Basic page needs
+    ============================================ -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Shopping Cart | Vanesa</title>
+    <meta name="description" content="">
+
+    <!-- Mobile specific metas
+    ============================================ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon
+    ============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="/Content/img/favicon.ico">
+    <!-- FONTS
+    ============================================ -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <!-- CSS  -->
+    <!-- Bootstrap CSS
+    ============================================ -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- font-awesome CSS
+    ============================================ -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- owl.carousel CSS
+    ============================================ -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/owl.transitions.css">
+
+    <!-- animate CSS
+    ============================================ -->
+    <link rel="stylesheet" href="css/animate.css">
+
+    <!-- FILTER_PRICE CSS
+    ============================================ -->
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+
+    <!-- fancybox CSS
+    ============================================ -->
+    <link rel="stylesheet" href="css/fancybox/jquery.fancybox.css">
+    <!-- Image Zoom CSS
+    ============================================ -->
+    <link rel="stylesheet" href="css/img-zoom/jquery.simpleLens.css">
+
+    <!-- Mobile menu CSS
+    ============================================ -->
+    <link rel="stylesheet" href="css/meanmenu.min.css">
+
+    <!-- normalize CSS
+    ============================================ -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- RS slider CSS
+    ============================================ -->
+    <link rel="stylesheet" type="text/css" href="lib/rs-plugin/css/settings.css" media="screen" />
+
+    <!-- main CSS
+    ============================================ -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- style CSS
+    ============================================ -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- responsive CSS
+    ============================================ -->
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- modernizr js
+    ============================================ -->
+    <script src="/Content/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body class="cart">
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- wishlist-area start -->
+
+    <div class="wishlist-area">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <form action="#">
+                        <div class="wishlist-content">
+                            <div class="wishlist-title">
+                                <h2>Sepetim</h2>
+                            </div>
+                            <div class="wishlist-table table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th class="product-remove">@Resource.Home.resim</th>
+                                            <th class="product-thumbnail">@Resource.Home.urunAciklama</th>
+                                            <th class="product-name"><span class="nobr">@Resource.Home.urunAdi</span></th>
+                                            <th class="product-price"><span class="nobr">@Resource.Home.UrunFiyati</span></th>
+                                            <th class="product-stock-stauts"><span class="nobr">@Resource.Home.stok </span></th>
+                                            <th class="product-stock-stauts"><span class="nobr">@Resource.Home.sil </span></th>
+                                            <th class="product-add-to-cart"></th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                      
+                                        @foreach (var item in Model.Sepet)
+                                        {
+                                            <tr>
+                                                <td class="product-thumbnail"><a href="@Url.Action("urunDetay","UrunDetay", new { Id=item.urunID})"><img src="@item.URUNLER.urunResimYol" alt="" /></a></td>
+                                                <td class="product-name"><a href="@Url.Action("urunDetay","UrunDetay", new { Id=item.urunID})">@item.URUNLER.urunAciklama</a></td>
+                                                <td class="product-name"><a href="@Url.Action("urunDetay","UrunDetay", new { Id=item.urunID})">@item.URUNLER.UrunAdi</a></td>
+                                                <td class="product-price">
+                                                    <div class="price-box">
+                                                        <span class="special-price">
+                                                            @item.URUNLER.urunAlisFiyati
+                                                           
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                                <td class="quantity">
+                                                    <input type="number" value="1">
+                                                </td>
+
+                                                <td class="product-remove"><a href="@Url.Action("sil","Sepetim", new { Id=item.sepetID})"><i class="fa fa-trash-o"></i></a></td>
+                                            </tr>
+                                        }
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-lg-8 col-md-8">
+                                <div class="buttons-cart">
+                                    <a href="@Url.Action("index","Home")">Alışverişe Devam et</a>
+                                </div>
+                                @*<div class="coupon">
+                                    <h3>Kupon</h3>
+                                    <p>Kupona sahipsen</p>
+                                    <input type="text" placeholder="Coupon code">
+                                    <input type="submit" value="Apply Coupon">
+                                </div>*@
+                            </div>
+                            <div class="col-xs-12 col-lg-4 col-md-4">
+                                <div class="cart-totals">
+                                    <h2>Toplam</h2>
+                                    <table>
+                                        @*<tr class="cart-subtotal">
+                                            <th>Subtotal</th>
+                                            <td><span class="amount"></span></td>
+                                        </tr>*@
+                                        @*<tr class="shipping">
+                                            <th>Shipping</th>
+                                            <td>
+                                                <ul>
+                                                    <li>
+                                                        <input type="radio">
+                                                        <label>
+                                                            Flat Rate: <span class="amount"></span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio">
+                                                        <label>
+                                                            Free Shipping
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio">
+                                                        <label>
+                                                            International Delivery:<span class="amount">£120.00</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                                <p>
+                                                    <a href="#">Calculate Shipping</a>
+                                                </p>
+                                            </td>
+                                        </tr>*@
+                                        
+                                        <tr class="order-total">
+                                            <th>Ara toplam</th>
+                                            <td>
+                                                <strong>
+                                                    <span class="amount">@Model.Sepet.Sum(x => x.URUNLER.urunAlisFiyati)</span>
+                                                </strong>
+                                            </td>
+                                        </tr>
+                                        <tr class="order-total">
+                                            <th>KDV</th>
+                                            <td>
+                                                <strong>
+                                                    <span class="amount">@(Model.Sepet.Sum(x => x.URUNLER.urunFiyat)-Model.Sepet.Sum(x => x.URUNLER.urunAlisFiyati)) </span>
+                                                </strong>
+                                            </td>
+                                        </tr>
+                                        <tr class="order-total">
+                                            <th>Toplam</th>
+                                            <td>
+                                                <strong>
+                                                    <span class="amount">@Model.Sepet.Sum(x => x.URUNLER.urunFiyat)</span>
+                                                </strong>
+                                            </td>
+                                        </tr>
+                                        
+                                    </table>
+                                    <div class="clear"></div>
+                                    <div class="proceed-to-checkout">
+                                        <a href="#">Devam Et</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- cart-area end -->
+    <!-- FOOTER-TOP-AREA END-->
+    <!-- JS -->
+    <!-- jquery js -->
+    <script src="/Content/js/vendor/jquery-1.11.3.min.js"></script>
+
+    <!-- bootstrap js -->
+    <script src="/Content/js/bootstrap.min.js"></script>
+
+    <!-- owl.carousel.min js -->
+    <script src="/Content/js/owl.carousel.min.js"></script>
+
+    <!-- Mobile Menu js -->
+    <script src="/Content/js/jquery.meanmenu.js"></script>
+
+    <!-- FILTER_PRICE js -->
+    <script src="/Content/js/jquery-ui.min.js"></script>
+
+    <!-- mixitup js -->
+    <script src="/Content/js/jquery.mixitup.min.js"></script>
+    <!-- fancybox js -->
+    <script src="/Content/js/fancybox/jquery.fancybox.pack.js"></script>
+    <!-- Img Zoom js -->
+    <script src="/Content/js/img-zoom/jquery.simpleLens.min.js"></script>
+
+    <!-- jquery.countdown js -->
+    <script src="/Content/js/jquery.countdown.min.js"></script>
+
+    <!-- parallax js -->
+    <script src="/Content/js/parallax.js"></script>
+    <!-- jquery.collapse js -->
+    <script src="/Content/js/jquery.collapse.js"></script>
+
+    <!-- jquery.easing js -->
+    <script src="/Content/js/jquery.easing.1.3.min.js"></script>
+
+    <!-- jquery.scrollUp js -->
+    <script src="/Content/js/jquery.scrollUp.min.js"></script>
+
+    <!-- knob circle js -->
+    <script src="/Content/js/jquery.knob.js"></script>
+
+    <!-- jquery.appear js -->
+    <script src="/Content/js/jquery.appear.js"></script>
+    <!-- jquery.counterup js -->
+    <script src="/Content/js/jquery.counterup.min.js"></script>
+    <script src="/Content/js/waypoints.min.js"></script>
+
+    <!-- wow js -->
+    <script src="/Content/js/wow.js"></script>
+    <script>
+			new WOW().init();
+    </script>
+    <!-- rs-plugin js -->
+    <script type="text/javascript" src="lib/rs-plugin//Content/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="lib/rs-plugin//Content/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="lib/rs-plugin/rs.home.js"></script>
+
+    <!-- plugins js -->
+    <script src="/Content/js/plugins.js"></script>
+
+    <!-- main js -->
+    <script src="/Content/js/main.js"></script>
+</body>
+</html>

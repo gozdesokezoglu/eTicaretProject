@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EticaretDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ALISVERISSEPETI">
+    <Key>
+      <PropertyRef Name="sepetID" />
+    </Key>
+    <Property Name="sepetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="urunID" Type="Int32" Nullable="false" />
+    <Property Name="kullaniciID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="URUNLER" Relationship="Self.FK_ALISVERISSEPETI_URUNLER" FromRole="ALISVERISSEPETI" ToRole="URUNLER" />
+  </EntityType>
+  <EntityType Name="ANAKATEGORİ">
+    <Key>
+      <PropertyRef Name="anakategoriID" />
+    </Key>
+    <Property Name="anakategoriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="anakategoriAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="KATEGORILER" Relationship="Self.FK_KATEGORİLER_ANAKATEGORİ" FromRole="ANAKATEGORİ" ToRole="KATEGORILER" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="BANKALAR">
+    <Key>
+      <PropertyRef Name="bankaID" />
+    </Key>
+    <Property Name="bankaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bankaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BankaLogoYol" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KAMPANYALAR">
+    <Key>
+      <PropertyRef Name="kampanyaID" />
+    </Key>
+    <Property Name="kampanyaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="urunID" Type="Int32" Nullable="false" />
+    <Property Name="indirimOrani" Type="Int16" Nullable="false" />
+    <Property Name="baslangicTarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="bitisTarihi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="URUNLER" Relationship="Self.FK_KAMPANYALAR_URUNLER" FromRole="KAMPANYALAR" ToRole="URUNLER" />
+  </EntityType>
+  <EntityType Name="KARGO">
+    <Key>
+      <PropertyRef Name="kargoID" />
+    </Key>
+    <Property Name="kargoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kargoFirmaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kargoFirmaAciklama" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SIPARISLER" Relationship="Self.FK_SIPARISLER_KARGO" FromRole="KARGO" ToRole="SIPARISLER" />
+  </EntityType>
+  <EntityType Name="KATEGORILER">
+    <Key>
+      <PropertyRef Name="kategoriID" />
+    </Key>
+    <Property Name="kategoriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kategoriAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="anaKategoriID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ANAKATEGORİ" Relationship="Self.FK_KATEGORİLER_ANAKATEGORİ" FromRole="KATEGORILER" ToRole="ANAKATEGORİ" />
+    <NavigationProperty Name="URUNLER" Relationship="Self.FK_URUNLER_KATEGORİLER" FromRole="KATEGORILER" ToRole="URUNLER" />
+  </EntityType>
+  <EntityType Name="MARKALAR">
+    <Key>
+      <PropertyRef Name="markaID" />
+    </Key>
+    <Property Name="markaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="markaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MarkaResimYol" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="URUNLER" Relationship="Self.FK_URUNLER_MARKALAR" FromRole="MARKALAR" ToRole="URUNLER" />
+  </EntityType>
+  <EntityType Name="ODEMESECENEKLER">
+    <Key>
+      <PropertyRef Name="odemeSecenekID" />
+    </Key>
+    <Property Name="odemeSecenekID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OdemeTip" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="SIPARISLER" Relationship="Self.FK_SIPARISLER_ODEMESECENEKLER" FromRole="ODEMESECENEKLER" ToRole="SIPARISLER" />
+  </EntityType>
+  <EntityType Name="OZELLIKDETAY">
+    <Key>
+      <PropertyRef Name="ozellikDetayID" />
+    </Key>
+    <Property Name="ozellikDetayID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ozellikID" Type="Int32" Nullable="false" />
+    <Property Name="urunID" Type="Int32" Nullable="false" />
+    <Property Name="ozellikDetayi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="URUNLER" Relationship="Self.FK_OZELLIKDETAY_URUNLER" FromRole="OZELLIKDETAY" ToRole="URUNLER" />
+    <NavigationProperty Name="URUNOZELLIKLER" Relationship="Self.FK_OZELLIKDETAY_URUNOZELLIKLER" FromRole="OZELLIKDETAY" ToRole="URUNOZELLIKLER" />
+  </EntityType>
+  <EntityType Name="SIPARISLER">
+    <Key>
+      <PropertyRef Name="siparisID" />
+    </Key>
+    <Property Name="siparisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="urunID" Type="Int32" Nullable="false" />
+    <Property Name="siparisDurum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="odemeSecekenleriID" Type="Int32" Nullable="false" />
+    <Property Name="siparisTarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="kargoID" Type="Int32" Nullable="false" />
+    <Property Name="kargoNo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="TeslimTarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="KARGO" Relationship="Self.FK_SIPARISLER_KARGO" FromRole="SIPARISLER" ToRole="KARGO" />
+    <NavigationProperty Name="ODEMESECENEKLER" Relationship="Self.FK_SIPARISLER_ODEMESECENEKLER" FromRole="SIPARISLER" ToRole="ODEMESECENEKLER" />
+    <NavigationProperty Name="URUNLER" Relationship="Self.FK_SIPARISLER_URUNLER" FromRole="SIPARISLER" ToRole="URUNLER" />
+  </EntityType>
+  <EntityType Name="SLIDER">
+    <Key>
+      <PropertyRef Name="SliderID" />
+    </Key>
+    <Property Name="SliderID" Type="Int32" Nullable="false" />
+    <Property Name="SliderText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ResimYolu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BaslangicTarihi" Type="DateTime" Precision="3" />
+    <Property Name="BitisTarihi" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="URUNLER">
+    <Key>
+      <PropertyRef Name="urunID" />
+    </Key>
+    <Property Name="urunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kategoriID" Type="Int32" Nullable="false" />
+    <Property Name="markaID" Type="Int32" Nullable="false" />
+    <Property Name="UrunAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="urunAciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="urunFiyat" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="urunAlisFiyati" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="urunResimYol" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="BaslangicTarihi" Type="DateTime" Precision="3" />
+    <Property Name="BitisTarihi" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ALISVERISSEPETI" Relationship="Self.FK_ALISVERISSEPETI_URUNLER" FromRole="URUNLER" ToRole="ALISVERISSEPETI" />
+    <NavigationProperty Name="KAMPANYALAR" Relationship="Self.FK_KAMPANYALAR_URUNLER" FromRole="URUNLER" ToRole="KAMPANYALAR" />
+    <NavigationProperty Name="KATEGORILER" Relationship="Self.FK_URUNLER_KATEGORİLER" FromRole="URUNLER" ToRole="KATEGORILER" />
+    <NavigationProperty Name="MARKALAR" Relationship="Self.FK_URUNLER_MARKALAR" FromRole="URUNLER" ToRole="MARKALAR" />
+    <NavigationProperty Name="OZELLIKDETAY" Relationship="Self.FK_OZELLIKDETAY_URUNLER" FromRole="URUNLER" ToRole="OZELLIKDETAY" />
+    <NavigationProperty Name="SIPARISLER" Relationship="Self.FK_SIPARISLER_URUNLER" FromRole="URUNLER" ToRole="SIPARISLER" />
+  </EntityType>
+  <EntityType Name="URUNOZELLIKLER">
+    <Key>
+      <PropertyRef Name="ozellikID" />
+    </Key>
+    <Property Name="ozellikID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ozellikAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="anakategoriID" Type="Int32" />
+    <NavigationProperty Name="OZELLIKDETAY" Relationship="Self.FK_OZELLIKDETAY_URUNOZELLIKLER" FromRole="URUNOZELLIKLER" ToRole="OZELLIKDETAY" />
+  </EntityType>
+  <Association Name="FK_ALISVERISSEPETI_URUNLER">
+    <End Role="URUNLER" Type="Self.URUNLER" Multiplicity="1" />
+    <End Role="ALISVERISSEPETI" Type="Self.ALISVERISSEPETI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="URUNLER">
+        <PropertyRef Name="urunID" />
+      </Principal>
+      <Dependent Role="ALISVERISSEPETI">
+        <PropertyRef Name="urunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KATEGORİLER_ANAKATEGORİ">
+    <End Role="ANAKATEGORİ" Type="Self.ANAKATEGORİ" Multiplicity="1" />
+    <End Role="KATEGORILER" Type="Self.KATEGORILER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ANAKATEGORİ">
+        <PropertyRef Name="anakategoriID" />
+      </Principal>
+      <Dependent Role="KATEGORILER">
+        <PropertyRef Name="anaKategoriID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KAMPANYALAR_URUNLER">
+    <End Role="URUNLER" Type="Self.URUNLER" Multiplicity="1" />
+    <End Role="KAMPANYALAR" Type="Self.KAMPANYALAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="URUNLER">
+        <PropertyRef Name="urunID" />
+      </Principal>
+      <Dependent Role="KAMPANYALAR">
+        <PropertyRef Name="urunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SIPARISLER_KARGO">
+    <End Role="KARGO" Type="Self.KARGO" Multiplicity="1" />
+    <End Role="SIPARISLER" Type="Self.SIPARISLER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KARGO">
+        <PropertyRef Name="kargoID" />
+      </Principal>
+      <Dependent Role="SIPARISLER">
+        <PropertyRef Name="kargoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_URUNLER_KATEGORİLER">
+    <End Role="KATEGORILER" Type="Self.KATEGORILER" Multiplicity="1" />
+    <End Role="URUNLER" Type="Self.URUNLER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KATEGORILER">
+        <PropertyRef Name="kategoriID" />
+      </Principal>
+      <Dependent Role="URUNLER">
+        <PropertyRef Name="kategoriID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_URUNLER_MARKALAR">
+    <End Role="MARKALAR" Type="Self.MARKALAR" Multiplicity="1" />
+    <End Role="URUNLER" Type="Self.URUNLER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MARKALAR">
+        <PropertyRef Name="markaID" />
+      </Principal>
+      <Dependent Role="URUNLER">
+        <PropertyRef Name="markaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SIPARISLER_ODEMESECENEKLER">
+    <End Role="ODEMESECENEKLER" Type="Self.ODEMESECENEKLER" Multiplicity="1" />
+    <End Role="SIPARISLER" Type="Self.SIPARISLER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ODEMESECENEKLER">
+        <PropertyRef Name="odemeSecenekID" />
+      </Principal>
+      <Dependent Role="SIPARISLER">
+        <PropertyRef Name="odemeSecekenleriID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OZELLIKDETAY_URUNLER">
+    <End Role="URUNLER" Type="Self.URUNLER" Multiplicity="1" />
+    <End Role="OZELLIKDETAY" Type="Self.OZELLIKDETAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="URUNLER">
+        <PropertyRef Name="urunID" />
+      </Principal>
+      <Dependent Role="OZELLIKDETAY">
+        <PropertyRef Name="urunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OZELLIKDETAY_URUNOZELLIKLER">
+    <End Role="URUNOZELLIKLER" Type="Self.URUNOZELLIKLER" Multiplicity="1" />
+    <End Role="OZELLIKDETAY" Type="Self.OZELLIKDETAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="URUNOZELLIKLER">
+        <PropertyRef Name="ozellikID" />
+      </Principal>
+      <Dependent Role="OZELLIKDETAY">
+        <PropertyRef Name="ozellikID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SIPARISLER_URUNLER">
+    <End Role="URUNLER" Type="Self.URUNLER" Multiplicity="1" />
+    <End Role="SIPARISLER" Type="Self.SIPARISLER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="URUNLER">
+        <PropertyRef Name="urunID" />
+      </Principal>
+      <Dependent Role="SIPARISLER">
+        <PropertyRef Name="urunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="projectMVCDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="ALISVERISSEPETI" EntityType="Self.ALISVERISSEPETI" />
+    <EntitySet Name="ANAKATEGORİ" EntityType="Self.ANAKATEGORİ" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" />
+    <EntitySet Name="BANKALAR" EntityType="Self.BANKALAR" />
+    <EntitySet Name="KAMPANYALAR" EntityType="Self.KAMPANYALAR" />
+    <EntitySet Name="KARGO" EntityType="Self.KARGO" />
+    <EntitySet Name="KATEGORILER" EntityType="Self.KATEGORILER" />
+    <EntitySet Name="MARKALAR" EntityType="Self.MARKALAR" />
+    <EntitySet Name="ODEMESECENEKLER" EntityType="Self.ODEMESECENEKLER" />
+    <EntitySet Name="OZELLIKDETAY" EntityType="Self.OZELLIKDETAY" />
+    <EntitySet Name="SIPARISLER" EntityType="Self.SIPARISLER" />
+    <EntitySet Name="SLIDER" EntityType="Self.SLIDER" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="URUNLER" EntityType="Self.URUNLER" />
+    <EntitySet Name="URUNOZELLIKLER" EntityType="Self.URUNOZELLIKLER" />
+    <AssociationSet Name="FK_ALISVERISSEPETI_URUNLER" Association="Self.FK_ALISVERISSEPETI_URUNLER">
+      <End Role="URUNLER" EntitySet="URUNLER" />
+      <End Role="ALISVERISSEPETI" EntitySet="ALISVERISSEPETI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KATEGORİLER_ANAKATEGORİ" Association="Self.FK_KATEGORİLER_ANAKATEGORİ">
+      <End Role="ANAKATEGORİ" EntitySet="ANAKATEGORİ" />
+      <End Role="KATEGORILER" EntitySet="KATEGORILER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KAMPANYALAR_URUNLER" Association="Self.FK_KAMPANYALAR_URUNLER">
+      <End Role="URUNLER" EntitySet="URUNLER" />
+      <End Role="KAMPANYALAR" EntitySet="KAMPANYALAR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SIPARISLER_KARGO" Association="Self.FK_SIPARISLER_KARGO">
+      <End Role="KARGO" EntitySet="KARGO" />
+      <End Role="SIPARISLER" EntitySet="SIPARISLER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_URUNLER_KATEGORİLER" Association="Self.FK_URUNLER_KATEGORİLER">
+      <End Role="KATEGORILER" EntitySet="KATEGORILER" />
+      <End Role="URUNLER" EntitySet="URUNLER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_URUNLER_MARKALAR" Association="Self.FK_URUNLER_MARKALAR">
+      <End Role="MARKALAR" EntitySet="MARKALAR" />
+      <End Role="URUNLER" EntitySet="URUNLER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SIPARISLER_ODEMESECENEKLER" Association="Self.FK_SIPARISLER_ODEMESECENEKLER">
+      <End Role="ODEMESECENEKLER" EntitySet="ODEMESECENEKLER" />
+      <End Role="SIPARISLER" EntitySet="SIPARISLER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OZELLIKDETAY_URUNLER" Association="Self.FK_OZELLIKDETAY_URUNLER">
+      <End Role="URUNLER" EntitySet="URUNLER" />
+      <End Role="OZELLIKDETAY" EntitySet="OZELLIKDETAY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OZELLIKDETAY_URUNOZELLIKLER" Association="Self.FK_OZELLIKDETAY_URUNOZELLIKLER">
+      <End Role="URUNOZELLIKLER" EntitySet="URUNOZELLIKLER" />
+      <End Role="OZELLIKDETAY" EntitySet="OZELLIKDETAY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SIPARISLER_URUNLER" Association="Self.FK_SIPARISLER_URUNLER">
+      <End Role="URUNLER" EntitySet="URUNLER" />
+      <End Role="SIPARISLER" EntitySet="SIPARISLER" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

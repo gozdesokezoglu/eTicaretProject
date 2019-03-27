@@ -1,0 +1,44 @@
+﻿@model List<eTicaretProje.MARKALAR>
+    @{
+        ViewBag.Title = "markaListele";
+    }
+
+
+    <div class="col-sm-12">
+        <section class="panel">
+            <header class="panel-heading">
+                KATEGORİLER
+                <span class="tools pull-right">
+                    <a href="javascript:;" class="fa fa-chevron-down"></a>
+                    <a href="javascript:;" class="fa fa-times"></a>
+                </span>
+            </header>
+            <div class="panel-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Marka ID</th>
+                            <th>Marka Ad</th>
+                            <th>Marka Resmi</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.markaID</td>
+                                <td><img src="@item.MarkaResimYol" style="height:100%; max-height:100px;" /></td>
+                                <td>@item.markaAdi</td>
+                                <td>@Html.ActionLink("Düzenle", "Edit", "Marka", new { id = item.markaID }, null)| @Html.ActionLink("Sil", "Delete", "Marka", new { id = item.markaID }, null)</td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+

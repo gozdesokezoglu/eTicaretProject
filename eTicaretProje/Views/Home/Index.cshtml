@@ -1,0 +1,1406 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model eTicaretProje.Models.Homemodel
+
+<div class="slider-and-category-saidebar">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3">
+
+                <div class="category-saidebar">
+                    @foreach (var item in Model.AnaKategori)
+                    {<ul>
+                        <li>
+                            <a href="#" class="arrow">
+                                @if (item.anakategoriAdi == "Bilgisayar")
+                                {
+                                    <i class="fa fa-laptop"></i>
+                                }
+                                else {
+                                    <i class="fa fa-tablet"></i> }
+                                @item.anakategoriAdi
+                            </a>
+
+                            <div class="cat-mega-menu">
+                                <div class="single-cat-mega-menu">
+                                    @foreach (var i in Model.Kategori)
+                                    {
+
+                                        if(item.anakategoriAdi == i.ANAKATEGORİ.anakategoriAdi)
+                                        {
+                                            <a href="@Url.Action("kategoriListele","YeniUrunler",new { ID = i.kategoriID })">@i.kategoriAdi</a>
+                                        }
+                                        
+                                    }
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    }
+               
+                </div>
+            </div>
+           
+            <div class="col-lg-9 col-md-9">
+                <div class="row">
+                    <div class="col-lg-9 col-md-9">
+                        <!-- SLIDER-AREA-START -->
+                        @{Html.RenderAction("_slider", "Home");
+                        }
+
+                        <!-- SLIDER-AREA-END -->
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <div class="banner-left-area">
+                            @*@{Html.RenderAction("_slider2", "Home");
+                                }*@
+                            <div class="single-banner-left">
+                                <a href="#">
+                                    <img src="/Content/img/slider/intel_2in1home2_banner21.jpg">
+                                </a>
+                            </div>
+                            <div class="single-banner-left">
+                                <a href="#">
+                                    <img src="/Content/img/slider/vatan_bilgisayar_30_indirim2499.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="single-banner-left">
+                                <a href="#">
+                                    <img src="/Content/img/slider/hqdefault.jpg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- PRODUCT-CAROSUL START-->
+<div class="product-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="title-tab-menu">
+                    <h3>@Resource.Home.onecikanurunler</h3>
+                    @*@Resource.Home.hosgeldiniz*@
+                </div>
+                <div class="row">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="women">
+                            <div class="product-carusol-9">
+                                @foreach (var i in Model.OneCikanUrunler)
+                                {
+
+                                    <div class="col-lg-3 col-md-3">
+                                        <!-- SINGLE-PRODUCT START-->
+                                        <div class="single-product">
+                                            <div class="product-img">
+                                                <a href="@Url.Action("urunDetay","UrunDetay",new { Id=i.urunID})">
+                                                    <img src="@i.urunResimYol" alt="Special" class="primary-image" />
+                                                    @*BURAYA FOTOLARIN BAŞKA GÖRÜNÜŞLERİNİ KOY*@
+                                                    @*<img src="/Content/img/product/4.jpg" alt="Special" class="secondary-image" />*@
+                                                </a>
+                                                <div class="action-button">
+                                                    <div class="add-to-wishlist">
+                                                        <a class="color-tooltip" data-toggle="tooltip" href="@Url.Action("begendiklerim", "begendiklerim", new { Id = i.urunID })" title="@Resource.Home.begen"><i class="fa fa-heart-o"></i></a>
+                                                    </div>
+                                                    <div class="compare-button">
+                                                        <a class="color-tooltip" data-toggle="tooltip" href="#" title="@Resource.Home.kopyala"><i class="fa fa-files-o"></i></a>
+                                                    </div>
+                                                    <div class="quickviewbtn">
+                                                        <a class="color-tooltip" data-toggle="tooltip" href="@Url.Action("urunDetay", "urunDetay", new { Id = i.urunID })" title="@Resource.Home.goruntule"><i class="fa fa-search"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-name-ratting">
+                                                <h2 class="product-name">
+                                                    <a href="#">@i.UrunAdi </a>
+                                                </h2>
+                                                <div class="ratings">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                </div>
+                                                <div class="price-box-small">
+                                                    <span class="special-price">
+                                                        ₺@i.urunAlisFiyati
+
+                                                    </span>
+                                                    <span class="old-price">
+
+                                                        ₺@i.urunFiyat
+                                                    </span>
+                                                    <div class="product-name-cart-button">
+                                                     
+                                                        <!-- <div class="cart-button"></div> -->
+                                                        <a href="@Url.Action("SepeteEkle","YeniUrunler", new { Id=i.urunID})" class="button">@Resource.Home.sepeteekle</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- SINGLE-PRODUCT END-->
+                                    </div>}
+
+                            </div>
+                        </div>
+                        <!-- WOMEN-TAB-END -->
+                        <!-- MEN-TAB-START -->
+                        <div class="tab-pane fade" id="men">
+                            <div class="product-carusol-9">
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/39.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/40.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Rhoncus eleifend</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £75.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/5.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/6.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Fermentum eros</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £90.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <span class="onsale">
+                                            <span class="sale-bg"></span>
+                                            <span class="sale-text">Sale</span>
+                                        </span>
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/9.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/5.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Elementum felis</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £120.00
+                                                </span>
+                                                <span class="old-price">
+                                                    £125.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <span class="onsale">
+                                            <span class="sale-bg"></span>
+                                            <span class="sale-text">Sale</span>
+                                        </span>
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/2.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/1.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Aenean eu tristique</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £70.00
+                                                </span>
+                                                <span class="old-price">
+                                                    £80.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <span class="onsale">
+                                            <span class="sale-bg"></span>
+                                            <span class="sale-text">Sale</span>
+                                        </span>
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/33.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/21.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Vivamus blandit</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £65.00
+                                                </span>
+                                                <span class="old-price">
+                                                    £65.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <span class="onsale">
+                                            <span class="sale-bg"></span>
+                                            <span class="sale-text">Sale</span>
+                                        </span>
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/3.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/2.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Vivamus blandit</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £65.00
+                                                </span>
+                                                <span class="old-price">
+                                                    £65.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- MEN-TAB-END -->
+                        <!-- TEEN-TAB-START -->
+                        <div class="tab-pane fade" id="teen">
+                            <div class="product-carusol-9">
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/5.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/6.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Fermentum eros</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £90.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/6.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/5.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Etiam molestie</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £95.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <span class="onsale">
+                                            <span class="sale-bg"></span>
+                                            <span class="sale-text">Sale</span>
+                                        </span>
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/9.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/5.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Etiam molestie</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £120.00
+                                                </span>
+                                                <span class="old-price">
+                                                    £125.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <span class="onsale">
+                                            <span class="sale-bg"></span>
+                                            <span class="sale-text">Sale</span>
+                                        </span>
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/2.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/1.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Aenean eu tristique</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £70.00
+                                                </span>
+                                                <span class="old-price">
+                                                    £80.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/3.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/4.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Vivamus blandit</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £165.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/6.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/7.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Vivamus blandit</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £165.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- TEEN-TAB-END -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- NEW-ARRIVALS-CAROSUL START-->
+<div class="product-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="title-tab-menu">
+                    <h3>@Resource.Home.yeniurunler</h3>
+                </div>
+                <div class="row">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="accessories">
+                            <div class="product-carusol-9">
+                                @foreach (var i in Model.YeniUrunler)
+                                {
+
+                                    <div class="col-lg-3 col-md-3">
+                                        <!-- SINGLE-PRODUCT START-->
+                                        <div class="single-product">
+                                            <div class="product-img">
+                                                <a href="@Url.Action("urunDetay","UrunDetay",new { Id=i.urunID})">
+                                                    <img src="@i.urunResimYol" alt="Special" class="primary-image" />
+                                                    @*<img src="/Content/img/product/21.jpg" alt="Special" class="secondary-image" />*@
+                                                </a>
+                                                <div class="action-button">
+                                                    <div class="add-to-wishlist">
+                                                        <a class="color-tooltip" data-toggle="tooltip" href="@Url.Action("begendiklerim", "begendiklerim", new { Id = i.urunID })" title="@Resource.Home.begen"><i class="fa fa-heart-o"></i></a>
+                                                    </div>
+                                                    <div class="compare-button">
+                                                        <a class="color-tooltip" data-toggle="tooltip" href="#" title="@Resource.Home.kopyala"><i class="fa fa-files-o"></i></a>
+                                                    </div>
+                                                    <div class="quickviewbtn">
+                                                        <a class="color-tooltip" data-toggle="tooltip" href="@Url.Action("urunDetay", "urunDetay", new { Id = i.urunID })" title="@Resource.Home.goruntule"><i class="fa fa-search"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-name-ratting">
+                                                <h2 class="product-name">
+                                                    <a href="#">@i.UrunAdi</a>
+                                                </h2>
+                                                <div class="ratings">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                </div>
+                                                <div class="price-box-small">
+                                                    <span class="special-price">
+
+                                                        ₺@i.urunAlisFiyati
+                                                    </span>
+                                                    <span class="old-price">
+                                                        ₺@i.urunFiyat
+                                                    </span>
+                                                    <div class="product-name-cart-button">
+
+                                                        <!-- <div class="cart-button"></div> -->
+                                                        <a href="@Url.Action("SepeteEkle","YeniUrunler", new { Id=i.urunID})" class="button">@Resource.Home.sepeteekle</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- SINGLE-PRODUCT END-->
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                        <!-- ACCESSORIES-TAB-END -->
+                        <!-- MEN-TAB-START -->
+                        <div class="tab-pane fade" id="bags">
+                            <div class="product-carusol-9">
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/37.jpg" alt="Special" class="primary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Vulputate justo</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £90.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <span class="onsale">
+                                            <span class="sale-bg"></span>
+                                            <span class="sale-text">Sale</span>
+                                        </span>
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/32.jpg" alt="Special" class="primary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="@Resource.Home.begen"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="@Resource.Home.kopyala"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="@Resource.Home.goruntule"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Kaoreet lobortis</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £90.00
+                                                </span>
+                                                <span class="old-price">
+                                                    £95.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <span class="onsale">
+                                            <span class="sale-bg"></span>
+                                            <span class="sale-text">Sale</span>
+                                        </span>
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/4.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/36.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Convallis quam sit</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £30.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/7.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/8.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Condimentum posuere</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £115.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/23.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/38.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Buscipit at magna</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £48.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <span class="onsale">
+                                            <span class="sale-bg"></span>
+                                            <span class="sale-text">Sale</span>
+                                        </span>
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/8.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/7.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Aliquam lobortis</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £100.00
+                                                </span>
+                                                <span class="old-price">
+                                                    £105.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- BAG-TAB-END -->
+                        <!-- CLOTHINGS-TAB-START -->
+                        <div class="tab-pane fade" id="clothings">
+                            <div class="product-carusol-9">
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/39.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/40.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Rhoncus eleifend</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £75.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/4.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/36.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Malesuada fames</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £106.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/5.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/6.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Fermentum eros</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £90.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/2.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/21.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Etiam molestie</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £95.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <span class="onsale">
+                                            <span class="sale-bg"></span>
+                                            <span class="sale-text">Sale</span>
+                                        </span>
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/9.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/5.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Elementum felis</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £120.00
+                                                </span>
+                                                <span class="old-price">
+                                                    £125.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <span class="onsale">
+                                            <span class="sale-bg"></span>
+                                            <span class="sale-text">Sale</span>
+                                        </span>
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/19.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/20.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Congue lectus</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £105.00
+                                                </span>
+                                                <span class="old-price">
+                                                    £115.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <span class="onsale">
+                                            <span class="sale-bg"></span>
+                                            <span class="sale-text">Sale</span>
+                                        </span>
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/7.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/8.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Aliquam lobortis</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £100.00
+                                                </span>
+                                                <span class="old-price">
+                                                    £105.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <!-- SINGLE-PRODUCT START-->
+                                    <div class="single-product">
+                                        <span class="onsale">
+                                            <span class="sale-bg"></span>
+                                            <span class="sale-text">Sale</span>
+                                        </span>
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/Content/img/product/1.jpg" alt="Special" class="primary-image" />
+                                                <img src="/Content/img/product/2.jpg" alt="Special" class="secondary-image" />
+                                            </a>
+                                            <div class="action-button">
+                                                <div class="add-to-wishlist">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                                </div>
+                                                <div class="compare-button">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Compare"><i class="fa fa-files-o"></i></a>
+                                                </div>
+                                                <div class="quickviewbtn">
+                                                    <a class="color-tooltip" data-toggle="tooltip" href="#" title="Quick View"><i class="fa fa-search"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-name-ratting">
+                                            <h2 class="product-name">
+                                                <a href="#">Aenean eu tristique</a>
+                                            </h2>
+                                            <div class="ratings">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="price-box-small">
+                                                <span class="special-price">
+                                                    £70.00
+                                                </span>
+                                                <span class="old-price">
+                                                    £80.00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SINGLE-PRODUCT END-->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- CLOTHINGS-TAB-END -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- PRODUCT-CAROSUL END-->
+<!-- BANNER-AREA START-->
+-->
+<!-- PRODUCT-CAROSUL END-->
+<!-- LOGOBRAND-AREA-START -->
+<div class="logo-brand-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="title-tab-menu">
+                    <h3>@Resource.Home.markalarimiz</h3>
+                </div>
+                <div class="logo-brand-3">
+                    @{ Html.RenderAction("banner", "Home");}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- LOGOBRAND-AREA-END -->

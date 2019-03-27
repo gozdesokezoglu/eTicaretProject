@@ -1,0 +1,1876 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{73D5B9E9-DF51-4467-9DE1-810690EA3209}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eTicaretProje</RootNamespace>
+    <AssemblyName>eTicaretProje</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.3\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.3\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.3\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.2.3\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.3\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.3.490, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.1.2.3\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ALISVERISSEPETI.cs">
+      <DependentUpon>projectMVCDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ANAKATEGORİ.cs">
+      <DependentUpon>projectMVCDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\anaKategoriController.cs" />
+    <Compile Include="Areas\Admin\Controllers\EticaretDBEntities.cs" />
+    <Compile Include="Areas\Admin\Controllers\KategoriController.cs" />
+    <Compile Include="Areas\Admin\Controllers\loginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MarkaController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RolController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SliderController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UrunlerController.cs" />
+    <Compile Include="Areas\Admin\Models\AnaKategoriModel.cs" />
+    <Compile Include="Areas\Admin\Models\AdminModel.cs" />
+    <Compile Include="Areas\Admin\Models\KategoriModel.cs" />
+    <Compile Include="Areas\Admin\Models\LoginViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\MarkaModel.cs" />
+    <Compile Include="Areas\Admin\Models\MetaData.cs" />
+    <Compile Include="Areas\Admin\Models\PartialClasses.cs" />
+    <Compile Include="Areas\Admin\Models\Rol.cs" />
+    <Compile Include="Areas\Admin\Models\RolEkleModel.cs" />
+    <Compile Include="Areas\Admin\Models\RolKullaniciEkleModel.cs" />
+    <Compile Include="Areas\Admin\Models\SignUpModel.cs" />
+    <Compile Include="Areas\Admin\Models\SliderModel.cs" />
+    <Compile Include="Areas\Admin\Models\UrunModel.cs" />
+    <Compile Include="AspNetRoles.cs">
+      <DependentUpon>projectMVCDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserClaims.cs">
+      <DependentUpon>projectMVCDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogins.cs">
+      <DependentUpon>projectMVCDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUsers.cs">
+      <DependentUpon>projectMVCDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BANKALAR.cs">
+      <DependentUpon>projectMVCDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BegendiklerimController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SepetimController.cs" />
+    <Compile Include="Controllers\UrunDetayController.cs" />
+    <Compile Include="Controllers\YeniUrunlerController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="KAMPANYALAR.cs">
+      <DependentUpon>projectMVCDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KARGO.cs">
+      <DependentUpon>projectMVCDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KATEGORILER.cs">
+      <DependentUpon>projectMVCDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LanguageAttribute.cs" />
+    <Compile Include="MARKALAR.cs">
+      <DependentUpon>projectMVCDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Homemodel.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\KategoriAramaModel.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="ODEMESECENEKLER.cs">
+      <DependentUpon>projectMVCDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OZELLIKDETAY.cs">
+      <DependentUpon>projectMVCDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="projectMVCDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projectMVCDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="projectMVCDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projectMVCDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="projectMVCDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projectMVCDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource\Home.en.Designer.cs">
+      <DependentUpon>Home.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Resource\Home.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Home.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="SIPARISLER.cs">
+      <DependentUpon>projectMVCDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SLIDER.cs">
+      <DependentUpon>projectMVCDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="URUNLER.cs">
+      <DependentUpon>projectMVCDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="URUNOZELLIKLER.cs">
+      <DependentUpon>projectMVCDB.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Content\css\bootstrap-fileupload.min.css" />
+    <Content Include="Areas\Admin\Content\css\bootstrap-reset.css" />
+    <Content Include="Areas\Admin\Content\css\bootstrap.css" />
+    <Content Include="Areas\Admin\Content\css\bootstrap.min.css" />
+    <Content Include="Areas\Admin\Content\css\clndr.css" />
+    <Content Include="Areas\Admin\Content\css\custom-ico-fonts.css" />
+    <Content Include="Areas\Admin\Content\css\jquery-ui-1.10.3.css" />
+    <Content Include="Areas\Admin\Content\css\jquery.stepy.css" />
+    <Content Include="Areas\Admin\Content\css\owl.carousel.css" />
+    <Content Include="Areas\Admin\Content\css\owl.theme.css" />
+    <Content Include="Areas\Admin\Content\css\style-responsive.css" />
+    <Content Include="Areas\Admin\Content\css\style.css" />
+    <Content Include="Areas\Admin\Content\css\table-responsive.css" />
+    <Content Include="Areas\Admin\Content\fonts\css\font-awesome.css" />
+    <Content Include="Areas\Admin\Content\fonts\css\font-awesome.min.css" />
+    <Content Include="Areas\Admin\Content\fonts\custom-ico-fonts\custom-ico-font.svg" />
+    <Content Include="Areas\Admin\Content\fonts\fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\Admin\Content\fonts\less\font-awesome.css" />
+    <Content Include="Areas\Admin\Content\fonts\less\mixins.css" />
+    <Content Include="Areas\Admin\Content\fonts\less\variables.css" />
+    <Content Include="Areas\Admin\Content\images\404-error.png" />
+    <Content Include="Areas\Admin\Content\images\500-error.png" />
+    <Content Include="Areas\Admin\Content\images\alert.png" />
+    <Content Include="Areas\Admin\Content\images\avatar-mini.jpg" />
+    <Content Include="Areas\Admin\Content\images\blog\blog-avatar-2.jpg" />
+    <Content Include="Areas\Admin\Content\images\blog\blog-avatar.jpg" />
+    <Content Include="Areas\Admin\Content\images\blog\blog-sm-img.jpg" />
+    <Content Include="Areas\Admin\Content\images\blog\blog-thumb-1.jpg" />
+    <Content Include="Areas\Admin\Content\images\blog\blog-thumb-2.jpg" />
+    <Content Include="Areas\Admin\Content\images\blog\blog-thumb-3.jpg" />
+    <Content Include="Areas\Admin\Content\images\blog\blog-wide-img.jpg" />
+    <Content Include="Areas\Admin\Content\images\blog\image2.jpg" />
+    <Content Include="Areas\Admin\Content\images\blog\image3.jpg" />
+    <Content Include="Areas\Admin\Content\images\details_close.png" />
+    <Content Include="Areas\Admin\Content\images\details_open.png" />
+    <Content Include="Areas\Admin\Content\images\error.png" />
+    <Content Include="Areas\Admin\Content\images\gallery\image1.jpg" />
+    <Content Include="Areas\Admin\Content\images\gallery\image2.jpg" />
+    <Content Include="Areas\Admin\Content\images\gallery\image3.jpg" />
+    <Content Include="Areas\Admin\Content\images\gallery\image4.jpg" />
+    <Content Include="Areas\Admin\Content\images\gallery\image5.jpg" />
+    <Content Include="Areas\Admin\Content\images\gallery\sm-img-1.jpg" />
+    <Content Include="Areas\Admin\Content\images\gallery\sm-img-2.jpg" />
+    <Content Include="Areas\Admin\Content\images\gallery\sm-img-3.jpg" />
+    <Content Include="Areas\Admin\Content\images\gallery\wdgt-img.jpg" />
+    <Content Include="Areas\Admin\Content\images\graph.jpg" />
+    <Content Include="Areas\Admin\Content\images\input-spinner.gif" />
+    <Content Include="Areas\Admin\Content\images\invoice-logo.jpg" />
+    <Content Include="Areas\Admin\Content\images\lockscreen-bg.jpg" />
+    <Content Include="Areas\Admin\Content\images\login-bg.jpg" />
+    <Content Include="Areas\Admin\Content\images\login-logo.png" />
+    <Content Include="Areas\Admin\Content\images\logo.png" />
+    <Content Include="Areas\Admin\Content\images\logo_icon.png" />
+    <Content Include="Areas\Admin\Content\images\minus.png" />
+    <Content Include="Areas\Admin\Content\images\photos\user-avatar.png" />
+    <Content Include="Areas\Admin\Content\images\photos\user1.png" />
+    <Content Include="Areas\Admin\Content\images\photos\user2.png" />
+    <Content Include="Areas\Admin\Content\images\photos\user3.png" />
+    <Content Include="Areas\Admin\Content\images\photos\user4.png" />
+    <Content Include="Areas\Admin\Content\images\photos\user5.png" />
+    <Content Include="Areas\Admin\Content\images\photos\userprofile.png" />
+    <Content Include="Areas\Admin\Content\images\plus-white.png" />
+    <Content Include="Areas\Admin\Content\images\plus.png" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\css\demo_page.css" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\css\demo_table.css" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\css\demo_table_jui.css" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\css\jquery.dataTables.css" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\images\back_disabled.png" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\images\back_enabled.png" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\images\back_enabled_hover.png" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\images\favicon.ico" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\images\forward_disabled.png" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\images\forward_enabled.png" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\images\forward_enabled_hover.png" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\images\sort_asc.png" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\images\sort_asc_disabled.png" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\images\sort_both.png" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\images\sort_desc copy.png" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\images\sort_desc.png" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\images\sort_desc_disabled.png" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\js\jquery.dataTables.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\js\jquery.dataTables.min.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\js\jquery.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\api\api.internal.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\api\api.methods.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\api\api.static.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\core\core.ajax.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\core\core.columns.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\core\core.constructor.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\core\core.data.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\core\core.draw.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\core\core.filter.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\core\core.info.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\core\core.init.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\core\core.length.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\core\core.page.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\core\core.processing.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\core\core.scrolling.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\core\core.sizing.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\core\core.sort.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\core\core.state.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\core\core.support.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\DataTables.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\ext\ext.classes.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\ext\ext.paging.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\ext\ext.sorting.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\ext\ext.types.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\model\model.column.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\model\model.defaults.columns.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\model\model.defaults.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\model\model.ext.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\model\model.row.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\model\model.search.js" />
+    <Content Include="Areas\Admin\Content\js\advanced-datatable\src\model\model.settings.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-colorpicker\css\colorpicker.css" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-colorpicker\img\alpha.png" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-colorpicker\img\hue.png" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-colorpicker\img\saturation.png" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-colorpicker\js\bootstrap-colorpicker.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datepicker\css\datepicker-custom.css" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datepicker\css\datepicker.css" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-daterangepicker\date.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-daterangepicker\examples.html" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-daterangepicker\moment.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-daterangepicker\moment.min.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\css\datetimepicker-custom.css" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\css\datetimepicker.css" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\bootstrap-datetimepicker.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.bg.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ca.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.cs.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.da.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.de.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.el.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.es.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.fi.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.fr.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.he.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.hr.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.hu.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.id.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.is.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.it.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ja.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.kr.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.lt.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.lv.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ms.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.nb.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.nl.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.pl.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.pt-BR.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.pt.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ro.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.rs-latin.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.rs.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ru.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.sk.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.sl.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.sv.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.sw.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.th.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.tr.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ua.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.uk.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.zh-CN.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.zh-TW.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\less\datetimepicker.css" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-fileupload.min.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-inputmask\bootstrap-inputmask.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-inputmask\bootstrap-inputmask.min.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-timepicker\css\timepicker.css" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-timepicker\less\timepicker.css" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-wysihtml5\bootstrap-wysihtml5.css" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-wysihtml5\bootstrap-wysihtml5.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-wysihtml5\wysihtml5-0.3.0.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-wysihtml5\wysiwyg-color.css" />
+    <Content Include="Areas\Admin\Content\js\bootstrap.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Content\js\c3-chart\c3-chart.init.js" />
+    <Content Include="Areas\Admin\Content\js\c3-chart\c3.css" />
+    <Content Include="Areas\Admin\Content\js\c3-chart\c3.js" />
+    <Content Include="Areas\Admin\Content\js\c3-chart\c3.min.js" />
+    <Content Include="Areas\Admin\Content\js\calendar\clndr.js" />
+    <Content Include="Areas\Admin\Content\js\calendar\clndr.min.js" />
+    <Content Include="Areas\Admin\Content\js\calendar\evnt.calendar.init.js" />
+    <Content Include="Areas\Admin\Content\js\calendar\moment-2.2.1.js" />
+    <Content Include="Areas\Admin\Content\js\chart-js\Chart.js" />
+    <Content Include="Areas\Admin\Content\js\chart-js\Chart.min.js" />
+    <Content Include="Areas\Admin\Content\js\chart-js\chartjs.init.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\build-config.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\ckeditor.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\config.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\contents.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\af.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\ar.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\bg.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\bn.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\bs.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\ca.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\cs.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\cy.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\da.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\de.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\el.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\en-au.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\en-ca.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\en-gb.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\en.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\eo.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\es.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\et.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\eu.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\fa.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\fi.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\fo.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\fr-ca.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\fr.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\gl.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\gu.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\he.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\hi.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\hr.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\hu.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\is.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\it.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\ja.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\ka.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\km.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\ko.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\ku.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\lt.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\lv.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\mk.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\mn.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\ms.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\nb.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\nl.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\no.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\pl.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\pt-br.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\pt.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\ro.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\ru.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\sk.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\sl.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\sr-latn.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\sr.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\sv.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\th.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\tr.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\ug.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\uk.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\vi.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\zh-cn.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\lang\zh.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\fakeobjects\images\spacer.gif" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\icons.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\ajax.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\api.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\appendto.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\assets\inlineall\logo.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\assets\sample.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\assets\sample.jpg" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\assets\uilanguages\languages.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\divreplace.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\index.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\inlineall.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\inlinebycode.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\plugins\dialog\assets\my_dialog.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\plugins\dialog\dialog.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\plugins\enterkey\enterkey.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.swf" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\swfobject.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\plugins\htmlwriter\outputforflash.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\plugins\htmlwriter\outputhtml.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\plugins\magicline\magicline.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\plugins\toolbar\toolbar.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\plugins\wysiwygarea\fullpage.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\readonly.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\replacebyclass.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\replacebycode.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\sample.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\sample.js" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\tabindex.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\uicolor.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\uilanguages.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\xhtmlstyle.html" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\moono\dialog.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\moono\dialog_opera.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\moono\editor.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\moono\icons.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\moono\images\close.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\moono\images\mini.png" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\styles.js" />
+    <Content Include="Areas\Admin\Content\js\dashboard-chart-init.js" />
+    <Content Include="Areas\Admin\Content\js\data-tables\DT_bootstrap.css" />
+    <Content Include="Areas\Admin\Content\js\data-tables\DT_bootstrap.js" />
+    <Content Include="Areas\Admin\Content\js\data-tables\images\sort_asc.png" />
+    <Content Include="Areas\Admin\Content\js\data-tables\images\sort_both.png" />
+    <Content Include="Areas\Admin\Content\js\data-tables\images\sort_desc.png" />
+    <Content Include="Areas\Admin\Content\js\data-tables\jquery.dataTables.js" />
+    <Content Include="Areas\Admin\Content\js\dropzone\css\basic.css" />
+    <Content Include="Areas\Admin\Content\js\dropzone\css\dropzone.css" />
+    <Content Include="Areas\Admin\Content\js\dropzone\dropzone-amd-module.js" />
+    <Content Include="Areas\Admin\Content\js\dropzone\dropzone.js" />
+    <Content Include="Areas\Admin\Content\js\dropzone\images\spritemap%402x.png" />
+    <Content Include="Areas\Admin\Content\js\dropzone\images\spritemap.png" />
+    <Content Include="Areas\Admin\Content\js\dynamic_table_init.js" />
+    <Content Include="Areas\Admin\Content\js\easypiechart\easypiechart-init.js" />
+    <Content Include="Areas\Admin\Content\js\easypiechart\easypiechart.js" />
+    <Content Include="Areas\Admin\Content\js\easypiechart\jquery.easypiechart.js" />
+    <Content Include="Areas\Admin\Content\js\easypiechart\jquery.easypiechart.min.js" />
+    <Content Include="Areas\Admin\Content\js\editable-table.js" />
+    <Content Include="Areas\Admin\Content\js\external-dragging-calendar.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\excanvas.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\excanvas.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.colorhelpers.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.colorhelpers.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.animator.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.animator.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.canvas.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.canvas.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.categories.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.categories.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.crosshair.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.crosshair.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.errorbars.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.errorbars.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.fillbetween.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.fillbetween.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.growraf.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.image.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.image.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.navigate.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.navigate.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.pie.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.pie.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.pie.resize.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.resize.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.resize.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.selection.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.selection.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.spline.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.stack.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.stack.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.symbol.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.symbol.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.threshold.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.threshold.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.time.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.time.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.tooltip.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.flot.tooltip.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\jquery.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\LICENSE.txt" />
+    <Content Include="Areas\Admin\Content\js\flot.chart.init.js" />
+    <Content Include="Areas\Admin\Content\js\fuelux\css\tree-style.css" />
+    <Content Include="Areas\Admin\Content\js\fuelux\css\tree.css" />
+    <Content Include="Areas\Admin\Content\js\fuelux\img\tree-icons.png" />
+    <Content Include="Areas\Admin\Content\js\fuelux\js\spinner.js" />
+    <Content Include="Areas\Admin\Content\js\fuelux\js\spinner.min.js" />
+    <Content Include="Areas\Admin\Content\js\fuelux\js\tree.js" />
+    <Content Include="Areas\Admin\Content\js\fuelux\js\tree.min.js" />
+    <Content Include="Areas\Admin\Content\js\fullcalendar\bootstrap-fullcalendar.css" />
+    <Content Include="Areas\Admin\Content\js\fullcalendar\fullcalendar.css" />
+    <Content Include="Areas\Admin\Content\js\fullcalendar\fullcalendar.js" />
+    <Content Include="Areas\Admin\Content\js\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Areas\Admin\Content\js\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Areas\Admin\Content\js\fullcalendar\gcal.js" />
+    <Content Include="Areas\Admin\Content\js\google-map\gmaps-init.js" />
+    <Content Include="Areas\Admin\Content\js\google-map\gmaps.js" />
+    <Content Include="Areas\Admin\Content\js\gritter\css\jquery.gritter.css" />
+    <Content Include="Areas\Admin\Content\js\gritter\images\gritter-blue.png" />
+    <Content Include="Areas\Admin\Content\js\gritter\images\gritter-brown.png" />
+    <Content Include="Areas\Admin\Content\js\gritter\images\gritter-light.png" />
+    <Content Include="Areas\Admin\Content\js\gritter\images\gritter-long.png" />
+    <Content Include="Areas\Admin\Content\js\gritter\images\gritter-purple.png" />
+    <Content Include="Areas\Admin\Content\js\gritter\images\gritter.png" />
+    <Content Include="Areas\Admin\Content\js\gritter\images\ie-spacer.gif" />
+    <Content Include="Areas\Admin\Content\js\gritter\js\gritter-init.js" />
+    <Content Include="Areas\Admin\Content\js\gritter\js\jquery.gritter.js" />
+    <Content Include="Areas\Admin\Content\js\gritter\js\jquery.gritter.min.js" />
+    <Content Include="Areas\Admin\Content\js\html5shiv.js" />
+    <Content Include="Areas\Admin\Content\js\icheck-init.js" />
+    <Content Include="Areas\Admin\Content\js\iCheck\jquery.icheck.js" />
+    <Content Include="Areas\Admin\Content\js\iCheck\jquery.icheck.min.js" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\all.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\aero%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\aero.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\aero.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\blue%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\blue.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\blue.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\flat%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\flat.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\flat.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\green%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\green.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\green.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\grey%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\grey.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\grey.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\orange%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\orange.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\orange.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\pink%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\pink.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\pink.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\purple%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\purple.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\purple.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\red%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\red.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\red.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\yellow%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\yellow.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\yellow.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\flat\_all.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\futurico\futurico%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\futurico\futurico.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\futurico\futurico.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\line\aero.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\line\blue.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\line\green.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\line\grey.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\line\line%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\line\line.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\line\line.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\line\orange.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\line\pink.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\line\purple.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\line\red.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\line\yellow.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\line\_all.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\aero%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\aero.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\aero.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\blue%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\blue.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\blue.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\green%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\green.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\green.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\grey%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\grey.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\grey.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\minimal%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\minimal.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\minimal.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\orange%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\orange.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\orange.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\pink%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\pink.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\pink.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\purple%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\purple.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\purple.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\red%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\red.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\red.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\yellow%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\yellow.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\yellow.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\minimal\_all.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\polaris\polaris%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\polaris\polaris.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\polaris\polaris.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\aero%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\aero.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\aero.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\blue%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\blue.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\blue.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\green%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\green.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\green.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\grey%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\grey.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\grey.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\orange%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\orange.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\orange.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\pink%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\pink.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\pink.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\purple%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\purple.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\purple.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\red%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\red.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\red.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\square%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\square.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\square.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\yellow%402x.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\yellow.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\yellow.png" />
+    <Content Include="Areas\Admin\Content\js\iCheck\skins\square\_all.css" />
+    <Content Include="Areas\Admin\Content\js\iCheck\zepto.icheck.js" />
+    <Content Include="Areas\Admin\Content\js\iCheck\zepto.icheck.min.js" />
+    <Content Include="Areas\Admin\Content\js\ion.rangeSlider-1.8.2\css\ion.rangeSlider.css" />
+    <Content Include="Areas\Admin\Content\js\ion.rangeSlider-1.8.2\css\ion.rangeSlider.skinFlat.css" />
+    <Content Include="Areas\Admin\Content\js\ion.rangeSlider-1.8.2\css\ion.rangeSlider.skinNice.css" />
+    <Content Include="Areas\Admin\Content\js\ion.rangeSlider-1.8.2\css\ion.rangeSlider.skinSimple.css" />
+    <Content Include="Areas\Admin\Content\js\ion.rangeSlider-1.8.2\css\normalize.min.css" />
+    <Content Include="Areas\Admin\Content\js\ion.rangeSlider-1.8.2\img\sprite-skin-flat-red.png" />
+    <Content Include="Areas\Admin\Content\js\ion.rangeSlider-1.8.2\img\sprite-skin-flat.png" />
+    <Content Include="Areas\Admin\Content\js\ion.rangeSlider-1.8.2\img\sprite-skin-nice.png" />
+    <Content Include="Areas\Admin\Content\js\ion.rangeSlider-1.8.2\img\sprite-skin-simple.png" />
+    <Content Include="Areas\Admin\Content\js\ion.rangeSlider-1.8.2\js\ion-rangeSlider\ion.rangeSlider.js" />
+    <Content Include="Areas\Admin\Content\js\ion.rangeSlider-1.8.2\js\ion-rangeSlider\ion.rangeSlider.min.js" />
+    <Content Include="Areas\Admin\Content\js\ion.rangeSlider-1.8.2\js\vendor\jquery-1.10.2.min.js" />
+    <Content Include="Areas\Admin\Content\js\ios-switch\ios-init.js" />
+    <Content Include="Areas\Admin\Content\js\ios-switch\switchery.css" />
+    <Content Include="Areas\Admin\Content\js\ios-switch\switchery.js" />
+    <Content Include="Areas\Admin\Content\js\jquery-1.10.2.min.js" />
+    <Content Include="Areas\Admin\Content\js\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Areas\Admin\Content\js\jquery-multi-select\css\multi-select.css" />
+    <Content Include="Areas\Admin\Content\js\jquery-multi-select\img\switch.png" />
+    <Content Include="Areas\Admin\Content\js\jquery-multi-select\img\switch_original.png" />
+    <Content Include="Areas\Admin\Content\js\jquery-multi-select\js\jquery.multi-select.js" />
+    <Content Include="Areas\Admin\Content\js\jquery-multi-select\js\jquery.quicksearch.js" />
+    <Content Include="Areas\Admin\Content\js\jquery-tags-input\jquery.tagsinput.css" />
+    <Content Include="Areas\Admin\Content\js\jquery-tags-input\jquery.tagsinput.js" />
+    <Content Include="Areas\Admin\Content\js\jquery-tags-input\jquery.tagsinput.min.js" />
+    <Content Include="Areas\Admin\Content\js\jquery-ui-1.10.3.min.js" />
+    <Content Include="Areas\Admin\Content\js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.cookies.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.isotope.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.nicescroll.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.stepy.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.validate.min.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jquery-jvectormap-1.1.1.css" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jquery-jvectormap-1.1.1.min.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jquery-jvectormap-1.2.2.css" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jquery-jvectormap-au-mill-en.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jquery-jvectormap-us-aea-en.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jquery-jvectormap-us-lcc-en.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jquery-jvectormap-us-merc-en.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jquery-jvectormap-us-mill-en.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jqvmap\data\jquery.vmap.sampledata.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jqvmap\jquery.vmap.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jqvmap\jquery.vmap.min.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jqvmap\jquery.vmap.packed.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jqvmap\jqvmap.css" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jqvmap\maps\continents\jquery.vmap.africa.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jqvmap\maps\continents\jquery.vmap.asia.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jqvmap\maps\continents\jquery.vmap.australia.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jqvmap\maps\continents\jquery.vmap.europe.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jqvmap\maps\continents\jquery.vmap.north-america.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jqvmap\maps\continents\jquery.vmap.south-america.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jqvmap\maps\continents\readme.txt" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jqvmap\maps\jquery.vmap.algeria.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jqvmap\maps\jquery.vmap.brazil.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jqvmap\maps\jquery.vmap.europe.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jqvmap\maps\jquery.vmap.france.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jqvmap\maps\jquery.vmap.germany.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jqvmap\maps\jquery.vmap.russia.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jqvmap\maps\jquery.vmap.usa.js" />
+    <Content Include="Areas\Admin\Content\js\jvector-map\jqvmap\maps\jquery.vmap.world.js" />
+    <Content Include="Areas\Admin\Content\js\main-chart.js" />
+    <Content Include="Areas\Admin\Content\js\modernizr.min.js" />
+    <Content Include="Areas\Admin\Content\js\morris-chart\morris.css" />
+    <Content Include="Areas\Admin\Content\js\morris-chart\morris.init.js" />
+    <Content Include="Areas\Admin\Content\js\morris-chart\morris.js" />
+    <Content Include="Areas\Admin\Content\js\morris-chart\morris.min.js" />
+    <Content Include="Areas\Admin\Content\js\morris-chart\raphael-min.js" />
+    <Content Include="Areas\Admin\Content\js\multi-select-init.js" />
+    <Content Include="Areas\Admin\Content\js\nestable-init.js" />
+    <Content Include="Areas\Admin\Content\js\nestable\index.html" />
+    <Content Include="Areas\Admin\Content\js\nestable\jquery.nestable.css" />
+    <Content Include="Areas\Admin\Content\js\nestable\jquery.nestable.js" />
+    <Content Include="Areas\Admin\Content\js\owl.carousel.js" />
+    <Content Include="Areas\Admin\Content\js\owl.carousel.min.js" />
+    <Content Include="Areas\Admin\Content\js\pickers-init.js" />
+    <Content Include="Areas\Admin\Content\js\respond.min.js" />
+    <Content Include="Areas\Admin\Content\js\scripts.js" />
+    <Content Include="Areas\Admin\Content\js\sparkline\jquery.sparkline.js" />
+    <Content Include="Areas\Admin\Content\js\sparkline\sparkline-init.js" />
+    <Content Include="Areas\Admin\Content\js\spinner-init.js" />
+    <Content Include="Areas\Admin\Content\js\tagsinput-init.js" />
+    <Content Include="Areas\Admin\Content\js\tree-init.js" />
+    <Content Include="Areas\Admin\Content\js\validation-init.js" />
+    <Content Include="Content\audio\Nana-Dreams.mp3" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\animate.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\fancybox\blank.gif" />
+    <Content Include="Content\css\fancybox\fancybox_buttons.png" />
+    <Content Include="Content\css\fancybox\fancybox_loading%402x.gif" />
+    <Content Include="Content\css\fancybox\fancybox_loading.gif" />
+    <Content Include="Content\css\fancybox\fancybox_overlay.png" />
+    <Content Include="Content\css\fancybox\fancybox_sprite%402x.png" />
+    <Content Include="Content\css\fancybox\fancybox_sprite.png" />
+    <Content Include="Content\css\fancybox\jquery.fancybox-buttons.css" />
+    <Content Include="Content\css\fancybox\jquery.fancybox-thumbs.css" />
+    <Content Include="Content\css\fancybox\jquery.fancybox.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\img-zoom\jquery.simpleLens.css" />
+    <Content Include="Content\css\jquery-ui.min.css" />
+    <Content Include="Content\css\main.css" />
+    <Content Include="Content\css\meanmenu.min.css" />
+    <Content Include="Content\css\normalize.css" />
+    <Content Include="Content\css\owl.carousel.css" />
+    <Content Include="Content\css\owl.theme.css" />
+    <Content Include="Content\css\owl.transitions.css" />
+    <Content Include="Content\css\responsive.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\img\404.png" />
+    <Content Include="Content\img\about-us\1.jpg" />
+    <Content Include="Content\img\about-us\2.jpg" />
+    <Content Include="Content\img\about-us\3.jpg" />
+    <Content Include="Content\img\about-us\about-us.jpg" />
+    <Content Include="Content\img\about-us\bg_aboutus.jpg" />
+    <Content Include="Content\img\about-us\icon_service.png" />
+    <Content Include="Content\img\about-us\icon_work.png" />
+    <Content Include="Content\img\add\1.png" />
+    <Content Include="Content\img\adminler\IMG_5699.JPG" />
+    <Content Include="Content\img\adminler\IMG_5712.JPG" />
+    <Content Include="Content\img\adminler\IMG_8419.JPG" />
+    <Content Include="Content\img\adminler\IMG_8422.JPG" />
+    <Content Include="Content\img\adminler\IMG_8425.JPG" />
+    <Content Include="Content\img\adminler\Originals\IMG_8419.JPG" />
+    <Content Include="Content\img\adminler\Originals\IMG_8422.JPG" />
+    <Content Include="Content\img\adminler\Originals\IMG_8425.JPG" />
+    <Content Include="Content\img\Aksesuarlar\Bilgisayar Aksesuarları\ASUS EXTERNAL SIYAH DVD WRITER\foto1.jpg" />
+    <Content Include="Content\img\Aksesuarlar\Bilgisayar Aksesuarları\HAMA 30618 3M USB UZATMA KABLOSU\foto1.jpg" />
+    <Content Include="Content\img\Aksesuarlar\Bilgisayar Aksesuarları\INCA INC-354BX NOTEBOOK SOĞUTUCU\foto1.jpg" />
+    <Content Include="Content\img\Aksesuarlar\Telefon Aksesuarları\SAMSUNG GALAXY S4 MINI BEYAZ FONKSIYONEL KILIF\foto1.jpg" />
+    <Content Include="Content\img\Aksesuarlar\Telefon Aksesuarları\SAMSUNG HM1500 BLUETOOTH KULAKLIK\foto1.jpg" />
+    <Content Include="Content\img\Aksesuarlar\Telefon Aksesuarları\TTEC COMPACT 2CKC2001 ARAÇ ŞARJ CİHAZI İPHONE 4 1000MA\foto1.jpg" />
+    <Content Include="Content\img\Aksesuarlar\TV Aksesuarları\MODEV CR  54  -  130 SİYAH İNCİ PLAZMALCD TV SEHPASI\foto1.jpg" />
+    <Content Include="Content\img\Aksesuarlar\TV Aksesuarları\SILVERCREST SC-012 120 CM CORDOBA AHSAP PLAZMALCD TV SEHPASI\foto1.jpg" />
+    <Content Include="Content\img\Aksesuarlar\TV Aksesuarları\ULTIMATE %2832 -42%29 PRD-B-120-B-005-B PLAZMALCD TV SEHPASI\foto1.jpg" />
+    <Content Include="Content\img\banner\1.jpg" />
+    <Content Include="Content\img\banner\2.jpg" />
+    <Content Include="Content\img\banner\3.jpg" />
+    <Content Include="Content\img\banner\4.jpg" />
+    <Content Include="Content\img\banner\home-10\1.jpg" />
+    <Content Include="Content\img\banner\home-10\2.jpg" />
+    <Content Include="Content\img\banner\home-10\3.jpg" />
+    <Content Include="Content\img\banner\home-10\4.jpg" />
+    <Content Include="Content\img\banner\home-2\1.jpg" />
+    <Content Include="Content\img\banner\home-2\2.jpg" />
+    <Content Include="Content\img\banner\home-2\3.jpg" />
+    <Content Include="Content\img\banner\home-2\4.jpg" />
+    <Content Include="Content\img\banner\home-2\5.jpg" />
+    <Content Include="Content\img\banner\home-2\6.jpg" />
+    <Content Include="Content\img\banner\home-2\7.jpg" />
+    <Content Include="Content\img\banner\home-2\8.jpg" />
+    <Content Include="Content\img\banner\home-3\1.jpg" />
+    <Content Include="Content\img\banner\home-3\2.jpg" />
+    <Content Include="Content\img\banner\home-3\3.jpg" />
+    <Content Include="Content\img\banner\home-3\4.jpg" />
+    <Content Include="Content\img\banner\home-3\5.jpg" />
+    <Content Include="Content\img\banner\home-5\1.jpg" />
+    <Content Include="Content\img\banner\home-5\2.jpg" />
+    <Content Include="Content\img\banner\home-5\3.jpg" />
+    <Content Include="Content\img\banner\home-8\1.jpg" />
+    <Content Include="Content\img\banner\home-8\2.jpg" />
+    <Content Include="Content\img\banner\home-8\3.jpg" />
+    <Content Include="Content\img\banner\home-8\4.jpg" />
+    <Content Include="Content\img\banner\home-9\1.png" />
+    <Content Include="Content\img\banner\home-9\2.png" />
+    <Content Include="Content\img\banner\home-9\3.png" />
+    <Content Include="Content\img\banner\home-9\4.jpg" />
+    <Content Include="Content\img\banner\home-9\5.jpg" />
+    <Content Include="Content\img\banner\home-9\6.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\apple\MACBOOK NOTEBOOK CORE M 1.1GHZ-8GB-256GB SSD-12-INT- NOTEBOOK BILGISAYAR\v2-77092-1_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\apple\MACBOOK NOTEBOOK CORE M 1.1GHZ-8GB-256GB SSD-12-INT- NOTEBOOK BILGISAYAR\v2-77092-2_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\apple\MACBOOK NOTEBOOK CORE M 1.1GHZ-8GB-256GB SSD-12-INT- NOTEBOOK BILGISAYAR\v2-77092-3_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\apple\MACBOOKAIR NOTEBOOKCOREİ5 1.6GHZ-4GB-128GBSSD-11.6-INTEL NOTEBOOK BILGISAYAR\v2-76763-1_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\apple\MACBOOKAIR NOTEBOOKCOREİ5 1.6GHZ-4GB-128GBSSD-11.6-INTEL NOTEBOOK BILGISAYAR\v2-76763-2_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\apple\MACBOOKAIR NOTEBOOKCOREİ5 1.6GHZ-4GB-128GBSSD-13.3-INTEL NOTEBOOK BILGISAYAR\v2-76761-1_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\apple\MACBOOKAIR NOTEBOOKCOREİ5 1.6GHZ-4GB-128GBSSD-13.3-INTEL NOTEBOOK BILGISAYAR\v2-76761-2_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\apple\MACBOOKAIR NOTEBOOKCOREİ5 1.6GHZ-4GB-128GBSSD-13.3-INTEL NOTEBOOK BILGISAYAR\v2-76761-3_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\apple\MACBOOKPRO NOTEBOOK CORE İ7 2.2GHZ-16GB-256GB-15-INT TASINABİLİR BİLGİSAYAR\v2-77726-1_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\apple\MACBOOKPRO NOTEBOOK CORE İ7 2.2GHZ-16GB-256GB-15-INT TASINABİLİR BİLGİSAYAR\v2-77726-2_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\apple\MACBOOKPRO NOTEBOOK CORE İ7 2.2GHZ-16GB-256GB-15-INT TASINABİLİR BİLGİSAYAR\v2-77726-3_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\apple\MACBOOKPRO NOTEBOOK CORE İ7 2.2GHZ-16GB-256GB-15-INT TASINABİLİR BİLGİSAYAR\v2-77726-4_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\apple\MACBOOKPRO NOTEBOOK COREİ5 2.7GHZ-8GB-256GB SSD-13.3-INTEL NOTEBOOK BILGISAYAR\v2-76759-1_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\apple\MACBOOKPRO NOTEBOOK COREİ5 2.7GHZ-8GB-256GB SSD-13.3-INTEL NOTEBOOK BILGISAYAR\v2-76759-2_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\apple\MACBOOKPRO NOTEBOOK COREİ5 2.7GHZ-8GB-256GB SSD-13.3-INTEL NOTEBOOK BILGISAYAR\v2-76759-4_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\casper\CASPER CN-V3A3050A CELERON N3050 1.16GHZ-4GB-500GB-INTEL-15.6-W10 NOTEBOOK\v2-79979-1_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\casper\CASPER CN-V3A3050A CELERON N3050 1.16GHZ-4GB-500GB-INTEL-15.6-W10 NOTEBOOK\v2-79979-2_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\casper\CASPER CN-V3A3050A CELERON N3050 1.16GHZ-4GB-500GB-INTEL-15.6-W10 NOTEBOOK\v2-79979_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\casper\CASPER CN-V5K6200A CORE İ5 6200U 2.3GHZ-8GB RAM-1TB HDD-15.6-2GB-W10 NOTEBOOK\v2-79893-1_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\casper\CASPER CN-V5K6200A CORE İ5 6200U 2.3GHZ-8GB RAM-1TB HDD-15.6-2GB-W10 NOTEBOOK\v2-79893-2_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\casper\CASPER CN-V5K6200A CORE İ5 6200U 2.3GHZ-8GB RAM-1TB HDD-15.6-2GB-W10 NOTEBOOK\v2-79893-3_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\casper\CASPER CN-V5K6200A CORE İ5 6200U 2.3GHZ-8GB RAM-1TB HDD-15.6-2GB-W10 NOTEBOOK\v2-79893_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\casper\CASPER CN-VLE2840B CELERON N2840 2.16GHZ-2GB-500GB-INTEL-14-W10 NOTEBOOK\v2-79526-1_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\casper\CASPER CN-VLE2840B CELERON N2840 2.16GHZ-2GB-500GB-INTEL-14-W10 NOTEBOOK\v2-79526-2_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\casper\CASPER CN-VLE2840B CELERON N2840 2.16GHZ-2GB-500GB-INTEL-14-W10 NOTEBOOK\v2-79526-3_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\casper\CASPER CN-VLE2840B CELERON N2840 2.16GHZ-2GB-500GB-INTEL-14-W10 NOTEBOOK\v2-79526_medium.JPG" />
+    <Content Include="Content\img\Bilgisayarlar\casper\CASPER N360 ATOM Z3735F 1.83GHZ-2GB-64GB-11.6%27%27 -W8.1 NOTEBOOK BILGISAYAR\v2-77946-4_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\casper\CASPER N360 ATOM Z3735F 1.83GHZ-2GB-64GB-11.6%27%27 -W8.1 NOTEBOOK BILGISAYAR\v2-77946-5_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\casper\CASPER N360 ATOM Z3735F 1.83GHZ-2GB-64GB-11.6%27%27 -W8.1 NOTEBOOK BILGISAYAR\v2-77946-6_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\hp\HP ENVY 13-D000NT CORE İ5 6200U 2.3GHZ-4GB-256GBSSD-13.3-INTEL-W10\v2-80002-1_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\hp\HP ENVY 13-D000NT CORE İ5 6200U 2.3GHZ-4GB-256GBSSD-13.3-INTEL-W10\v2-80002-2_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\hp\HP ENVY 13-D000NT CORE İ5 6200U 2.3GHZ-4GB-256GBSSD-13.3-INTEL-W10\v2-80002-3_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\hp\HP ENVY 13-D000NT CORE İ5 6200U 2.3GHZ-4GB-256GBSSD-13.3-INTEL-W10\v2-80002_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\hp\HP15-AC118NT MAVİ CORE İ5 5200U 2.2GHZ-8GB-1TB HDD-15.6%27%27-2GB-W10 NOTEBOOK\v2-79308-1_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\hp\HP15-AC118NT MAVİ CORE İ5 5200U 2.2GHZ-8GB-1TB HDD-15.6%27%27-2GB-W10 NOTEBOOK\v2-79308-2_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\hp\HP15-AC118NT MAVİ CORE İ5 5200U 2.2GHZ-8GB-1TB HDD-15.6%27%27-2GB-W10 NOTEBOOK\v2-79308-3_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\hp\HP15-AC118NT MAVİ CORE İ5 5200U 2.2GHZ-8GB-1TB HDD-15.6%27%27-2GB-W10 NOTEBOOK\v2-79308_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\lenovo\LENOVO IDEAPAD 100 CORE İ3 5005U 2GHZ-4GB RAM-500GB HDD-15.6-2GB-W10 NOTEBOOK\v2-79515-4_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\lenovo\LENOVO IDEAPAD 500 CORE İ5 6200U 2.3GHZ-8GB RAM-1TB HDD-15.6-2GB-W10 NOTEBOOK\v2-79809-1_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\lenovo\LENOVO IDEAPAD 500 CORE İ5 6200U 2.3GHZ-8GB RAM-1TB HDD-15.6-2GB-W10 NOTEBOOK\v2-79809-2_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\lenovo\LENOVO IDEAPAD 500 CORE İ5 6200U 2.3GHZ-8GB RAM-1TB HDD-15.6-2GB-W10 NOTEBOOK\v2-79809-3_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\lenovo\LENOVO IDEAPAD 500 CORE İ5 6200U 2.3GHZ-8GB RAM-1TB HDD-15.6-2GB-W10 NOTEBOOK\v2-79809_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\lenovo\LENOVO YOGA3 PRO CORE M 5Y71 2.9GHZ-8GB-256SSD-13.3%27%27-INT -W8.1 NOTEBOOK\v2-79513-1_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\lenovo\LENOVO YOGA3 PRO CORE M 5Y71 2.9GHZ-8GB-256SSD-13.3%27%27-INT -W8.1 NOTEBOOK\v2-79513-2_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\lenovo\LENOVO YOGA3 PRO CORE M 5Y71 2.9GHZ-8GB-256SSD-13.3%27%27-INT -W8.1 NOTEBOOK\v2-79513_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\lenovo\LENOVO YOGA500 CORE İ3 4030U 1.9GHZ-4GB-500GBSSHD-14%27%27-INT -W8.1 NOTEBOOK\v2-78906-1_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\lenovo\LENOVO YOGA500 CORE İ3 4030U 1.9GHZ-4GB-500GBSSHD-14%27%27-INT -W8.1 NOTEBOOK\v2-78906-2_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\lenovo\LENOVO YOGA500 CORE İ3 4030U 1.9GHZ-4GB-500GBSSHD-14%27%27-INT -W8.1 NOTEBOOK\v2-78906-3_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\lenovo\LENOVO YOGA500 CORE İ3 4030U 1.9GHZ-4GB-500GBSSHD-14%27%27-INT -W8.1 NOTEBOOK\v2-78906_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\toshiba\TOSHIBA SATELLITE C55 CORE İ3 5015U 1.7GHZ-4GB-500GB-INT-15.6-W10 NOTEBOOK\v2-79802-1_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\toshiba\TOSHIBA SATELLITE C55 CORE İ3 5015U 1.7GHZ-4GB-500GB-INT-15.6-W10 NOTEBOOK\v2-79802-2_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\toshiba\TOSHIBA SATELLITE C55 CORE İ3 5015U 1.7GHZ-4GB-500GB-INT-15.6-W10 NOTEBOOK\v2-79802-3_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\toshiba\TOSHIBA SATELLITE C55 CORE İ3 5015U 1.7GHZ-4GB-500GB-INT-15.6-W10 NOTEBOOK\v2-79802-5_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\toshiba\TOSHIBA SATELLITE L50 CORE İ5 5200U 2.20GHZ-8GB-1TB+8GB SSD-2GB-15.6-W8.1\v2-79801-1_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\toshiba\TOSHIBA SATELLITE L50 CORE İ5 5200U 2.20GHZ-8GB-1TB+8GB SSD-2GB-15.6-W8.1\v2-79801-2_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\toshiba\TOSHIBA SATELLITE L50 CORE İ5 5200U 2.20GHZ-8GB-1TB+8GB SSD-2GB-15.6-W8.1\v2-79801-3_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\toshiba\TOSHIBA SATELLITE L50 CORE İ5 5200U 2.20GHZ-8GB-1TB+8GB SSD-2GB-15.6-W8.1\v2-79801-5_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\toshiba\TOSHIBA SATELLITE L50 CORE İ5 5200U 2.20GHZ-8GB-1TB-2GB-15.6-W8.1 NOTEBOOK\v2-78940-1_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\toshiba\TOSHIBA SATELLITE L50 CORE İ5 5200U 2.20GHZ-8GB-1TB-2GB-15.6-W8.1 NOTEBOOK\v2-78940-2_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\toshiba\TOSHIBA SATELLITE L50 CORE İ5 5200U 2.20GHZ-8GB-1TB-2GB-15.6-W8.1 NOTEBOOK\v2-78940-3_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\toshiba\TOSHIBA SATELLITE L50 CORE İ5 5200U 2.20GHZ-8GB-1TB-2GB-15.6-W8.1 NOTEBOOK\v2-78940-5_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\toshiba\TOSHIBA SATELLITE P50 CORE İ5 5200U 2.20GHZ-8GB-256SSD-2GB-15.6FHD-W8.1\v2-78955-1_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\toshiba\TOSHIBA SATELLITE P50 CORE İ5 5200U 2.20GHZ-8GB-256SSD-2GB-15.6FHD-W8.1\v2-78955-2_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\toshiba\TOSHIBA SATELLITE P50 CORE İ5 5200U 2.20GHZ-8GB-256SSD-2GB-15.6FHD-W8.1\v2-78955-3_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\toshiba\TOSHIBA SATELLITE P50 CORE İ5 5200U 2.20GHZ-8GB-256SSD-2GB-15.6FHD-W8.1\v2-78955-5_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\toshiba\TOSHIBA SATELLITE P50W CORE İ5 5200U 2.20GHZ-8GB-1TB-15.6FHD-INT-W8.1 NOTEBOOK\v2-78957-1_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\toshiba\TOSHIBA SATELLITE P50W CORE İ5 5200U 2.20GHZ-8GB-1TB-15.6FHD-INT-W8.1 NOTEBOOK\v2-78957-2_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\toshiba\TOSHIBA SATELLITE P50W CORE İ5 5200U 2.20GHZ-8GB-1TB-15.6FHD-INT-W8.1 NOTEBOOK\v2-78957-3_medium.jpg" />
+    <Content Include="Content\img\Bilgisayarlar\toshiba\TOSHIBA SATELLITE P50W CORE İ5 5200U 2.20GHZ-8GB-1TB-15.6FHD-INT-W8.1 NOTEBOOK\v2-78957-5_medium.jpg" />
+    <Content Include="Content\img\bkg_block_bottom.jpg" />
+    <Content Include="Content\img\bkg_blog_title.gif" />
+    <Content Include="Content\img\bkg_category.png" />
+    <Content Include="Content\img\bkg_menu.png" />
+    <Content Include="Content\img\bkg_slider_home.png" />
+    <Content Include="Content\img\bkg_std_testimo.jpg" />
+    <Content Include="Content\img\bkg_title.gif" />
+    <Content Include="Content\img\blog\1.jpg" />
+    <Content Include="Content\img\blog\2.jpg" />
+    <Content Include="Content\img\blog\3.jpg" />
+    <Content Include="Content\img\blog\4.jpg" />
+    <Content Include="Content\img\blog\author.jpg" />
+    <Content Include="Content\img\blog\avatar - Copy.jpg" />
+    <Content Include="Content\img\blog\avatar-2.jpg" />
+    <Content Include="Content\img\blog\avatar.jpg" />
+    <Content Include="Content\img\blog\blog-page\1.jpg" />
+    <Content Include="Content\img\blog\blog-page\2.jpg" />
+    <Content Include="Content\img\blog\blog-page\3.jpg" />
+    <Content Include="Content\img\blog\blog-page\bg_blog.jpg" />
+    <Content Include="Content\img\blog\home-3\1.jpg" />
+    <Content Include="Content\img\blog\home-3\2.jpg" />
+    <Content Include="Content\img\blog\home-3\3.jpg" />
+    <Content Include="Content\img\blog\home-3\4.jpg" />
+    <Content Include="Content\img\blog\recent-post\1.jpg" />
+    <Content Include="Content\img\blog\recent-post\2.jpg" />
+    <Content Include="Content\img\blog\recent-post\3.jpg" />
+    <Content Include="Content\img\blog\recent-post\4.jpg" />
+    <Content Include="Content\img\brand-logo\1.png" />
+    <Content Include="Content\img\brand-logo\2.png" />
+    <Content Include="Content\img\brand-logo\3.png" />
+    <Content Include="Content\img\brand-logo\4.png" />
+    <Content Include="Content\img\brand-logo\5.png" />
+    <Content Include="Content\img\categories1.jpg" />
+    <Content Include="Content\img\contact_bg.jpg" />
+    <Content Include="Content\img\en.png" />
+    <Content Include="Content\img\es.png" />
+    <Content Include="Content\img\favicon.ico" />
+    <Content Include="Content\img\fr.png" />
+    <Content Include="Content\img\free_shipping.png" />
+    <Content Include="Content\img\logo-2.png" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\map-marker.png" />
+    <Content Include="Content\img\money_back.png" />
+    <Content Include="Content\img\payment.png" />
+    <Content Include="Content\img\payment\discover.png" />
+    <Content Include="Content\img\payment\master.png" />
+    <Content Include="Content\img\payment\paypal.png" />
+    <Content Include="Content\img\payment\skrill.png" />
+    <Content Include="Content\img\payment\visa.png" />
+    <Content Include="Content\img\portfolio\1.jpg" />
+    <Content Include="Content\img\portfolio\10.jpg" />
+    <Content Include="Content\img\portfolio\11.jpg" />
+    <Content Include="Content\img\portfolio\12.jpg" />
+    <Content Include="Content\img\portfolio\13.jpg" />
+    <Content Include="Content\img\portfolio\2.jpg" />
+    <Content Include="Content\img\portfolio\3.jpg" />
+    <Content Include="Content\img\portfolio\4.jpg" />
+    <Content Include="Content\img\portfolio\5.jpg" />
+    <Content Include="Content\img\portfolio\6.jpg" />
+    <Content Include="Content\img\portfolio\7.jpg" />
+    <Content Include="Content\img\portfolio\8.jpg" />
+    <Content Include="Content\img\portfolio\9.jpg" />
+    <Content Include="Content\img\portfolio\portfolio-shadow.png" />
+    <Content Include="Content\img\portfolio\thumbs\1.jpg" />
+    <Content Include="Content\img\portfolio\thumbs\2.jpg" />
+    <Content Include="Content\img\portfolio\thumbs\3.jpg" />
+    <Content Include="Content\img\product\1.jpg" />
+    <Content Include="Content\img\product\10.jpg" />
+    <Content Include="Content\img\product\11.jpg" />
+    <Content Include="Content\img\product\12.jpg" />
+    <Content Include="Content\img\product\13.jpg" />
+    <Content Include="Content\img\product\14.jpg" />
+    <Content Include="Content\img\product\15.jpg" />
+    <Content Include="Content\img\product\16.jpg" />
+    <Content Include="Content\img\product\17.jpg" />
+    <Content Include="Content\img\product\18.jpg" />
+    <Content Include="Content\img\product\19.jpg" />
+    <Content Include="Content\img\product\2.jpg" />
+    <Content Include="Content\img\product\20.jpg" />
+    <Content Include="Content\img\product\21.jpg" />
+    <Content Include="Content\img\product\22.jpg" />
+    <Content Include="Content\img\product\23.jpg" />
+    <Content Include="Content\img\product\24.jpg" />
+    <Content Include="Content\img\product\25.jpg" />
+    <Content Include="Content\img\product\26.jpg" />
+    <Content Include="Content\img\product\27.jpg" />
+    <Content Include="Content\img\product\28.jpg" />
+    <Content Include="Content\img\product\29.jpg" />
+    <Content Include="Content\img\product\3.jpg" />
+    <Content Include="Content\img\product\30.jpg" />
+    <Content Include="Content\img\product\31.jpg" />
+    <Content Include="Content\img\product\32.jpg" />
+    <Content Include="Content\img\product\33.jpg" />
+    <Content Include="Content\img\product\34.jpg" />
+    <Content Include="Content\img\product\35.jpg" />
+    <Content Include="Content\img\product\36.jpg" />
+    <Content Include="Content\img\product\37.jpg" />
+    <Content Include="Content\img\product\38.jpg" />
+    <Content Include="Content\img\product\39.jpg" />
+    <Content Include="Content\img\product\4.jpg" />
+    <Content Include="Content\img\product\40.jpg" />
+    <Content Include="Content\img\product\41.jpg" />
+    <Content Include="Content\img\product\42.jpg" />
+    <Content Include="Content\img\product\43.jpg" />
+    <Content Include="Content\img\product\44.jpg" />
+    <Content Include="Content\img\product\46.jpg" />
+    <Content Include="Content\img\product\47.jpg" />
+    <Content Include="Content\img\product\48.jpg" />
+    <Content Include="Content\img\product\49.jpg" />
+    <Content Include="Content\img\product\5.jpg" />
+    <Content Include="Content\img\product\50.jpg" />
+    <Content Include="Content\img\product\51.jpg" />
+    <Content Include="Content\img\product\52.jpg" />
+    <Content Include="Content\img\product\53.jpg" />
+    <Content Include="Content\img\product\54.jpg" />
+    <Content Include="Content\img\product\6.jpg" />
+    <Content Include="Content\img\product\7.jpg" />
+    <Content Include="Content\img\product\8.jpg" />
+    <Content Include="Content\img\product\9.jpg" />
+    <Content Include="Content\img\product\product-details\full\1.jpg" />
+    <Content Include="Content\img\product\product-details\full\2.jpg" />
+    <Content Include="Content\img\product\product-details\full\3.jpg" />
+    <Content Include="Content\img\product\product-details\full\4.jpg" />
+    <Content Include="Content\img\product\product-details\thumnail\1.jpg" />
+    <Content Include="Content\img\product\product-details\thumnail\2.jpg" />
+    <Content Include="Content\img\product\product-details\thumnail\3.jpg" />
+    <Content Include="Content\img\product\product-details\thumnail\4.jpg" />
+    <Content Include="Content\img\product\product-details\thumnail\5.jpg" />
+    <Content Include="Content\img\product\product-details\thumnail\6.jpg" />
+    <Content Include="Content\img\product\product-details\thumnail\7.jpg" />
+    <Content Include="Content\img\product\product-details\thumnail\8.jpg" />
+    <Content Include="Content\img\product\product-details\thumnail\9.jpg" />
+    <Content Include="Content\img\product\pupolar-cat\kids.jpg" />
+    <Content Include="Content\img\product\pupolar-cat\laptop.png" />
+    <Content Include="Content\img\product\pupolar-cat\men.jpg" />
+    <Content Include="Content\img\product\pupolar-cat\phone.png" />
+    <Content Include="Content\img\product\pupolar-cat\teen.jpg" />
+    <Content Include="Content\img\product\pupolar-cat\women.jpg" />
+    <Content Include="Content\img\product\total-cart.jpg" />
+    <Content Include="Content\img\product\total-cart2.jpg" />
+    <Content Include="Content\img\slider\aksesuar1.jpg" />
+    <Content Include="Content\img\slider\aksesuar2.jpg" />
+    <Content Include="Content\img\slider\aksesuar3.jpg" />
+    <Content Include="Content\img\slider\dummy.png" />
+    <Content Include="Content\img\slider\home-10\1.jpg" />
+    <Content Include="Content\img\slider\home-10\2.jpg" />
+    <Content Include="Content\img\slider\home-2\1.jpg" />
+    <Content Include="Content\img\slider\home-2\2.jpg" />
+    <Content Include="Content\img\slider\home-3\1.jpg" />
+    <Content Include="Content\img\slider\home-3\2.jpg" />
+    <Content Include="Content\img\slider\home-5\1.jpg" />
+    <Content Include="Content\img\slider\home-5\2.jpg" />
+    <Content Include="Content\img\slider\home-6\1.jpg" />
+    <Content Include="Content\img\slider\home-6\2.jpg" />
+    <Content Include="Content\img\slider\home-8\1.jpg" />
+    <Content Include="Content\img\slider\home-8\2.jpg" />
+    <Content Include="Content\img\slider\home-9\1.jpg" />
+    <Content Include="Content\img\slider\home-9\2.jpg" />
+    <Content Include="Content\img\slider\slider-1.png" />
+    <Content Include="Content\img\slider\slider-2.png" />
+    <Content Include="Content\img\slider\televizyon1.jpg" />
+    <Content Include="Content\img\slider\televizyon2.jpg" />
+    <Content Include="Content\img\slider\transparent.png" />
+    <Content Include="Content\img\support.png" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone5s16gb\v2-69067-4_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone5s16gb\v2-69067-5_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone5s16gb\v2-69067-6_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone6s128gb\v2-79048-5_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone6s128gb\v2-79048-6_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone6s128gb\v2-79048-7_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone6s128gb\v2-79048-8_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone6splus128gb\v2-79060-5_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone6splus128gb\v2-79060-6_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone6splus128gb\v2-79060-7_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone6splus128gb\v2-79060-8_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone6splus64gb\v2-79056-5_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone6splus64gb\v2-79056-6_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone6splus64gb\v2-79056-7_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone6splus64gb\v2-79056-8_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone6splus\v2-79058-5_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone6splus\v2-79058-6_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone6splus\v2-79058-7_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone6splus\v2-79058-8_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone6s\v2-79043-5_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone6s\v2-79043-6_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone6s\v2-79043-7_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\apple\ıphone6s\v2-79043-8_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\casper\CASPER VIA V10 AKILLI TELEFON BEYAZ\v2-78887-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\casper\CASPER VIA V10 AKILLI TELEFON BEYAZ\v2-78887-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\casper\CASPER VIA V10 AKILLI TELEFON BEYAZ\v2-78887-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\casper\CASPER VIA V3 AKILLI TELEFON SİYAH\v2-79870-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\casper\CASPER VIA V3 AKILLI TELEFON SİYAH\v2-79870-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\casper\CASPER VIA V3 AKILLI TELEFON SİYAH\v2-79870-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\casper\CASPER VIA V3 AKILLI TELEFON SİYAH\v2-79870_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\casper\CASPER VIA V6X AKILLI TELEFON BEYAZ\v2-78801-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\casper\CASPER VIA V6X AKILLI TELEFON BEYAZ\v2-78801-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\casper\CASPER VIA V6X AKILLI TELEFON BEYAZ\v2-78801-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\casper\CASPER VIA V6X AKILLI TELEFON BEYAZ\v2-78801-4_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\casper\CASPER VIA V9 AKILLI TELEFON GOLD\v2-78362-6_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\casper\CASPER VIA V9 AKILLI TELEFON GOLD\v2-78362-7_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\casper\CASPER VIA V9 AKILLI TELEFON GOLD\v2-78362-8_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\casper\CASPER VIA V9 AKILLI TELEFON GOLD\v2-78362-9_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\casper\CASPER VIA V9 AKILLI TELEFON YEŞİL\v2-78638-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\casper\CASPER VIA V9 AKILLI TELEFON YEŞİL\v2-78638-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\casper\CASPER VIA V9 AKILLI TELEFON YEŞİL\v2-78638-4_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\casper\CASPER VIA V9 AKILLI TELEFON YEŞİL\v2-78638-5_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBILE 4G ANDROID ONE DUAL SIM\v2-78035-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBILE 4G ANDROID ONE DUAL SIM\v2-78035-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBILE 4G ANDROID ONE DUAL SIM\v2-78035-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBILE 4G ANDROID ONE DUAL SIM\v2-78035_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBILE DISCOVERY AIR BEYAZ\v2-76292-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBILE DISCOVERY AIR BEYAZ\v2-76292-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBILE DISCOVERY AIR BEYAZ\v2-76292-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBILE DISCOVERY AIR BEYAZ\v2-76292_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBILE DISCOVERY ELITE 32GB BEYAZ\v2-72321-12_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBILE DISCOVERY ELITE 32GB BEYAZ\v2-72321-13_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBILE DISCOVERY ELITE 32GB BEYAZ\v2-72321-14_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBİLE 16 GB DİSCOVERY BEYAZ\v2-69054-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBİLE 16 GB DİSCOVERY BEYAZ\v2-GM_DİSCOVERY_16_WH-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBİLE 16 GB DİSCOVERY BEYAZ\v2-GM_DİSCOVERY_16_WH_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBİLE DİSCOVERY 2 BEYAZ\v2-74799-5_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBİLE DİSCOVERY 2 BEYAZ\v2-74799-6_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBİLE DİSCOVERY 2 BEYAZ\v2-74799-7_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBİLE DİSCOVERY 2 MİNİ BEYAZ\v2-75112-6_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBİLE DİSCOVERY 2 MİNİ BEYAZ\v2-75112-8_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBİLE DİSCOVERY 2 MİNİ BEYAZ\v2-75112-9_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBİLE DİSCOVERY 2 PLUS BEYAZ\v2-76508-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBİLE DİSCOVERY 2 PLUS BEYAZ\v2-76508-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBİLE DİSCOVERY 2 PLUS BEYAZ\v2-76508-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\generalmobile\GENERAL MOBİLE DİSCOVERY 2 PLUS BEYAZ\v2-76508-4_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\htc\HTC DESIRE 728G ÇİFT SIM AKILLI TELEFON GRİ\v2-79882-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\htc\HTC DESIRE 728G ÇİFT SIM AKILLI TELEFON GRİ\v2-79882-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\htc\HTC DESIRE 728G ÇİFT SIM AKILLI TELEFON GRİ\v2-79882-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\htc\HTC DESIRE 728G ÇİFT SIM AKILLI TELEFON GRİ\v2-79882-4_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\htc\HTC DESIRE 816G BEYAZ AKILLI TELEFON\v2-78931-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\htc\HTC DESIRE 816G BEYAZ AKILLI TELEFON\v2-78931-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\htc\HTC DESIRE 816G BEYAZ AKILLI TELEFON\v2-78931-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\htc\HTC DESIRE 820 TURUNCU AKILLI TELEFON\v2-77499-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\htc\HTC DESIRE 820 TURUNCU AKILLI TELEFON\v2-77499-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\htc\HTC DESIRE 820 TURUNCU AKILLI TELEFON\v2-77499-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\htc\HTC DESIRE 820 TURUNCU AKILLI TELEFON\v2-77499_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\htc\HTC ONE A9 GRİ AKILLI TELEFON\v2-79433-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\htc\HTC ONE A9 GRİ AKILLI TELEFON\v2-79433-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\htc\HTC ONE A9 GRİ AKILLI TELEFON\v2-79433-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\htc\HTC ONE A9 GRİ AKILLI TELEFON\v2-79433-4_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\htc\HTC ONE M9 PLUS SILVER AKILLI TELEFON\v2-78468-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\htc\HTC ONE M9 PLUS SILVER AKILLI TELEFON\v2-78468-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\htc\HTC ONE M9 PLUS SILVER AKILLI TELEFON\v2-78468-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\htc\HTC ONE M9 PLUS SILVER AKILLI TELEFON\v2-78468_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\lenovo\LENOVO A7000 ÇİFT SIM AKILLI TELEFON BEYAZ\v2-79914-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\lenovo\LENOVO A7000 ÇİFT SIM AKILLI TELEFON BEYAZ\v2-79914-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\lenovo\LENOVO A7000 ÇİFT SIM AKILLI TELEFON BEYAZ\v2-79914-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\lenovo\LENOVO A7000 ÇİFT SIM AKILLI TELEFON BEYAZ\v2-79914_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\lenovo\LENOVO P70 AKILLI TELEFON LACİVERT\v2-78146-4_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\lenovo\LENOVO P70 AKILLI TELEFON LACİVERT\v2-78146-5_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\lenovo\LENOVO P70 AKILLI TELEFON LACİVERT\v2-78146-6_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\lenovo\LENOVO P70 AKILLI TELEFON LACİVERT\v2-78146-7_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\lenovo\LENOVO S580 AKILLI TELEFON SİYAH\v2-77687-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\lenovo\LENOVO S580 AKILLI TELEFON SİYAH\v2-77687-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\lenovo\LENOVO S580 AKILLI TELEFON SİYAH\v2-77687-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\lenovo\LENOVO S580 AKILLI TELEFON SİYAH\v2-77687_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\lenovo\LENOVO S90 AKILLI TELEFON GOLD\v2-78143-4_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\lenovo\LENOVO S90 AKILLI TELEFON GOLD\v2-78143-5_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\lenovo\LENOVO S90 AKILLI TELEFON GOLD\v2-78143-6_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\lenovo\LENOVO S90 AKILLI TELEFON GOLD\v2-78143-7_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\lenovo\LENOVO VIBE P1 AKILLI TELEFON GÜMÜŞ\v2-79622-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\lenovo\LENOVO VIBE P1 AKILLI TELEFON GÜMÜŞ\v2-79622-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\lenovo\LENOVO VIBE P1 AKILLI TELEFON GÜMÜŞ\v2-79622-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\lenovo\LENOVO VIBE SHOT Z90 AKILLI TELEFON SİYAH\v2-79450-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\lenovo\LENOVO VIBE SHOT Z90 AKILLI TELEFON SİYAH\v2-79450-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\lenovo\LENOVO VIBE SHOT Z90 AKILLI TELEFON SİYAH\v2-79450-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG G531 GRAND PRIME AKILLI TELEFON GRİ\v2-78493-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG G531 GRAND PRIME AKILLI TELEFON GRİ\v2-78493-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG G531 GRAND PRIME AKILLI TELEFON GRİ\v2-78493-4_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG G531 GRAND PRIME AKILLI TELEFON GRİ\v2-78493-5_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG G925 S6 EDGE 64 GB AKILLI TELEFON BEYAZ\v2-78505-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG G925 S6 EDGE 64 GB AKILLI TELEFON BEYAZ\v2-78505-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG G925 S6 EDGE 64 GB AKILLI TELEFON BEYAZ\v2-78505-4_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG G925 S6 EDGE 64 GB AKILLI TELEFON BEYAZ\v2-78505-5_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG GALAXY A5 GOLD AKILLI TELEFON\v2-78771-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG GALAXY A5 GOLD AKILLI TELEFON\v2-78771-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG GALAXY A5 GOLD AKILLI TELEFON\v2-78771-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG GALAXY A5 GOLD AKILLI TELEFON\v2-78771-4_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG GALAXY A8 AKILLI TELEFON GOLD\v2-79469-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG GALAXY A8 AKILLI TELEFON GOLD\v2-79469-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG GALAXY A8 AKILLI TELEFON GOLD\v2-79469-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG GALAXY A8 AKILLI TELEFON GOLD\v2-79469-5_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG GALAXY J2 SİYAH AKILLI TELEFON SAM_SM-J200FZKATUR\v2-79094-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG GALAXY J2 SİYAH AKILLI TELEFON SAM_SM-J200FZKATUR\v2-79094-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG GALAXY J2 SİYAH AKILLI TELEFON SAM_SM-J200FZKATUR\v2-79094-6_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG GALAXY J7 BEYAZ AKILLI TELEFON\v2-78433-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG GALAXY J7 BEYAZ AKILLI TELEFON\v2-78433-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG GALAXY J7 BEYAZ AKILLI TELEFON\v2-78433-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG GALAXY J7 BEYAZ AKILLI TELEFON\v2-78433-4_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG GALAXY NOTE 5\v2-78439-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG GALAXY NOTE 5\v2-78439-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG GALAXY NOTE 5\v2-78439-4_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\samsung\SAMSUNG GALAXY NOTE 5\v2-78439-5_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\sony\SONY XPERIA M4 AQUA AKILLI TELEFON GÜMÜŞ\v2-78211_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\sony\SONY XPERIA M5 AKILLI TELEFON BLACK\v2-79641-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\sony\SONY XPERIA M5 AKILLI TELEFON BLACK\v2-79641-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\sony\SONY XPERIA M5 AKILLI TELEFON BLACK\v2-79641-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\sony\SONY XPERIA M5 AKILLI TELEFON BLACK\v2-79641_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\sony\SONY XPERIA M5 AKILLI TELEFON GOLD\v2-79639-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\sony\SONY XPERIA M5 AKILLI TELEFON GOLD\v2-79639-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\sony\SONY XPERIA M5 AKILLI TELEFON GOLD\v2-79639-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\sony\SONY XPERIA M5 AKILLI TELEFON GOLD\v2-79639_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\sony\SONY XPERIA Z5 AKILLI TELEFON BEYAZ SONY_Z5_WH E6603TRW\v2-79518-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\sony\SONY XPERIA Z5 AKILLI TELEFON BEYAZ SONY_Z5_WH E6603TRW\v2-79518-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\sony\SONY XPERIA Z5 AKILLI TELEFON BEYAZ SONY_Z5_WH E6603TRW\v2-79518-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\sony\SONY XPERIA Z5 AKILLI TELEFON BEYAZ SONY_Z5_WH E6603TRW\v2-79518-4_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\sony\SONY XPERIA Z5 PREMIUM AKILLI TELEFON SİYAH\v2-79848-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\sony\SONY XPERIA Z5 PREMIUM AKILLI TELEFON SİYAH\v2-79848_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\sony\SONY Z5 COMPACT AKILLI TELEFON PEMBE\v2-79524-1_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\sony\SONY Z5 COMPACT AKILLI TELEFON PEMBE\v2-79524-2_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\sony\SONY Z5 COMPACT AKILLI TELEFON PEMBE\v2-79524-3_medium.jpg" />
+    <Content Include="Content\img\Telefonlar\sony\SONY Z5 COMPACT AKILLI TELEFON PEMBE\v2-79524-4_medium.jpg" />
+    <Content Include="Content\img\Televizyonlar\lg\LG 49UF8507 DVB-S2T2C 4K UHD 3D WEBOS SMART LED LCD TV + 2 GÖZLÜK\foto1.jpg" />
+    <Content Include="Content\img\Televizyonlar\lg\LG 49UF8507 DVB-S2T2C 4K UHD 3D WEBOS SMART LED LCD TV + 2 GÖZLÜK\foto2.jpg" />
+    <Content Include="Content\img\Televizyonlar\lg\LG 49UF8507 DVB-S2T2C 4K UHD 3D WEBOS SMART LED LCD TV + 2 GÖZLÜK\foto3.htm" />
+    <Content Include="Content\img\Televizyonlar\lg\LG 55UF7787 DVB-S2T2C 4K UHD WEBOS SMART LED LCD TV\foto1.jpg" />
+    <Content Include="Content\img\Televizyonlar\lg\LG 55UF7787 DVB-S2T2C 4K UHD WEBOS SMART LED LCD TV\foto2.jpg" />
+    <Content Include="Content\img\Televizyonlar\lg\LG 65EG960V DVB-S2T2C 4K UHD 3D WEBOS SMART CURVED OLED TV + 2 GÖZLÜK\foto1.jpg" />
+    <Content Include="Content\img\Televizyonlar\lg\LG 65EG960V DVB-S2T2C 4K UHD 3D WEBOS SMART CURVED OLED TV + 2 GÖZLÜK\foto2.jpg" />
+    <Content Include="Content\img\Televizyonlar\lg\LG 65EG960V DVB-S2T2C 4K UHD 3D WEBOS SMART CURVED OLED TV + 2 GÖZLÜK\foto3.jpg" />
+    <Content Include="Content\img\Televizyonlar\philips\PHILIPS 40PUK640012 DVB-S 4K UHD ANDROID SMART LED TV\foto1.jpg" />
+    <Content Include="Content\img\Televizyonlar\philips\PHILIPS 40PUK640012 DVB-S 4K UHD ANDROID SMART LED TV\foto2.jpg" />
+    <Content Include="Content\img\Televizyonlar\philips\PHILIPS 40PUK640012 DVB-S 4K UHD ANDROID SMART LED TV\foto3.jpg" />
+    <Content Include="Content\img\Televizyonlar\philips\PHILIPS 55PUK490012 4K Ultra HD LED TV , VALUE 130B PLAZMALCD TV SEHPASI\foto1.jpg" />
+    <Content Include="Content\img\Televizyonlar\philips\PHILIPS 65PUS760012 UHD LED TV\foto1.jpg" />
+    <Content Include="Content\img\Televizyonlar\philips\PHILIPS 65PUS760012 UHD LED TV\foto2.jpg" />
+    <Content Include="Content\img\Televizyonlar\samsung\SAMSUNG UE32J5373ASXTK FHD SMART LED TV\foto1.jpg" />
+    <Content Include="Content\img\Televizyonlar\samsung\SAMSUNG UE32J5373ASXTK FHD SMART LED TV\foto2.jpg" />
+    <Content Include="Content\img\Televizyonlar\samsung\SAMSUNG UE55JS9000TXTK CURVED SUHD 3D READY SMART%28TIZEN%29 DAHİLİ HD UYDU ALICILI NANOCRYSTAL LED TV\foto1.jpg" />
+    <Content Include="Content\img\Televizyonlar\samsung\SAMSUNG UE55JS9000TXTK CURVED SUHD 3D READY SMART%28TIZEN%29 DAHİLİ HD UYDU ALICILI NANOCRYSTAL LED TV\foto2.jpg" />
+    <Content Include="Content\img\Televizyonlar\samsung\SAMSUNG UE55JU6470UXTK UHD SMART%28TIZEN%29 DVB-S LED TV\foto1.jpg" />
+    <Content Include="Content\img\Televizyonlar\samsung\SAMSUNG UE55JU6470UXTK UHD SMART%28TIZEN%29 DVB-S LED TV\foto2.jpg" />
+    <Content Include="Content\img\Televizyonlar\vestel\VESTEL 40FA8100 FULL HD 3D SMART DVB-TCS2 LED TV + 2 GÖZLÜK\foto1.jpg" />
+    <Content Include="Content\img\Televizyonlar\vestel\VESTEL 43FA9000 FULL HD 3D SMART DVB-T2CS2 LED TV + 4 GÖZLÜK + 2 ÇİFTE EKRAN GÖZLÜĞÜ + AIR MOUSE\foto1.jpg" />
+    <Content Include="Content\img\Televizyonlar\vestel\VESTEL 43FA9000 FULL HD 3D SMART DVB-T2CS2 LED TV + 4 GÖZLÜK + 2 ÇİFTE EKRAN GÖZLÜĞÜ + AIR MOUSE\foto2.jpg" />
+    <Content Include="Content\img\Televizyonlar\vestel\VESTEL 48UA9300 4K ULTRA HD 3D SMART DVB-T2CS2 LED TV + 2 GÖZLÜK\foto1.jpg" />
+    <Content Include="Content\img\Televizyonlar\vestel\VESTEL 48UA9300 4K ULTRA HD 3D SMART DVB-T2CS2 LED TV + 2 GÖZLÜK\foto2.jpg" />
+    <Content Include="Content\img\wtabs-separator.png" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\fancybox\jquery.fancybox-media.js" />
+    <Content Include="Content\js\fancybox\jquery.fancybox-thumbs.js" />
+    <Content Include="Content\js\fancybox\jquery.fancybox.pack.js" />
+    <Content Include="Content\js\img-zoom\jquery.simpleLens.min.js" />
+    <Content Include="Content\js\jquery-ui.min.js" />
+    <Content Include="Content\js\jquery.appear.js" />
+    <Content Include="Content\js\jquery.bxslider.min.js" />
+    <Content Include="Content\js\jquery.collapse.js" />
+    <Content Include="Content\js\jquery.countdown.min.js" />
+    <Content Include="Content\js\jquery.counterup.min.js" />
+    <Content Include="Content\js\jquery.easing.1.3.min.js" />
+    <Content Include="Content\js\jquery.knob.js" />
+    <Content Include="Content\js\jquery.meanmenu.js" />
+    <Content Include="Content\js\jquery.mixitup.min.js" />
+    <Content Include="Content\js\jquery.scrollUp.min.js" />
+    <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\owl.carousel.min.js" />
+    <Content Include="Content\js\parallax.js" />
+    <Content Include="Content\js\plugins.js" />
+    <Content Include="Content\js\vendor\jquery-1.11.3.min.js" />
+    <Content Include="Content\js\vendor\modernizr-2.8.3.min.js" />
+    <Content Include="Content\js\waypoints.min.js" />
+    <Content Include="Content\js\wow.js" />
+    <Content Include="Content\lib\rs-plugin\assets\arrowleft.png" />
+    <Content Include="Content\lib\rs-plugin\assets\arrowright.png" />
+    <Content Include="Content\lib\rs-plugin\assets\arrow_large_left.png" />
+    <Content Include="Content\lib\rs-plugin\assets\arrow_large_right.png" />
+    <Content Include="Content\lib\rs-plugin\assets\arrow_left.png" />
+    <Content Include="Content\lib\rs-plugin\assets\arrow_left2.png" />
+    <Content Include="Content\lib\rs-plugin\assets\arrow_right.png" />
+    <Content Include="Content\lib\rs-plugin\assets\arrow_right2.png" />
+    <Content Include="Content\lib\rs-plugin\assets\black50.png" />
+    <Content Include="Content\lib\rs-plugin\assets\boxed_bgtile.png" />
+    <Content Include="Content\lib\rs-plugin\assets\bullet.png" />
+    <Content Include="Content\lib\rs-plugin\assets\bullets.png" />
+    <Content Include="Content\lib\rs-plugin\assets\bullets2.png" />
+    <Content Include="Content\lib\rs-plugin\assets\bullet_boxed.png" />
+    <Content Include="Content\lib\rs-plugin\assets\coloredbg.png" />
+    <Content Include="Content\lib\rs-plugin\assets\grain.png" />
+    <Content Include="Content\lib\rs-plugin\assets\gridtile.png" />
+    <Content Include="Content\lib\rs-plugin\assets\gridtile_3x3.png" />
+    <Content Include="Content\lib\rs-plugin\assets\gridtile_3x3_white.png" />
+    <Content Include="Content\lib\rs-plugin\assets\gridtile_white.png" />
+    <Content Include="Content\lib\rs-plugin\assets\large_left.png" />
+    <Content Include="Content\lib\rs-plugin\assets\large_right.png" />
+    <Content Include="Content\lib\rs-plugin\assets\loader.gif" />
+    <Content Include="Content\lib\rs-plugin\assets\loader2.gif" />
+    <Content Include="Content\lib\rs-plugin\assets\navigdots.png" />
+    <Content Include="Content\lib\rs-plugin\assets\navigdots_bgtile.png" />
+    <Content Include="Content\lib\rs-plugin\assets\shadow1.png" />
+    <Content Include="Content\lib\rs-plugin\assets\shadow2.png" />
+    <Content Include="Content\lib\rs-plugin\assets\shadow3.png" />
+    <Content Include="Content\lib\rs-plugin\assets\small_left.png" />
+    <Content Include="Content\lib\rs-plugin\assets\small_left_boxed.png" />
+    <Content Include="Content\lib\rs-plugin\assets\small_right.png" />
+    <Content Include="Content\lib\rs-plugin\assets\small_right_boxed.png" />
+    <Content Include="Content\lib\rs-plugin\assets\timer.png" />
+    <Content Include="Content\lib\rs-plugin\assets\timerdot.png" />
+    <Content Include="Content\lib\rs-plugin\assets\transparent.jpg" />
+    <Content Include="Content\lib\rs-plugin\assets\white50.png" />
+    <Content Include="Content\lib\rs-plugin\css\settings-ie8.css" />
+    <Content Include="Content\lib\rs-plugin\css\settings.css" />
+    <Content Include="Content\lib\rs-plugin\font\revicons.svg" />
+    <Content Include="Content\lib\rs-plugin\images\decor_inside.png" />
+    <Content Include="Content\lib\rs-plugin\images\decor_inside_white.png" />
+    <Content Include="Content\lib\rs-plugin\images\decor_testimonial.png" />
+    <Content Include="Content\lib\rs-plugin\images\gradient\g30.png" />
+    <Content Include="Content\lib\rs-plugin\images\gradient\g40.png" />
+    <Content Include="Content\lib\rs-plugin\js\jquery.themepunch.enablelog.js" />
+    <Content Include="Content\lib\rs-plugin\js\jquery.themepunch.revolution.js" />
+    <Content Include="Content\lib\rs-plugin\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="Content\lib\rs-plugin\js\jquery.themepunch.tools.min.js" />
+    <Content Include="Content\lib\rs-plugin\rs.home.js" />
+    <Content Include="Content\Slider\about-us1.jpg" />
+    <Content Include="Content\Slider\intel_2in1home2_banner21.jpg" />
+    <Content Include="Content\style.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="projectMVCDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>projectMVCDB.edmx</DependentUpon>
+      <LastGenOutput>projectMVCDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="projectMVCDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>projectMVCDB.edmx</DependentUpon>
+      <LastGenOutput>projectMVCDB.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\ai.0.15.0-build58334.js" />
+    <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Admin\Content\fonts\custom-ico-fonts\custom-ico-font.eot" />
+    <Content Include="Areas\Admin\Content\fonts\custom-ico-fonts\custom-ico-font.ttf" />
+    <Content Include="Areas\Admin\Content\fonts\custom-ico-fonts\custom-ico-font.woff" />
+    <Content Include="Areas\Admin\Content\fonts\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\Admin\Content\fonts\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\Admin\Content\fonts\fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\Admin\Content\fonts\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Admin\Content\fonts\less\bordered-pulled.less" />
+    <Content Include="Areas\Admin\Content\fonts\less\core.less" />
+    <Content Include="Areas\Admin\Content\fonts\less\fixed-width.less" />
+    <Content Include="Areas\Admin\Content\fonts\less\font-awesome.less" />
+    <Content Include="Areas\Admin\Content\fonts\less\icons.less" />
+    <Content Include="Areas\Admin\Content\fonts\less\larger.less" />
+    <Content Include="Areas\Admin\Content\fonts\less\list.less" />
+    <Content Include="Areas\Admin\Content\fonts\less\mixins.less" />
+    <Content Include="Areas\Admin\Content\fonts\less\path.less" />
+    <Content Include="Areas\Admin\Content\fonts\less\rotated-flipped.less" />
+    <Content Include="Areas\Admin\Content\fonts\less\spinning.less" />
+    <Content Include="Areas\Admin\Content\fonts\less\stacked.less" />
+    <Content Include="Areas\Admin\Content\fonts\less\variables.less" />
+    <Content Include="Areas\Admin\Content\fonts\scss\font-awesome.scss" />
+    <Content Include="Areas\Admin\Content\fonts\scss\_bordered-pulled.scss" />
+    <Content Include="Areas\Admin\Content\fonts\scss\_core.scss" />
+    <Content Include="Areas\Admin\Content\fonts\scss\_fixed-width.scss" />
+    <Content Include="Areas\Admin\Content\fonts\scss\_icons.scss" />
+    <Content Include="Areas\Admin\Content\fonts\scss\_larger.scss" />
+    <Content Include="Areas\Admin\Content\fonts\scss\_list.scss" />
+    <Content Include="Areas\Admin\Content\fonts\scss\_mixins.scss" />
+    <Content Include="Areas\Admin\Content\fonts\scss\_path.scss" />
+    <Content Include="Areas\Admin\Content\fonts\scss\_rotated-flipped.scss" />
+    <Content Include="Areas\Admin\Content\fonts\scss\_spinning.scss" />
+    <Content Include="Areas\Admin\Content\fonts\scss\_stacked.scss" />
+    <Content Include="Areas\Admin\Content\fonts\scss\_variables.scss" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-colorpicker\less\colorpicker.less" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datepicker\less\datepicker.less" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-daterangepicker\README.md" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datetimepicker\less\datetimepicker.less" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-timepicker\less\timepicker.less" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\CHANGES.md" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\LICENSE.md" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\scayt\README.md" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\plugins\wsc\README.md" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\README.md" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\assets\posteddata.php" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.fla" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\samples\sample_posteddata.php" />
+    <Content Include="Areas\Admin\Content\js\ckeditor\skins\moono\readme.md" />
+    <Content Include="Areas\Admin\Content\js\dropzone\css\stylus\basic.styl" />
+    <Content Include="Areas\Admin\Content\js\dropzone\css\stylus\dropzone.styl" />
+    <Content Include="Areas\Admin\Content\js\dropzone\upload.php" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\API.md" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\build.log" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\CONTRIBUTING.md" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\FAQ.md" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\Makefile" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\NEWS.md" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\PLUGINS.md" />
+    <Content Include="Areas\Admin\Content\js\flot-chart\README.md" />
+    <Content Include="Areas\Admin\Content\js\fuelux\COPYING" />
+    <Content Include="Areas\Admin\Content\js\fuelux\README.md" />
+    <Content Include="Areas\Admin\Content\js\google-map\.gitignore" />
+    <Content Include="Areas\Admin\Content\js\iCheck\README.md" />
+    <Content Include="Areas\Admin\Content\js\ion.rangeSlider-1.8.2\PSD\sprite-skin.psd" />
+    <Content Include="Areas\Admin\Content\js\jquery-multi-select\.gitignore" />
+    <Content Include="Areas\Admin\Content\js\jquery-tags-input\README.md" />
+    <Content Include="Areas\Admin\Content\js\morris-chart\.gitignore" />
+    <Content Include="Areas\Admin\Content\js\nestable\README.md" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\lib\rs-plugin\assets\arrows.psd" />
+    <Content Include="Content\lib\rs-plugin\assets\bullets.psd" />
+    <Content Include="Content\lib\rs-plugin\assets\small_arrows.psd" />
+    <Content Include="Content\lib\rs-plugin\font\revicons.eot" />
+    <Content Include="Content\lib\rs-plugin\font\revicons.ttf" />
+    <Content Include="Content\lib\rs-plugin\font\revicons.woff" />
+    <EntityDeploy Include="projectMVCDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>projectMVCDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="projectMVCDB.edmx.diagram">
+      <DependentUpon>projectMVCDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\anaKategori\AnaKategoriEkle.cshtml" />
+    <Content Include="Areas\Admin\Views\anaKategori\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\anaKategori\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\anaKategori\AnaKategoriListele.cshtml" />
+    <Content Include="Areas\Admin\Views\Kategori\kategoriListele.cshtml" />
+    <Content Include="Areas\Admin\Views\Kategori\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Kategori\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Kategori\kategoriEkle.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminHome\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Marka\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Marka\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Marka\markaEkle.cshtml" />
+    <Content Include="Areas\Admin\Views\Marka\markaListele.cshtml" />
+    <Content Include="Areas\Admin\Views\Rol\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Rol\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Rol\RolListele.cshtml" />
+    <Content Include="Areas\Admin\Views\Rol\RolKullaniciEkle.cshtml" />
+    <Content Include="Areas\Admin\Views\Rol\RolEkle.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Ekle.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Urunler\urunListele.cshtml" />
+    <Content Include="Areas\Admin\Views\Urunler\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Urunler\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Urunler\urunEkle.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\Lockout.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Content\img\adminler\photothumb.db" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\iletisim.cshtml" />
+    <Content Include="Views\Home\hakkimizda.cshtml" />
+    <Content Include="Views\Home\hesabim.cshtml" />
+    <Content Include="Views\YeniUrunler\yeniurun.cshtml" />
+    <Content Include="Views\YeniUrunler\kategoriListele.cshtml" />
+    <Content Include="Views\YeniUrunler\firsaturun.cshtml" />
+    <Content Include="Views\YeniUrunler\urunList.cshtml" />
+    <Content Include="Views\UrunDetay\urunDetay.cshtml" />
+    <Content Include="Views\Begendiklerim\Begendiklerim.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial2.cshtml" />
+    <Content Include="Views\Home\_slider.cshtml" />
+    <Content Include="Views\Home\banner.cshtml" />
+    <Content Include="Views\Sepetim\sepetim.cshtml" />
+    <Content Include="Views\Home\kayitol.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource\Home.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.en.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CustomToolNamespace>Resource</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Home.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CustomToolNamespace>Resource</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1471</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1471/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

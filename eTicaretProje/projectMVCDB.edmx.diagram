@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6e38b454391c479db838dadcfba80a19" Name="Diagram1">
+        <EntityTypeShape EntityType="EticaretDatabaseModel.ALISVERISSEPETI" Width="1.5" PointX="7.5" PointY="14.5" />
+        <EntityTypeShape EntityType="EticaretDatabaseModel.ANAKATEGORİ" Width="1.5" PointX="0.75" PointY="6.375" />
+        <EntityTypeShape EntityType="EticaretDatabaseModel.AspNetRoles" Width="1.5" PointX="9.75" PointY="11.5" />
+        <EntityTypeShape EntityType="EticaretDatabaseModel.AspNetUserClaims" Width="1.5" PointX="14.25" PointY="10" />
+        <EntityTypeShape EntityType="EticaretDatabaseModel.AspNetUserLogins" Width="1.5" PointX="14.25" PointY="12.75" />
+        <EntityTypeShape EntityType="EticaretDatabaseModel.AspNetUsers" Width="1.5" PointX="12" PointY="10.375" />
+        <EntityTypeShape EntityType="EticaretDatabaseModel.BANKALAR" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EticaretDatabaseModel.KAMPANYALAR" Width="1.5" PointX="7.5" PointY="11.625" />
+        <EntityTypeShape EntityType="EticaretDatabaseModel.KARGO" Width="1.5" PointX="5.25" PointY="2.125" />
+        <EntityTypeShape EntityType="EticaretDatabaseModel.KATEGORILER" Width="1.5" PointX="3" PointY="6.125" />
+        <EntityTypeShape EntityType="EticaretDatabaseModel.MARKALAR" Width="1.5" PointX="3" PointY="3.25" />
+        <EntityTypeShape EntityType="EticaretDatabaseModel.ODEMESECENEKLER" Width="1.5" PointX="5.25" PointY="10.625" />
+        <EntityTypeShape EntityType="EticaretDatabaseModel.OZELLIKDETAY" Width="1.5" PointX="10.5" PointY="6.125" />
+        <EntityTypeShape EntityType="EticaretDatabaseModel.SIPARISLER" Width="1.5" PointX="7.5" PointY="5.625" />
+        <EntityTypeShape EntityType="EticaretDatabaseModel.SLIDER" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="EticaretDatabaseModel.URUNLER" Width="1.5" PointX="5.25" PointY="5.125" />
+        <EntityTypeShape EntityType="EticaretDatabaseModel.URUNOZELLIKLER" Width="1.5" PointX="8.25" PointY="2.25" />
+        <AssociationConnector Association="EticaretDatabaseModel.FK_ALISVERISSEPETI_URUNLER" />
+        <AssociationConnector Association="EticaretDatabaseModel.FK_KATEGORİLER_ANAKATEGORİ" />
+        <AssociationConnector Association="EticaretDatabaseModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="EticaretDatabaseModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="EticaretDatabaseModel.FK_KAMPANYALAR_URUNLER" />
+        <AssociationConnector Association="EticaretDatabaseModel.FK_SIPARISLER_KARGO" />
+        <AssociationConnector Association="EticaretDatabaseModel.FK_URUNLER_KATEGORİLER" />
+        <AssociationConnector Association="EticaretDatabaseModel.FK_URUNLER_MARKALAR" />
+        <AssociationConnector Association="EticaretDatabaseModel.FK_SIPARISLER_ODEMESECENEKLER" />
+        <AssociationConnector Association="EticaretDatabaseModel.FK_OZELLIKDETAY_URUNLER" />
+        <AssociationConnector Association="EticaretDatabaseModel.FK_OZELLIKDETAY_URUNOZELLIKLER" />
+        <AssociationConnector Association="EticaretDatabaseModel.FK_SIPARISLER_URUNLER" />
+        <AssociationConnector Association="EticaretDatabaseModel.AspNetUserRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

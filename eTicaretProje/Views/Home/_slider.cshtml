@@ -1,0 +1,58 @@
+﻿
+@{
+    Layout = null;
+}
+@model List<eTicaretProje.SLIDER>
+
+<div class="slider-wrap">
+
+    <div class="fullwidthbanner-container">
+        <div class="fullwidthbanner-9">
+            <ul>
+                <!-- SLIDE  -->
+                @*<li data-index="rs-26"
+                    data-transition="random"
+                    data-slotamount="7"
+                    data-easein="default"
+                    data-easeout="default"
+                    data-rotate="0"
+                    data-saveperformance="off"></li>*@
+
+                <!-- MAIN IMAGE -->
+                @foreach (var item in Model)
+                {
+                    <li>
+                        @if (item.ResimYolu == null)
+                        {
+                            <img src="/Content/img/about-us1.jpg" alt="" />
+                        }
+                        else
+                        {
+                            <img src="@item.ResimYolu" style="height:100%; max-height:400px;" alt="Slide 1" />
+
+                        }
+                        @*<div class="slider-caption">
+                                <h2><a href="blog-single.html">@item.SliderText</a></h2>
+                                <p>@item.SliderText</p>
+                            </div>*@
+                    </li>
+                }
+                <!-- LAYERS -->
+                <!-- SLIDE  -->
+                @*<li data-index="rs-27"
+                    data-transition="random"
+                    data-slotamount="7"
+                    data-easein="default"
+                    data-easeout="default"
+                    data-rotate="0"
+                    data-saveperformance="off">*@
+                <!-- MAIN IMAGE -->
+                @*<img src="/Content/img/slider/home-9/2.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>*@
+                <!-- LAYERS -->
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    -
+</div>

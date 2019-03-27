@@ -1,0 +1,69 @@
+﻿
+@model eTicaretProje.ANAKATEGORİ
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+@*<h3>Silmek istiyor musunuz?</h3>
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.anakategoriID)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.anakategoriID)
+            </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.anakategoriAdi)
+            </dt>
+            <dt>
+                @Html.DisplayFor(model => model.anakategoriAdi)
+            </dt>
+
+
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                @Html.ActionLink("Evet", "DeleteConfirm", new { id = Model.anakategoriID })|@Html.ActionLink("Hayır", "slider")
+            </div>
+        }
+
+    </div>*@
+
+<h2>
+    Silmek istediğinize emin misiniz?
+</h2>
+<br />
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.anakategoriID) :
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.anakategoriID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.anakategoriAdi) :
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.anakategoriAdi)
+        </dd>
+
+
+    </dl>
+</div>
+<br />
+@Html.ActionLink("Evet", "DeleteConfirm", new { id = Model.anakategoriID })|@Html.ActionLink("Hayır", "AnakategoriListele")
+
+
+

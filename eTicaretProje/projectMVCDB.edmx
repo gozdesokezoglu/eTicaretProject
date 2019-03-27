@@ -1,0 +1,1059 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EticaretDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ALISVERISSEPETI">
+          <Key>
+            <PropertyRef Name="sepetID" />
+          </Key>
+          <Property Name="sepetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="urunID" Type="int" Nullable="false" />
+          <Property Name="kullaniciID" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ANAKATEGORİ">
+          <Key>
+            <PropertyRef Name="anakategoriID" />
+          </Key>
+          <Property Name="anakategoriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="anakategoriAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BANKALAR">
+          <Key>
+            <PropertyRef Name="bankaID" />
+          </Key>
+          <Property Name="bankaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bankaAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BankaLogoYol" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KAMPANYALAR">
+          <Key>
+            <PropertyRef Name="kampanyaID" />
+          </Key>
+          <Property Name="kampanyaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="urunID" Type="int" Nullable="false" />
+          <Property Name="indirimOrani" Type="smallint" Nullable="false" />
+          <Property Name="baslangicTarihi" Type="date" Nullable="false" />
+          <Property Name="bitisTarihi" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KARGO">
+          <Key>
+            <PropertyRef Name="kargoID" />
+          </Key>
+          <Property Name="kargoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kargoFirmaAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="kargoFirmaAciklama" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="KATEGORILER">
+          <Key>
+            <PropertyRef Name="kategoriID" />
+          </Key>
+          <Property Name="kategoriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kategoriAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="anaKategoriID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MARKALAR">
+          <Key>
+            <PropertyRef Name="markaID" />
+          </Key>
+          <Property Name="markaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="markaAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="MarkaResimYol" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ODEMESECENEKLER">
+          <Key>
+            <PropertyRef Name="odemeSecenekID" />
+          </Key>
+          <Property Name="odemeSecenekID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OdemeTip" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OZELLIKDETAY">
+          <Key>
+            <PropertyRef Name="ozellikDetayID" />
+          </Key>
+          <Property Name="ozellikDetayID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ozellikID" Type="int" Nullable="false" />
+          <Property Name="urunID" Type="int" Nullable="false" />
+          <Property Name="ozellikDetayi" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SIPARISLER">
+          <Key>
+            <PropertyRef Name="siparisID" />
+          </Key>
+          <Property Name="siparisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="urunID" Type="int" Nullable="false" />
+          <Property Name="siparisDurum" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="odemeSecekenleriID" Type="int" Nullable="false" />
+          <Property Name="siparisTarihi" Type="date" Nullable="false" />
+          <Property Name="kargoID" Type="int" Nullable="false" />
+          <Property Name="kargoNo" Type="nvarchar" MaxLength="250" />
+          <Property Name="TeslimTarihi" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SLIDER">
+          <Key>
+            <PropertyRef Name="SliderID" />
+          </Key>
+          <Property Name="SliderID" Type="int" Nullable="false" />
+          <Property Name="SliderText" Type="nvarchar(max)" />
+          <Property Name="ResimYolu" Type="nvarchar(max)" />
+          <Property Name="BaslangicTarihi" Type="datetime" />
+          <Property Name="BitisTarihi" Type="datetime" />
+        </EntityType>
+        <EntityType Name="URUNLER">
+          <Key>
+            <PropertyRef Name="urunID" />
+          </Key>
+          <Property Name="urunID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kategoriID" Type="int" Nullable="false" />
+          <Property Name="markaID" Type="int" Nullable="false" />
+          <Property Name="UrunAdi" Type="nvarchar(max)" />
+          <Property Name="urunAciklama" Type="nvarchar(max)" />
+          <Property Name="urunFiyat" Type="money" />
+          <Property Name="urunAlisFiyati" Type="money" />
+          <Property Name="urunResimYol" Type="nvarchar" MaxLength="250" />
+          <Property Name="BaslangicTarihi" Type="datetime" />
+          <Property Name="BitisTarihi" Type="datetime" />
+        </EntityType>
+        <EntityType Name="URUNOZELLIKLER">
+          <Key>
+            <PropertyRef Name="ozellikID" />
+          </Key>
+          <Property Name="ozellikID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ozellikAd" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="anakategoriID" Type="int" />
+        </EntityType>
+        <Association Name="FK_ALISVERISSEPETI_URUNLER">
+          <End Role="URUNLER" Type="Self.URUNLER" Multiplicity="1" />
+          <End Role="ALISVERISSEPETI" Type="Self.ALISVERISSEPETI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="URUNLER">
+              <PropertyRef Name="urunID" />
+            </Principal>
+            <Dependent Role="ALISVERISSEPETI">
+              <PropertyRef Name="urunID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KAMPANYALAR_URUNLER">
+          <End Role="URUNLER" Type="Self.URUNLER" Multiplicity="1" />
+          <End Role="KAMPANYALAR" Type="Self.KAMPANYALAR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="URUNLER">
+              <PropertyRef Name="urunID" />
+            </Principal>
+            <Dependent Role="KAMPANYALAR">
+              <PropertyRef Name="urunID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KATEGORİLER_ANAKATEGORİ">
+          <End Role="ANAKATEGORİ" Type="Self.ANAKATEGORİ" Multiplicity="1" />
+          <End Role="KATEGORILER" Type="Self.KATEGORILER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ANAKATEGORİ">
+              <PropertyRef Name="anakategoriID" />
+            </Principal>
+            <Dependent Role="KATEGORILER">
+              <PropertyRef Name="anaKategoriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OZELLIKDETAY_URUNLER">
+          <End Role="URUNLER" Type="Self.URUNLER" Multiplicity="1" />
+          <End Role="OZELLIKDETAY" Type="Self.OZELLIKDETAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="URUNLER">
+              <PropertyRef Name="urunID" />
+            </Principal>
+            <Dependent Role="OZELLIKDETAY">
+              <PropertyRef Name="urunID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OZELLIKDETAY_URUNOZELLIKLER">
+          <End Role="URUNOZELLIKLER" Type="Self.URUNOZELLIKLER" Multiplicity="1" />
+          <End Role="OZELLIKDETAY" Type="Self.OZELLIKDETAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="URUNOZELLIKLER">
+              <PropertyRef Name="ozellikID" />
+            </Principal>
+            <Dependent Role="OZELLIKDETAY">
+              <PropertyRef Name="ozellikID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SIPARISLER_KARGO">
+          <End Role="KARGO" Type="Self.KARGO" Multiplicity="1" />
+          <End Role="SIPARISLER" Type="Self.SIPARISLER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KARGO">
+              <PropertyRef Name="kargoID" />
+            </Principal>
+            <Dependent Role="SIPARISLER">
+              <PropertyRef Name="kargoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SIPARISLER_ODEMESECENEKLER">
+          <End Role="ODEMESECENEKLER" Type="Self.ODEMESECENEKLER" Multiplicity="1" />
+          <End Role="SIPARISLER" Type="Self.SIPARISLER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ODEMESECENEKLER">
+              <PropertyRef Name="odemeSecenekID" />
+            </Principal>
+            <Dependent Role="SIPARISLER">
+              <PropertyRef Name="odemeSecekenleriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SIPARISLER_URUNLER">
+          <End Role="URUNLER" Type="Self.URUNLER" Multiplicity="1" />
+          <End Role="SIPARISLER" Type="Self.SIPARISLER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="URUNLER">
+              <PropertyRef Name="urunID" />
+            </Principal>
+            <Dependent Role="SIPARISLER">
+              <PropertyRef Name="urunID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_URUNLER_KATEGORİLER">
+          <End Role="KATEGORILER" Type="Self.KATEGORILER" Multiplicity="1" />
+          <End Role="URUNLER" Type="Self.URUNLER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KATEGORILER">
+              <PropertyRef Name="kategoriID" />
+            </Principal>
+            <Dependent Role="URUNLER">
+              <PropertyRef Name="kategoriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_URUNLER_MARKALAR">
+          <End Role="MARKALAR" Type="Self.MARKALAR" Multiplicity="1" />
+          <End Role="URUNLER" Type="Self.URUNLER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MARKALAR">
+              <PropertyRef Name="markaID" />
+            </Principal>
+            <Dependent Role="URUNLER">
+              <PropertyRef Name="markaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EticaretDatabaseModelStoreContainer">
+          <EntitySet Name="ALISVERISSEPETI" EntityType="Self.ALISVERISSEPETI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ANAKATEGORİ" EntityType="Self.ANAKATEGORİ" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BANKALAR" EntityType="Self.BANKALAR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KAMPANYALAR" EntityType="Self.KAMPANYALAR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KARGO" EntityType="Self.KARGO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KATEGORILER" EntityType="Self.KATEGORILER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MARKALAR" EntityType="Self.MARKALAR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ODEMESECENEKLER" EntityType="Self.ODEMESECENEKLER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OZELLIKDETAY" EntityType="Self.OZELLIKDETAY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SIPARISLER" EntityType="Self.SIPARISLER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SLIDER" EntityType="Self.SLIDER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="URUNLER" EntityType="Self.URUNLER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="URUNOZELLIKLER" EntityType="Self.URUNOZELLIKLER" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ALISVERISSEPETI_URUNLER" Association="Self.FK_ALISVERISSEPETI_URUNLER">
+            <End Role="URUNLER" EntitySet="URUNLER" />
+            <End Role="ALISVERISSEPETI" EntitySet="ALISVERISSEPETI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KAMPANYALAR_URUNLER" Association="Self.FK_KAMPANYALAR_URUNLER">
+            <End Role="URUNLER" EntitySet="URUNLER" />
+            <End Role="KAMPANYALAR" EntitySet="KAMPANYALAR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KATEGORİLER_ANAKATEGORİ" Association="Self.FK_KATEGORİLER_ANAKATEGORİ">
+            <End Role="ANAKATEGORİ" EntitySet="ANAKATEGORİ" />
+            <End Role="KATEGORILER" EntitySet="KATEGORILER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OZELLIKDETAY_URUNLER" Association="Self.FK_OZELLIKDETAY_URUNLER">
+            <End Role="URUNLER" EntitySet="URUNLER" />
+            <End Role="OZELLIKDETAY" EntitySet="OZELLIKDETAY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OZELLIKDETAY_URUNOZELLIKLER" Association="Self.FK_OZELLIKDETAY_URUNOZELLIKLER">
+            <End Role="URUNOZELLIKLER" EntitySet="URUNOZELLIKLER" />
+            <End Role="OZELLIKDETAY" EntitySet="OZELLIKDETAY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SIPARISLER_KARGO" Association="Self.FK_SIPARISLER_KARGO">
+            <End Role="KARGO" EntitySet="KARGO" />
+            <End Role="SIPARISLER" EntitySet="SIPARISLER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SIPARISLER_ODEMESECENEKLER" Association="Self.FK_SIPARISLER_ODEMESECENEKLER">
+            <End Role="ODEMESECENEKLER" EntitySet="ODEMESECENEKLER" />
+            <End Role="SIPARISLER" EntitySet="SIPARISLER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SIPARISLER_URUNLER" Association="Self.FK_SIPARISLER_URUNLER">
+            <End Role="URUNLER" EntitySet="URUNLER" />
+            <End Role="SIPARISLER" EntitySet="SIPARISLER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_URUNLER_KATEGORİLER" Association="Self.FK_URUNLER_KATEGORİLER">
+            <End Role="KATEGORILER" EntitySet="KATEGORILER" />
+            <End Role="URUNLER" EntitySet="URUNLER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_URUNLER_MARKALAR" Association="Self.FK_URUNLER_MARKALAR">
+            <End Role="MARKALAR" EntitySet="MARKALAR" />
+            <End Role="URUNLER" EntitySet="URUNLER" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EticaretDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="projectMVCDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ALISVERISSEPETI" EntityType="EticaretDatabaseModel.ALISVERISSEPETI" />
+          <EntitySet Name="ANAKATEGORİ" EntityType="EticaretDatabaseModel.ANAKATEGORİ" />
+          <EntitySet Name="AspNetRoles" EntityType="EticaretDatabaseModel.AspNetRoles" />
+          <EntitySet Name="AspNetUserClaims" EntityType="EticaretDatabaseModel.AspNetUserClaims" />
+          <EntitySet Name="AspNetUserLogins" EntityType="EticaretDatabaseModel.AspNetUserLogins" />
+          <EntitySet Name="AspNetUsers" EntityType="EticaretDatabaseModel.AspNetUsers" />
+          <EntitySet Name="BANKALAR" EntityType="EticaretDatabaseModel.BANKALAR" />
+          <EntitySet Name="KAMPANYALAR" EntityType="EticaretDatabaseModel.KAMPANYALAR" />
+          <EntitySet Name="KARGO" EntityType="EticaretDatabaseModel.KARGO" />
+          <EntitySet Name="KATEGORILER" EntityType="EticaretDatabaseModel.KATEGORILER" />
+          <EntitySet Name="MARKALAR" EntityType="EticaretDatabaseModel.MARKALAR" />
+          <EntitySet Name="ODEMESECENEKLER" EntityType="EticaretDatabaseModel.ODEMESECENEKLER" />
+          <EntitySet Name="OZELLIKDETAY" EntityType="EticaretDatabaseModel.OZELLIKDETAY" />
+          <EntitySet Name="SIPARISLER" EntityType="EticaretDatabaseModel.SIPARISLER" />
+          <EntitySet Name="SLIDER" EntityType="EticaretDatabaseModel.SLIDER" />
+          <EntitySet Name="URUNLER" EntityType="EticaretDatabaseModel.URUNLER" />
+          <EntitySet Name="URUNOZELLIKLER" EntityType="EticaretDatabaseModel.URUNOZELLIKLER" />
+          <AssociationSet Name="FK_ALISVERISSEPETI_URUNLER" Association="EticaretDatabaseModel.FK_ALISVERISSEPETI_URUNLER">
+            <End Role="URUNLER" EntitySet="URUNLER" />
+            <End Role="ALISVERISSEPETI" EntitySet="ALISVERISSEPETI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KATEGORİLER_ANAKATEGORİ" Association="EticaretDatabaseModel.FK_KATEGORİLER_ANAKATEGORİ">
+            <End Role="ANAKATEGORİ" EntitySet="ANAKATEGORİ" />
+            <End Role="KATEGORILER" EntitySet="KATEGORILER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="EticaretDatabaseModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="EticaretDatabaseModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KAMPANYALAR_URUNLER" Association="EticaretDatabaseModel.FK_KAMPANYALAR_URUNLER">
+            <End Role="URUNLER" EntitySet="URUNLER" />
+            <End Role="KAMPANYALAR" EntitySet="KAMPANYALAR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SIPARISLER_KARGO" Association="EticaretDatabaseModel.FK_SIPARISLER_KARGO">
+            <End Role="KARGO" EntitySet="KARGO" />
+            <End Role="SIPARISLER" EntitySet="SIPARISLER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_URUNLER_KATEGORİLER" Association="EticaretDatabaseModel.FK_URUNLER_KATEGORİLER">
+            <End Role="KATEGORILER" EntitySet="KATEGORILER" />
+            <End Role="URUNLER" EntitySet="URUNLER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_URUNLER_MARKALAR" Association="EticaretDatabaseModel.FK_URUNLER_MARKALAR">
+            <End Role="MARKALAR" EntitySet="MARKALAR" />
+            <End Role="URUNLER" EntitySet="URUNLER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SIPARISLER_ODEMESECENEKLER" Association="EticaretDatabaseModel.FK_SIPARISLER_ODEMESECENEKLER">
+            <End Role="ODEMESECENEKLER" EntitySet="ODEMESECENEKLER" />
+            <End Role="SIPARISLER" EntitySet="SIPARISLER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OZELLIKDETAY_URUNLER" Association="EticaretDatabaseModel.FK_OZELLIKDETAY_URUNLER">
+            <End Role="URUNLER" EntitySet="URUNLER" />
+            <End Role="OZELLIKDETAY" EntitySet="OZELLIKDETAY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OZELLIKDETAY_URUNOZELLIKLER" Association="EticaretDatabaseModel.FK_OZELLIKDETAY_URUNOZELLIKLER">
+            <End Role="URUNOZELLIKLER" EntitySet="URUNOZELLIKLER" />
+            <End Role="OZELLIKDETAY" EntitySet="OZELLIKDETAY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SIPARISLER_URUNLER" Association="EticaretDatabaseModel.FK_SIPARISLER_URUNLER">
+            <End Role="URUNLER" EntitySet="URUNLER" />
+            <End Role="SIPARISLER" EntitySet="SIPARISLER" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="EticaretDatabaseModel.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ALISVERISSEPETI">
+          <Key>
+            <PropertyRef Name="sepetID" />
+          </Key>
+          <Property Name="sepetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="urunID" Type="Int32" Nullable="false" />
+          <Property Name="kullaniciID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="URUNLER" Relationship="EticaretDatabaseModel.FK_ALISVERISSEPETI_URUNLER" FromRole="ALISVERISSEPETI" ToRole="URUNLER" />
+        </EntityType>
+        <EntityType Name="ANAKATEGORİ">
+          <Key>
+            <PropertyRef Name="anakategoriID" />
+          </Key>
+          <Property Name="anakategoriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="anakategoriAdi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KATEGORILER" Relationship="EticaretDatabaseModel.FK_KATEGORİLER_ANAKATEGORİ" FromRole="ANAKATEGORİ" ToRole="KATEGORILER" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="EticaretDatabaseModel.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="EticaretDatabaseModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="EticaretDatabaseModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="EticaretDatabaseModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="EticaretDatabaseModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="AspNetRoles" Relationship="EticaretDatabaseModel.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="BANKALAR">
+          <Key>
+            <PropertyRef Name="bankaID" />
+          </Key>
+          <Property Name="bankaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bankaAdi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BankaLogoYol" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KAMPANYALAR">
+          <Key>
+            <PropertyRef Name="kampanyaID" />
+          </Key>
+          <Property Name="kampanyaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="urunID" Type="Int32" Nullable="false" />
+          <Property Name="indirimOrani" Type="Int16" Nullable="false" />
+          <Property Name="baslangicTarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="bitisTarihi" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="URUNLER" Relationship="EticaretDatabaseModel.FK_KAMPANYALAR_URUNLER" FromRole="KAMPANYALAR" ToRole="URUNLER" />
+        </EntityType>
+        <EntityType Name="KARGO">
+          <Key>
+            <PropertyRef Name="kargoID" />
+          </Key>
+          <Property Name="kargoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kargoFirmaAdi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kargoFirmaAciklama" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SIPARISLER" Relationship="EticaretDatabaseModel.FK_SIPARISLER_KARGO" FromRole="KARGO" ToRole="SIPARISLER" />
+        </EntityType>
+        <EntityType Name="KATEGORILER">
+          <Key>
+            <PropertyRef Name="kategoriID" />
+          </Key>
+          <Property Name="kategoriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kategoriAdi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="anaKategoriID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ANAKATEGORİ" Relationship="EticaretDatabaseModel.FK_KATEGORİLER_ANAKATEGORİ" FromRole="KATEGORILER" ToRole="ANAKATEGORİ" />
+          <NavigationProperty Name="URUNLER" Relationship="EticaretDatabaseModel.FK_URUNLER_KATEGORİLER" FromRole="KATEGORILER" ToRole="URUNLER" />
+        </EntityType>
+        <EntityType Name="MARKALAR">
+          <Key>
+            <PropertyRef Name="markaID" />
+          </Key>
+          <Property Name="markaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="markaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MarkaResimYol" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="URUNLER" Relationship="EticaretDatabaseModel.FK_URUNLER_MARKALAR" FromRole="MARKALAR" ToRole="URUNLER" />
+        </EntityType>
+        <EntityType Name="ODEMESECENEKLER">
+          <Key>
+            <PropertyRef Name="odemeSecenekID" />
+          </Key>
+          <Property Name="odemeSecenekID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OdemeTip" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SIPARISLER" Relationship="EticaretDatabaseModel.FK_SIPARISLER_ODEMESECENEKLER" FromRole="ODEMESECENEKLER" ToRole="SIPARISLER" />
+        </EntityType>
+        <EntityType Name="OZELLIKDETAY">
+          <Key>
+            <PropertyRef Name="ozellikDetayID" />
+          </Key>
+          <Property Name="ozellikDetayID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ozellikID" Type="Int32" Nullable="false" />
+          <Property Name="urunID" Type="Int32" Nullable="false" />
+          <Property Name="ozellikDetayi" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="URUNLER" Relationship="EticaretDatabaseModel.FK_OZELLIKDETAY_URUNLER" FromRole="OZELLIKDETAY" ToRole="URUNLER" />
+          <NavigationProperty Name="URUNOZELLIKLER" Relationship="EticaretDatabaseModel.FK_OZELLIKDETAY_URUNOZELLIKLER" FromRole="OZELLIKDETAY" ToRole="URUNOZELLIKLER" />
+        </EntityType>
+        <EntityType Name="SIPARISLER">
+          <Key>
+            <PropertyRef Name="siparisID" />
+          </Key>
+          <Property Name="siparisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="urunID" Type="Int32" Nullable="false" />
+          <Property Name="siparisDurum" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="odemeSecekenleriID" Type="Int32" Nullable="false" />
+          <Property Name="siparisTarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="kargoID" Type="Int32" Nullable="false" />
+          <Property Name="kargoNo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TeslimTarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="KARGO" Relationship="EticaretDatabaseModel.FK_SIPARISLER_KARGO" FromRole="SIPARISLER" ToRole="KARGO" />
+          <NavigationProperty Name="ODEMESECENEKLER" Relationship="EticaretDatabaseModel.FK_SIPARISLER_ODEMESECENEKLER" FromRole="SIPARISLER" ToRole="ODEMESECENEKLER" />
+          <NavigationProperty Name="URUNLER" Relationship="EticaretDatabaseModel.FK_SIPARISLER_URUNLER" FromRole="SIPARISLER" ToRole="URUNLER" />
+        </EntityType>
+        <EntityType Name="SLIDER">
+          <Key>
+            <PropertyRef Name="SliderID" />
+          </Key>
+          <Property Name="SliderID" Type="Int32" Nullable="false" />
+          <Property Name="SliderText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ResimYolu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BaslangicTarihi" Type="DateTime" Precision="3" />
+          <Property Name="BitisTarihi" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="URUNLER">
+          <Key>
+            <PropertyRef Name="urunID" />
+          </Key>
+          <Property Name="urunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kategoriID" Type="Int32" Nullable="false" />
+          <Property Name="markaID" Type="Int32" Nullable="false" />
+          <Property Name="UrunAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="urunAciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="urunFiyat" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="urunAlisFiyati" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="urunResimYol" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="BaslangicTarihi" Type="DateTime" Precision="3" />
+          <Property Name="BitisTarihi" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ALISVERISSEPETI" Relationship="EticaretDatabaseModel.FK_ALISVERISSEPETI_URUNLER" FromRole="URUNLER" ToRole="ALISVERISSEPETI" />
+          <NavigationProperty Name="KAMPANYALAR" Relationship="EticaretDatabaseModel.FK_KAMPANYALAR_URUNLER" FromRole="URUNLER" ToRole="KAMPANYALAR" />
+          <NavigationProperty Name="KATEGORILER" Relationship="EticaretDatabaseModel.FK_URUNLER_KATEGORİLER" FromRole="URUNLER" ToRole="KATEGORILER" />
+          <NavigationProperty Name="MARKALAR" Relationship="EticaretDatabaseModel.FK_URUNLER_MARKALAR" FromRole="URUNLER" ToRole="MARKALAR" />
+          <NavigationProperty Name="OZELLIKDETAY" Relationship="EticaretDatabaseModel.FK_OZELLIKDETAY_URUNLER" FromRole="URUNLER" ToRole="OZELLIKDETAY" />
+          <NavigationProperty Name="SIPARISLER" Relationship="EticaretDatabaseModel.FK_SIPARISLER_URUNLER" FromRole="URUNLER" ToRole="SIPARISLER" />
+        </EntityType>
+        <EntityType Name="URUNOZELLIKLER">
+          <Key>
+            <PropertyRef Name="ozellikID" />
+          </Key>
+          <Property Name="ozellikID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ozellikAd" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="anakategoriID" Type="Int32" />
+          <NavigationProperty Name="OZELLIKDETAY" Relationship="EticaretDatabaseModel.FK_OZELLIKDETAY_URUNOZELLIKLER" FromRole="URUNOZELLIKLER" ToRole="OZELLIKDETAY" />
+        </EntityType>
+        <Association Name="FK_ALISVERISSEPETI_URUNLER">
+          <End Type="EticaretDatabaseModel.URUNLER" Role="URUNLER" Multiplicity="1" />
+          <End Type="EticaretDatabaseModel.ALISVERISSEPETI" Role="ALISVERISSEPETI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="URUNLER">
+              <PropertyRef Name="urunID" />
+            </Principal>
+            <Dependent Role="ALISVERISSEPETI">
+              <PropertyRef Name="urunID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KATEGORİLER_ANAKATEGORİ">
+          <End Type="EticaretDatabaseModel.ANAKATEGORİ" Role="ANAKATEGORİ" Multiplicity="1" />
+          <End Type="EticaretDatabaseModel.KATEGORILER" Role="KATEGORILER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ANAKATEGORİ">
+              <PropertyRef Name="anakategoriID" />
+            </Principal>
+            <Dependent Role="KATEGORILER">
+              <PropertyRef Name="anaKategoriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Type="EticaretDatabaseModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="EticaretDatabaseModel.AspNetUserClaims" Role="AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Type="EticaretDatabaseModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="EticaretDatabaseModel.AspNetUserLogins" Role="AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KAMPANYALAR_URUNLER">
+          <End Type="EticaretDatabaseModel.URUNLER" Role="URUNLER" Multiplicity="1" />
+          <End Type="EticaretDatabaseModel.KAMPANYALAR" Role="KAMPANYALAR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="URUNLER">
+              <PropertyRef Name="urunID" />
+            </Principal>
+            <Dependent Role="KAMPANYALAR">
+              <PropertyRef Name="urunID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SIPARISLER_KARGO">
+          <End Type="EticaretDatabaseModel.KARGO" Role="KARGO" Multiplicity="1" />
+          <End Type="EticaretDatabaseModel.SIPARISLER" Role="SIPARISLER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KARGO">
+              <PropertyRef Name="kargoID" />
+            </Principal>
+            <Dependent Role="SIPARISLER">
+              <PropertyRef Name="kargoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_URUNLER_KATEGORİLER">
+          <End Type="EticaretDatabaseModel.KATEGORILER" Role="KATEGORILER" Multiplicity="1" />
+          <End Type="EticaretDatabaseModel.URUNLER" Role="URUNLER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KATEGORILER">
+              <PropertyRef Name="kategoriID" />
+            </Principal>
+            <Dependent Role="URUNLER">
+              <PropertyRef Name="kategoriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_URUNLER_MARKALAR">
+          <End Type="EticaretDatabaseModel.MARKALAR" Role="MARKALAR" Multiplicity="1" />
+          <End Type="EticaretDatabaseModel.URUNLER" Role="URUNLER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MARKALAR">
+              <PropertyRef Name="markaID" />
+            </Principal>
+            <Dependent Role="URUNLER">
+              <PropertyRef Name="markaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SIPARISLER_ODEMESECENEKLER">
+          <End Type="EticaretDatabaseModel.ODEMESECENEKLER" Role="ODEMESECENEKLER" Multiplicity="1" />
+          <End Type="EticaretDatabaseModel.SIPARISLER" Role="SIPARISLER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ODEMESECENEKLER">
+              <PropertyRef Name="odemeSecenekID" />
+            </Principal>
+            <Dependent Role="SIPARISLER">
+              <PropertyRef Name="odemeSecekenleriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OZELLIKDETAY_URUNLER">
+          <End Type="EticaretDatabaseModel.URUNLER" Role="URUNLER" Multiplicity="1" />
+          <End Type="EticaretDatabaseModel.OZELLIKDETAY" Role="OZELLIKDETAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="URUNLER">
+              <PropertyRef Name="urunID" />
+            </Principal>
+            <Dependent Role="OZELLIKDETAY">
+              <PropertyRef Name="urunID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OZELLIKDETAY_URUNOZELLIKLER">
+          <End Type="EticaretDatabaseModel.URUNOZELLIKLER" Role="URUNOZELLIKLER" Multiplicity="1" />
+          <End Type="EticaretDatabaseModel.OZELLIKDETAY" Role="OZELLIKDETAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="URUNOZELLIKLER">
+              <PropertyRef Name="ozellikID" />
+            </Principal>
+            <Dependent Role="OZELLIKDETAY">
+              <PropertyRef Name="ozellikID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SIPARISLER_URUNLER">
+          <End Type="EticaretDatabaseModel.URUNLER" Role="URUNLER" Multiplicity="1" />
+          <End Type="EticaretDatabaseModel.SIPARISLER" Role="SIPARISLER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="URUNLER">
+              <PropertyRef Name="urunID" />
+            </Principal>
+            <Dependent Role="SIPARISLER">
+              <PropertyRef Name="urunID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Type="EticaretDatabaseModel.AspNetRoles" Role="AspNetRoles" Multiplicity="*" />
+          <End Type="EticaretDatabaseModel.AspNetUsers" Role="AspNetUsers" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EticaretDatabaseModelStoreContainer" CdmEntityContainer="projectMVCDBEntities">
+          <EntitySetMapping Name="ALISVERISSEPETI">
+            <EntityTypeMapping TypeName="EticaretDatabaseModel.ALISVERISSEPETI">
+              <MappingFragment StoreEntitySet="ALISVERISSEPETI">
+                <ScalarProperty Name="kullaniciID" ColumnName="kullaniciID" />
+                <ScalarProperty Name="urunID" ColumnName="urunID" />
+                <ScalarProperty Name="sepetID" ColumnName="sepetID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ANAKATEGORİ">
+            <EntityTypeMapping TypeName="EticaretDatabaseModel.ANAKATEGORİ">
+              <MappingFragment StoreEntitySet="ANAKATEGORİ">
+                <ScalarProperty Name="anakategoriAdi" ColumnName="anakategoriAdi" />
+                <ScalarProperty Name="anakategoriID" ColumnName="anakategoriID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="EticaretDatabaseModel.AspNetRoles">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="EticaretDatabaseModel.AspNetUserClaims">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="EticaretDatabaseModel.AspNetUserLogins">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="EticaretDatabaseModel.AspNetUsers">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BANKALAR">
+            <EntityTypeMapping TypeName="EticaretDatabaseModel.BANKALAR">
+              <MappingFragment StoreEntitySet="BANKALAR">
+                <ScalarProperty Name="BankaLogoYol" ColumnName="BankaLogoYol" />
+                <ScalarProperty Name="bankaAdi" ColumnName="bankaAdi" />
+                <ScalarProperty Name="bankaID" ColumnName="bankaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KAMPANYALAR">
+            <EntityTypeMapping TypeName="EticaretDatabaseModel.KAMPANYALAR">
+              <MappingFragment StoreEntitySet="KAMPANYALAR">
+                <ScalarProperty Name="bitisTarihi" ColumnName="bitisTarihi" />
+                <ScalarProperty Name="baslangicTarihi" ColumnName="baslangicTarihi" />
+                <ScalarProperty Name="indirimOrani" ColumnName="indirimOrani" />
+                <ScalarProperty Name="urunID" ColumnName="urunID" />
+                <ScalarProperty Name="kampanyaID" ColumnName="kampanyaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KARGO">
+            <EntityTypeMapping TypeName="EticaretDatabaseModel.KARGO">
+              <MappingFragment StoreEntitySet="KARGO">
+                <ScalarProperty Name="kargoFirmaAciklama" ColumnName="kargoFirmaAciklama" />
+                <ScalarProperty Name="kargoFirmaAdi" ColumnName="kargoFirmaAdi" />
+                <ScalarProperty Name="kargoID" ColumnName="kargoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KATEGORILER">
+            <EntityTypeMapping TypeName="EticaretDatabaseModel.KATEGORILER">
+              <MappingFragment StoreEntitySet="KATEGORILER">
+                <ScalarProperty Name="anaKategoriID" ColumnName="anaKategoriID" />
+                <ScalarProperty Name="kategoriAdi" ColumnName="kategoriAdi" />
+                <ScalarProperty Name="kategoriID" ColumnName="kategoriID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MARKALAR">
+            <EntityTypeMapping TypeName="EticaretDatabaseModel.MARKALAR">
+              <MappingFragment StoreEntitySet="MARKALAR">
+                <ScalarProperty Name="MarkaResimYol" ColumnName="MarkaResimYol" />
+                <ScalarProperty Name="markaAdi" ColumnName="markaAdi" />
+                <ScalarProperty Name="markaID" ColumnName="markaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ODEMESECENEKLER">
+            <EntityTypeMapping TypeName="EticaretDatabaseModel.ODEMESECENEKLER">
+              <MappingFragment StoreEntitySet="ODEMESECENEKLER">
+                <ScalarProperty Name="OdemeTip" ColumnName="OdemeTip" />
+                <ScalarProperty Name="odemeSecenekID" ColumnName="odemeSecenekID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OZELLIKDETAY">
+            <EntityTypeMapping TypeName="EticaretDatabaseModel.OZELLIKDETAY">
+              <MappingFragment StoreEntitySet="OZELLIKDETAY">
+                <ScalarProperty Name="ozellikDetayi" ColumnName="ozellikDetayi" />
+                <ScalarProperty Name="urunID" ColumnName="urunID" />
+                <ScalarProperty Name="ozellikID" ColumnName="ozellikID" />
+                <ScalarProperty Name="ozellikDetayID" ColumnName="ozellikDetayID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SIPARISLER">
+            <EntityTypeMapping TypeName="EticaretDatabaseModel.SIPARISLER">
+              <MappingFragment StoreEntitySet="SIPARISLER">
+                <ScalarProperty Name="TeslimTarihi" ColumnName="TeslimTarihi" />
+                <ScalarProperty Name="kargoNo" ColumnName="kargoNo" />
+                <ScalarProperty Name="kargoID" ColumnName="kargoID" />
+                <ScalarProperty Name="siparisTarihi" ColumnName="siparisTarihi" />
+                <ScalarProperty Name="odemeSecekenleriID" ColumnName="odemeSecekenleriID" />
+                <ScalarProperty Name="siparisDurum" ColumnName="siparisDurum" />
+                <ScalarProperty Name="urunID" ColumnName="urunID" />
+                <ScalarProperty Name="siparisID" ColumnName="siparisID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SLIDER">
+            <EntityTypeMapping TypeName="EticaretDatabaseModel.SLIDER">
+              <MappingFragment StoreEntitySet="SLIDER">
+                <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
+                <ScalarProperty Name="BaslangicTarihi" ColumnName="BaslangicTarihi" />
+                <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
+                <ScalarProperty Name="SliderText" ColumnName="SliderText" />
+                <ScalarProperty Name="SliderID" ColumnName="SliderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="URUNLER">
+            <EntityTypeMapping TypeName="EticaretDatabaseModel.URUNLER">
+              <MappingFragment StoreEntitySet="URUNLER">
+                <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
+                <ScalarProperty Name="BaslangicTarihi" ColumnName="BaslangicTarihi" />
+                <ScalarProperty Name="urunResimYol" ColumnName="urunResimYol" />
+                <ScalarProperty Name="urunAlisFiyati" ColumnName="urunAlisFiyati" />
+                <ScalarProperty Name="urunFiyat" ColumnName="urunFiyat" />
+                <ScalarProperty Name="urunAciklama" ColumnName="urunAciklama" />
+                <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
+                <ScalarProperty Name="markaID" ColumnName="markaID" />
+                <ScalarProperty Name="kategoriID" ColumnName="kategoriID" />
+                <ScalarProperty Name="urunID" ColumnName="urunID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="URUNOZELLIKLER">
+            <EntityTypeMapping TypeName="EticaretDatabaseModel.URUNOZELLIKLER">
+              <MappingFragment StoreEntitySet="URUNOZELLIKLER">
+                <ScalarProperty Name="anakategoriID" ColumnName="anakategoriID" />
+                <ScalarProperty Name="ozellikAd" ColumnName="ozellikAd" />
+                <ScalarProperty Name="ozellikID" ColumnName="ozellikID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="EticaretDatabaseModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

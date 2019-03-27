@@ -1,0 +1,47 @@
+﻿@model eTicaretProje.Areas.Admin.Models.RolEkleModel
+@{
+    ViewBag.Title = "RolEkle";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <section class="panel">
+
+                <header class="panel-heading">
+                    <h4>Rol Ekle</h4>
+                </header>
+
+                @using (Html.BeginForm("RolEkle", "Rol", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+                {
+
+                    <div class="panel-body">
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.RolAd, new { @class = "col-sm-3 control-label" })
+                            <div class="col-lg-4">
+                                @Html.TextBoxFor(m => m.RolAd, new { @class = "form-control", placeholder = "Rol Adı" })
+                                <br />
+                                <button type="submit" class="btn btn-primary">EKLE</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                }
+
+
+            </section>
+        </div>
+
+    </div>
+</div>
+
+
+@*@using (Html.BeginForm("RolEkle","Rol",FormMethod.Post))
+    {
+        @Html.TextBoxFor(m=>m.RolAd)
+        <input type="submit"/>*@
+
+
+

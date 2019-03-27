@@ -1,0 +1,81 @@
+﻿@model eTicaretProje.URUNLER
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>Silmek ister misiniz?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunAdi) :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.urunAciklama) :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.urunAciklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.urunFiyat) :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.urunFiyat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.urunAlisFiyati) :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.urunAlisFiyati)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.urunResimYol) :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.urunResimYol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BaslangicTarihi) :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BaslangicTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BitisTarihi) :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BitisTarihi)
+        </dd>
+
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            @Html.ActionLink("Evet", "DeleteConfirm", new { id = Model.urunID })| @Html.ActionLink("Hayır", "urunListele")
+        </div>
+    }
+</div>
+
+

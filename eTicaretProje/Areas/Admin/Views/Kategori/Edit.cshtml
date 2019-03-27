@@ -1,0 +1,93 @@
+﻿@model eTicaretProje.Areas.Admin.Models.KategoriModel
+@{
+    ViewBag.Title = "Edit";
+}
+@*<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Edit Media Gallery</h4>
+                </div>
+                <div class="modal-body row">
+                    <div class="col-md-5 img-modal">
+                        <img src="images/gallery/image1.jpg" alt="">
+                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit Image</a>
+                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-eye"></i> View Full Size</a>
+                        <p class="mtop10"><strong>File Name:</strong> img01.jpg</p>
+                        <p><strong>File Type:</strong> jpg</p>
+                        <p><strong>Resolution:</strong> 300x200</p>
+                        <p><strong>Uploaded By:</strong> <a href="#">ThemeBucket</a></p>
+                    </div>
+                    <div class="col-md-7">
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.kategoriID, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.EditorFor(model => model.kategoriID, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.kategoriID, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.kategoriAdi, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.EditorFor(model => model.kategoriAdi, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.kategoriAdi, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <div class="pull-right">
+                            <button class="btn btn-danger btn-sm" type="button">Sil</button>
+                            <button class="btn btn-success btn-sm" type="button">Güncele</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.kategoriID)
+    <div class="form-horizontal">
+        <h4>KATEGORİ EKLE</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.kategoriID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.kategoriID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.kategoriID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.kategoriAdi, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.kategoriAdi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.kategoriAdi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.BaslangicTarihi, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.BaslangicTarihi, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.BaslangicTarihi, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.BitisTarihi, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.BitisTarihi, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.BitisTarihi, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        *@
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+

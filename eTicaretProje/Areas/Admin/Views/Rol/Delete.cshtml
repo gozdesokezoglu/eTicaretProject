@@ -1,0 +1,31 @@
+﻿@model eTicaretProje.AspNetRoles
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<h3>Silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>AspNetRoles</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            @Html.ActionLink("Evet", "DeleteConfirm", new { id = Model.Id })|@Html.ActionLink("Hayır", "RolListele")
+        </div>
+    }
+</div>
