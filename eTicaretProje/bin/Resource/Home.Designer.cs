@@ -19,7 +19,7 @@ namespace Resource {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Home {
@@ -106,15 +106,6 @@ namespace Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Beğendiklerim.
-        /// </summary>
-        public static string begendiklerim {
-            get {
-                return ResourceManager.GetString("begendiklerim", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Beni Hatırla.
         /// </summary>
         public static string benihatirla {
@@ -169,6 +160,15 @@ namespace Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Beğendiklerim.
+        /// </summary>
+        public static string favoriler {
+            get {
+                return ResourceManager.GetString("favoriler", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fırsat Ürünleri.
         /// </summary>
         public static string firsaturunleri {
@@ -216,7 +216,7 @@ namespace Resource {
         /// <summary>
         ///   Looks up a localized string similar to Hakkımızda.
         /// </summary>
-        public static string hakkimizda {
+        public static string hakkimizda{
             get {
                 return ResourceManager.GetString("hakkimizda", resourceCulture);
             }

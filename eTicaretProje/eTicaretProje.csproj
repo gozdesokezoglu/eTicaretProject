@@ -243,7 +243,7 @@
       <DependentUpon>projectMVCDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\BegendiklerimController.cs" />
+    <Compile Include="Controllers\FavorilerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SepetimController.cs" />
@@ -1797,7 +1797,7 @@
     <Content Include="Views\YeniUrunler\firsaturun.cshtml" />
     <Content Include="Views\YeniUrunler\urunList.cshtml" />
     <Content Include="Views\UrunDetay\urunDetay.cshtml" />
-    <Content Include="Views\Begendiklerim\Begendiklerim.cshtml" />
+    <Content Include="Views\Favoriler\Favoriler.cshtml" />
     <Content Include="Views\Shared\_LoginPartial2.cshtml" />
     <Content Include="Views\Home\_slider.cshtml" />
     <Content Include="Views\Home\banner.cshtml" />
@@ -1824,12 +1824,14 @@
       <LastGenOutput>Home.en.Designer.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <CustomToolNamespace>Resource</CustomToolNamespace>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resource\Home.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Home.Designer.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <CustomToolNamespace>Resource</CustomToolNamespace>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

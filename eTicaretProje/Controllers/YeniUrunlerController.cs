@@ -36,50 +36,7 @@ namespace eTicaretProje.Controllers
 
 
         }
-        //public ActionResult kategoriListele(string id)
-        //{
-        //    bool durum = false; bool state = false;
-        //    model.Kategori = db.KATEGORILER.ToList();
-        //    model.AnaKategori = db.ANAKATEGORİ.ToList();
-        //    model.Marka = db.MARKALAR.ToList();
-        //    model.Sepet = db.ALISVERISSEPETI.ToList();
-        //    foreach (var item in db.MARKALAR)
-        //    {
-        //        if (id == item.markaAdi)
-        //        {
-        //            state = true;
-        //        }
-        //    }
-        //    if (state == true)
-        //    {
-        //        model.Urunler = db.URUNLER.Where(x => x.MARKALAR.markaAdi == id).ToList();
-        //    }
-        //    else
-        //    {
-        //        if (id == null)
-        //        {
-        //            model.Urunler = db.URUNLER.ToList();
-        //        }
-        //        else
-        //        {
-        //            foreach (var item in db.URUNLER)
-        //            {
-        //                if (id == item.KATEGORILER.ANAKATEGORİ.anakategoriAdi)
-        //                {
-        //                    durum = true;
-        //                }
-        //            }
-        //            if (durum == true)
-        //                model.Urunler = db.URUNLER.Where(x => x.KATEGORILER.ANAKATEGORİ.anakategoriAdi == id).ToList();
-        //            else
-        //                model.Urunler = db.URUNLER.Where(x => x.KATEGORILER.kategoriAdi == id).ToList();
-
-        //        }
-        //    }
-
-
-        //    return View(model);
-        //}
+    
         public ActionResult SepeteEkle(int ID)
         {
             if (ModelState.IsValid)

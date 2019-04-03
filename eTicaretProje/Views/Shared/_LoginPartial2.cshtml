@@ -2,7 +2,7 @@
 @if (Request.IsAuthenticated)
 {
     <li>@Html.ActionLink(Resource.Home.hesabim, "hesabim", "Home")</li>
-    <li>@Html.ActionLink(Resource.Home.begendiklerim, "begendiklerim", "begendiklerim")</li>
+    <li>@Html.ActionLink(Resource.Home.favoriler, "favoriler", "favoriler")</li>
     <li>@Html.ActionLink(Resource.Home.sepetim, "sepetim", "Sepetim")</li>
     <li>@Html.ActionLink(User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "navbar-right" })</li>
     <li><a href="javascript:document.getElementById('logoutForm').submit()">  Log off</a></li>

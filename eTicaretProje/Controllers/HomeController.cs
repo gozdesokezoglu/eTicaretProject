@@ -76,19 +76,14 @@ namespace eTicaretProje.Controllers
 
 
 
+        public ActionResult Contact()
+        {
+
+
+            return View();
+        }
+    
         public ActionResult iletisim()
-        {
-
-
-            return View();
-        }
-        public ActionResult hakkimizda()
-        {
-
-
-            return View();
-        }
-        public ActionResult hesabim()
         {
 
 
